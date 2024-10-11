@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// :root {
+//   --background: #ffffff;
+//   --foreground: #171717;
+// }
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background: #0a0a0a;
+//     --foreground: #ededed;
+//   }
+// }
+
+// body {
+//   color: var(--foreground);
+//   background: var(--background);
+//   font-family: Arial, Helvetica, sans-serif;
+// }
+
+// @layer utilities {
+//   .text-balance {
+//     text-wrap: balance;
+//   }
+// }
+
+
+body {
+  @apply font-primary text-base leading-6 text-gray-light; 
+}
+
+h1 {
+  @apply font-bold text-5xl leading-[61px]
+}
+
+h2 {
+  @apply font-bold text-[40px] leading-[48px]
+}
+
+h3{
+   @apply font-semibold text-[32px] 
+}
+
+h4 {
+  @apply font-semibold text-[28px]
+}
+
+h5 {
+  @apply font-semibold text-2xl
+}
+
+h6 {
+  @apply font-semibold text-xl
+}
+
+
+.paragraph-1 {
+  @apply text-2xl
+}
+
+.paragraph-2 {
+  @apply text-xl leading-none
+}
+
+.edgecase {
+  @apply text-sm  
+}
+
+.shadow1 {
+  box-shadow: 0px 58px 16px 0px rgba(17, 17, 17, 0.00), 0px 37px 15px 0px rgba(17, 17, 17, 0.01), 0px 21px 13px 0px rgba(17, 17, 17, 0.02), 0px 9px 9px 0px rgba(17, 17, 17, 0.03), 0px 2px 5px 0px rgba(17, 17, 17, 0.04);
+}
+
+.shadow2 {
+  box-shadow: 0px 149px 42px 0px rgba(0, 0, 0, 0.00), 0px 95px 38px 0px rgba(0, 0, 0, 0.01), 0px 54px 32px 0px rgba(0, 0, 0, 0.02), 0px 24px 24px 0px rgba(0, 0, 0, 0.03), 0px 6px 13px 0px rgba(0, 0, 0, 0.04);
+}
+
+.shadow3 {
+  box-shadow: 0px 200px 56px 0px rgba(0, 0, 0, 0.00), 0px 128px 51px 0px rgba(0, 0, 0, 0.00), 0px 72px 43px 0px rgba(0, 0, 0, 0.01), 0px 32px 32px 0px rgba(0, 0, 0, 0.02), 0px 8px 18px 0px rgba(0, 0, 0, 0.02);
+}
+
+.hover{
+  @apply relative z-20 border border-borderPrimary overflow-hidden duration-700 transition-all before:absolute before:rounded-full before:w-[58px] before:h-[58px] before:duration-700 before:transition-all before:left-1/2 before:-bottom-[33px] before:opacity-0 hover:before:opacity-100 before:-translate-x-1/2 hover:before:w-[200%] hover:before:h-[400%] hover:before:translate-y-0 before:-z-10
+}
+.hover-primary{
+  @apply before:bg-seconday-blue
+}
+.hover-secondary{
+  @apply before:bg-primary-red hover:border-primary-blue
+}
+
+// workspace Aside hover icon color 
+.hover-custom-filter {
+    filter: brightness(0) saturate(100%) invert(25%) sepia(92%) saturate(6816%) hue-rotate(244deg) brightness(102%) contrast(104%);
+    opacity: 1;
+}
+
+// workspace Aside active Menu Item 
+.active{
+  @apply bg-primary-red rounded-lg 
+}
+.active span{
+  @apply text-primary-blue font-semibold
+}
