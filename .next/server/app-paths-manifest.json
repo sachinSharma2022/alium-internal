@@ -1,6 +1,0 @@
-{
-  "/auth/reset-password/page": "app/auth/reset-password/page.js",
-  "/table/page": "app/table/page.js",
-  "/auth/login-success/page": "app/auth/login-success/page.js",
-  "/auth/login/page": "app/auth/login/page.js"
-}
