@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import WorkspaceHeading from "@/components/workspaceHeading";
 import edit from "../../public/images/edit.svg";
 import userplus from "../../public/images/user-plus.svg";
 import trash from "../../public/images/trash.svg";
 import Accordian from "@/components/accordian";
 import PrimaryLayout from "@/components/layout/primaryLayout";
 import AddNewSurvery from "@/components/workspace/addNewSurvery";
+import WorkspaceHeading from "@/components/workspace/workspaceHeading";
 
 const Workspace = () => {
   const [addSurvey, setAddSurvey] = useState(false);
