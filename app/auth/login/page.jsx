@@ -1,6 +1,7 @@
 import LoginLeftSec from "@/components/loginLeftSec";
 import LoginRightSec from "@/components/LoginRightSec";
 import React from "react";
+import { loginUser } from "@/lib/redux/authSlice";
 
 // Form Input Field
 const formInputField = [

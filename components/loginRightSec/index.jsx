@@ -6,7 +6,7 @@ import CheckBox from "../ui/checkbox";
 import { Button } from "../ui/button";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "@/lib/redux/authSlice";
+import { loginUser, registerUser } from "@/lib/redux/authSlice";
 import { useRouter } from "next/navigation";
 
 // Social Button Link
@@ -34,27 +34,22 @@ const LoginRightSec = ({
 }) => {
   const dispatch = useDispatch();
   const { loading, error, user, token } = useSelector((state) => state.auth);
-  const [formValues, setFormValues] = useState({
-    email: "",
-    password: "",
-  });
+  const [formValues, setFormValues] = useState({});
   const router = useRouter();
   console.log(formValues, "email");
   useEffect(() => {
     if (token) {
-      router.push("/login-success"); // Redirect to dashboard on login success
+      router.push("/auth/login-success"); // Redirect to dashboard on login success
     }
   }, [token, router]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form values before dispatch:", formValues);
-    const loginData = {
-      email: formValues.email,
-      password: formValues.password,
-    };
+    const payload = { ...formValues };
 
-    dispatch(loginUser(loginData)); // Dispatch login action
+    if (heading === "Log in") dispatch(loginUser(payload));
+    if (heading === "Create An Account") dispatch(registerUser(payload)); // Dispatch login action
   };
   const handleInputChange = (field, value) => {
     console.log(`Updating ${field} to ${value}`);
