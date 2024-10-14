@@ -1,13 +1,12 @@
 "use client";
 import InputField from "@/components/ui/input";
-import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
+import { Dialog, DialogPanel, DialogTitle, Select } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../../ui/button";
 import UploadImage from "../uploadImage";
-
-const countryCodes = [{ code: "+91" }, { code: "+1" }, { code: "+255" }];
+import Label from "@/components/ui/label";
 
 const UserProfile = () => {
   const [editProfile, setEditProfile] = useState(false);
@@ -66,34 +65,52 @@ const UserProfile = () => {
         {/* Profile Input field  */}
         <div className="grid grid-cols-2 gap-x-6 gap-y-5 mt-6 pb-6 border-b border-borderPrimary">
           <div className="">
+            <Label labelText="Full Name" />
             <InputField
-              label="Full Name"
               placeholder="Full Name"
               disabled={!editProfile ? true : false}
             />
           </div>
           <div className="">
-            <InputField
-              label="Phone Number"
-              placeholder="Phone Number"
-              className="relative placeholder:pl- 12 pl-[5.375rem]"
-              countryCode={true}
-              selectedCode={selectedCode}
-              handleSelectChange={handleSelectChange}
-              countryCodes={countryCodes}
-              disabled={!editProfile ? true : false}
-              type="tel"
-            />
+            <Label labelText="Phone Number" />
+
+            <div
+              className={`flex border border-borderPrimary rounded-lg overflow-hidden px-4 ${
+                !editProfile ? "bg-[#e9e9e9]" : ""
+              }`}
+            >
+              <Select
+                name="status"
+                aria-label="Project status"
+                className="bg-transparent"
+                disabled={!editProfile ? true : false}
+              >
+                <option value="91">91+</option>
+                <option value="90">90+</option>
+                <option value="92">92+</option>
+                <option value="93">93+</option>
+              </Select>
+
+              <InputField
+                placeholder="Phone Number"
+                selectedCode={selectedCode}
+                handleSelectChange={handleSelectChange}
+                type="tel"
+                className="py-0 border-none bg-transparent"
+                disabled={!editProfile ? true : false}
+              />
+            </div>
           </div>
-          <div className="">
+          <div>
+            <Label labelText="Email Address" />
             <InputField
-              label="Email Address"
               placeholder="johndoe1@email.com"
               type="email"
               disabled={!editProfile ? true : false}
             />
           </div>
-          <div className="">
+          <div>
+            <Label labelText="Company Name" />
             <InputField
               label="Company Name"
               placeholder="Company Name"
