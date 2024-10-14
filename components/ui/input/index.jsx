@@ -8,7 +8,6 @@ const InputField = ({
   onChange,
   inputWidth,
   disabled,
-  inputStyle,
 }) => {
   return (
     <>
