@@ -16,8 +16,6 @@ const countryCodes = [
 const UserProfile = ({ goBack, profileTitle, profileImg, profileName, admin, buttonText1, buttonText2, disabled }) => {
     const [selectedCode, setSelectedCode] = useState("+91");
 
-    const [editProfile, setEditProfile] = useState(true);
-
     const handleSelectChange = (code) => {
         setSelectedCode(code);
     };
@@ -48,9 +46,7 @@ const UserProfile = ({ goBack, profileTitle, profileImg, profileName, admin, but
             {/* Profile Content  */}
             <div className="bg-white h-[500px] p-6 rounded-xl mt-6">
                 <h6 className="text-black-primary border-b border-borderPrimary pb-3">
-            {
-                editProfle ? "User Profile " : "Edit Profile"
-            }
+                editProfle 
                 </h6>
                 <div className="flex items-center gap-8 mt-6">
                     {/* profile Image  */}
@@ -123,14 +119,18 @@ const UserProfile = ({ goBack, profileTitle, profileImg, profileName, admin, but
 
                 {/* Buttons   */}
                 <div className="flex items-center justify-between mt-6">
-                    <Button size="sm" width="auto" className="hover hover-secondary" onClick={() => setIsOpen(true)}>
-                        {buttonText1}
-                    </Button>
-                    <Button variant="blueBtn" size="sm" width="auto">
-                        <Link href="/edit-profile">
-                            {buttonText2}
-                        </Link>
-                    </Button>
+                   <div className='w-auto'>
+                        <Button size="sm" className="hover hover-secondary" onClick={() => setIsOpen(true)}>
+                            {buttonText1}
+                        </Button>
+                   </div>
+                    <div className='w-auto'>
+                        <Button variant="blueBtn" size="sm">
+                            <Link href="/edit-profile">
+                                {buttonText2}
+                            </Link>
+                        </Button>
+                    </div>
                 </div>
                 {/* Modal  */}
                 <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">

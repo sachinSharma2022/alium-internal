@@ -20,7 +20,6 @@ const Profile = () => {
                     admin="Profile picture must be in PNG or JPG format and under 2 MB."
                     buttonText1="Cancel"
                     buttonText2="Edit Profile"
-                    disabled={true}
                 />
         </PrimaryLayout>
     )
