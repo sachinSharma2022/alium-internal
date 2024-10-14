@@ -9,6 +9,7 @@ const buttonVariants = cva(styles.base, {
     variant: {
       default: styles.variant_default,
       blueBtn: styles.variant_blueBtn,
+      redBtn: styles.variant_redBtn,
     },
     size: {
       default: styles.size_default,

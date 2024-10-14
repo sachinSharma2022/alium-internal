@@ -199,7 +199,7 @@ const LoginRightSec = ({
                 </div>
               </div>
             )}
-            <Button variant="blueBtn" size="lg" onClick={handleSubmit}>
+            <Button variant="blueBtn" size="sm" onClick={handleSubmit}>
               {buttonText}
             </Button>
           </div>

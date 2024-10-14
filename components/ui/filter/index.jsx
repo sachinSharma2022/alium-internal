@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import RadioButton from "../radioButton";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import clsx from "clsx";
 import CheckBox from "../checkbox";
@@ -177,9 +176,7 @@ const Filter = () => {
                     Response Count
                   </Disclosure.Button>
                   <Disclosure.Panel className="bg-gray-table-bg rounded-xl ">
-                    <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3">
-                      
-                    </ul>
+                    <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3"></ul>
                   </Disclosure.Panel>
                 </Disclosure>
 

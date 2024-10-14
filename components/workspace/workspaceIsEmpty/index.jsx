@@ -1,29 +1,38 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
-const WorkspaceHeading = ({ heading, buttonText, icons, onClick }) => {
+const WorkspaceIsEmpty = () => {
+  const card = [
+    {
+      text: "Project Proposal Survey collects detailed project ideas, objectives, timelines, and resource requirements from team members",
+    },
+
+    {
+      text: "Event Feedback Form to gather attendee insights and improve future events",
+    },
+    {
+      text: "Feature Request Quiz Identify user needs by prioritizing desired features and understanding their impact on user experience",
+    },
+  ];
+
   return (
-    <div className="bg-white-smoke mb-8 w-full">
-      <div className="flex items-center justify-between p-8 bg-white mx-auto rounded-xl w-full">
-        <div className="flex items-center gap-6">
-          <h1 className="text-black-primary text-5xl">{heading}</h1>
-          {icons.length > 0 && (
-            <div className="flex items-center gap-3">
-              {icons.map((item, index) => (
-                <button
-                  key={index}
-                  className="p-2 border border-borderPrimary rounded-md hover:bg-primary-red transition-all duration-300"
-                >
-                  <Image src={item} width={20} height={20} alt="not found" />
-                </button>
-              ))}
+    <>
+      <div className="flex flex-col items-center gap-3 relative">
+        <Image
+          src="/images/emptybox.svg"
+          width={228}
+          height={180}
+          alt="emptybox"
+        />
+        <div className="w-[528px] items-center gap-5 flex flex-col relative flex-[0_0_auto]">
+          <div className="items-start gap-4 self-stretch w-full flex flex-col relative flex-[0_0_auto]">
+            <div className="relative self-stretch mt-[-1.00px]  font-semibold text-black text-2xl text-center tracking-[0]">
+              Your Workspace is Empty
             </div>
-          )}
-        </div>
-        <div>
+          </div>
           <div className="flex items-center">
-            <Button onClick={onClick} variant="blueBtn" size="sm">
+            <Button variant="blueBtn" size="sm">
               <span>
                 <svg
                   width="24"
@@ -55,13 +64,13 @@ const WorkspaceHeading = ({ heading, buttonText, icons, onClick }) => {
                   </defs>
                 </svg>
               </span>
-              {buttonText}
+              Add New Survey
             </Button>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default WorkspaceHeading;
+export default WorkspaceIsEmpty;

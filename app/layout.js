@@ -1,13 +1,5 @@
-// import { AlbertSans } from "next/font/google"
-import Header from "@/components/layout/header";
 import "../styles/global.scss";
 import { ReduxProvider } from "@/lib/redux/provider";
-
-// export const albertsans = AlbertSans({
-//   subsets: ["latin"],
-//   display: "swap",
-//   variable: "--font-primary",
-// })
 
 export const metadata = {
   title: "Create Next App",
@@ -18,10 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ReduxProvider>
-          <Header />
-          {children}
-        </ReduxProvider>
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );

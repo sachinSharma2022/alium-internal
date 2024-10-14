@@ -11,6 +11,7 @@ const InputField = ({
   required = false,
   value, // Add value prop
   onChange, // Add onChange prop
+  inputWidth,
 }) => {
   return (
     <>
@@ -30,7 +31,7 @@ const InputField = ({
         <input
           type={type}
           id={id}
-          className={`bg-white border border-borderPrimary text-black h-[2.75rem] text-base font-semibold rounded-lg block w-full py-3 px-4 dark:placeholder-gray-light placeholder:font-normal focus:outline-none ${className}`}
+          className={`bg-white border border-borderPrimary text-black h-[2.75rem] text-base font-semibold rounded-lg block w-full py-3 px-4 dark:placeholder-gray-light placeholder:font-normal focus:outline-none ${className} ${inputWidth}`}
           placeholder={placeholder}
           required={required}
           value={value} // Set the value prop
