@@ -1,28 +1,19 @@
-"use client"
-import { useState } from 'react';
-import UserProfile from '@/components/UserProfile';
-import PrimaryLayout from '@/components/layout/primaryLayout';
+"use client";
+import { useState } from "react";
+import UserProfile from "@/components/profiles/userProfile";
+import PrimaryLayout from "@/components/layout/primaryLayout";
 
 const Profile = () => {
-    const [selectedCode, setSelectedCode] = useState("+91");
+  const [selectedCode, setSelectedCode] = useState("+91");
 
-    const handleSelectChange = (code) => {
-        setSelectedCode(code);
-    };
-    return (
-        <PrimaryLayout>
-            
-            <UserProfile
-                    goBack="Go Back"
-                    profileTitle="Edit Profile"
-                    profileImg="images/user-image.svg"
-                    profileName="Upload Picture"
-                    admin="Profile picture must be in PNG or JPG format and under 2 MB."
-                    buttonText1="Cancel"
-                    buttonText2="Edit Profile"
-                />
-        </PrimaryLayout>
-    )
-}
+  const handleSelectChange = (code) => {
+    setSelectedCode(code);
+  };
+  return (
+    <PrimaryLayout>
+      <UserProfile />
+    </PrimaryLayout>
+  );
+};
 
-export default Profile
+export default Profile;
