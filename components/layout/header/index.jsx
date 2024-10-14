@@ -30,7 +30,7 @@ const Header = () => {
 
               <button
                 type="button"
-                class="relative inline-flex items-center p-3 text-white"
+                className="relative inline-flex items-center p-3 text-white"
               >
                 <Image src="/images/bell.svg" width={24} height={24} />
 

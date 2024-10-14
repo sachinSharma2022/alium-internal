@@ -11,12 +11,12 @@ const WorkspaceHeading = ({ heading, buttonText, icons, onClick }) => {
           {icons.length > 0 && (
             <div className="flex items-center gap-3">
               {icons.map((item, index) => (
-                <button
+                <Button
                   key={index}
-                  className="p-2 border border-borderPrimary rounded-md hover:bg-primary-red transition-all duration-300"
+                  className="p-2 w-9 min-h-9 border border-borderPrimary rounded-md hover:bg-primary-red transition-all duration-300"
                 >
                   <Image src={item} width={20} height={20} alt="not found" />
-                </button>
+                </Button>
               ))}
             </div>
           )}

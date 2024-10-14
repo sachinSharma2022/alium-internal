@@ -11,7 +11,7 @@ const ManageUser = () => {
   const data = [
     {
       Title: (
-        <div class="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
+        <div className="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
           <span className=" w-10 flex items-center justify-center bg-red-100 text-pink-500 font-semibold  py-2.5 px-2 rounded-full	">
             JD
           </span>
@@ -25,9 +25,10 @@ const ManageUser = () => {
 
       Actions: (
         <div className="flex gap-4">
-          <button
+          <Button
+            variant="none"
             type="button"
-            class="relative items-center border-none p-2 rounded-md bg-white hover hover-secondary"
+            className="relative w-9 min-h-9 items-center border-none p-2 !rounded-md hover hover-secondary"
           >
             <Image
               src="/images/more.svg"
@@ -35,14 +36,14 @@ const ManageUser = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
         </div>
       ),
     },
 
     {
       Title: (
-        <div class="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
+        <div className="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
           <span className=" w-10 flex items-center justify-center bg-red-100 text-pink-500 font-semibold  py-2.5 px-2 rounded-full	">
             JD
           </span>
@@ -56,9 +57,9 @@ const ManageUser = () => {
 
       Actions: (
         <div className="flex gap-4">
-          <button
+          <Button
             type="button"
-            class="relative items-center border-none p-2 rounded-md bg-white hover hover-secondary"
+            class="relative items-center border-none p-2 rounded-md  hover hover-secondary"
           >
             <Image
               src="/images/more.svg"
@@ -66,14 +67,14 @@ const ManageUser = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
         </div>
       ),
     },
 
     {
       Title: (
-        <div class="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
+        <div className="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
           <span className=" w-10 flex items-center justify-center bg-red-100 text-pink-500 font-semibold  py-2.5 px-2 rounded-full	">
             JD
           </span>
@@ -87,9 +88,10 @@ const ManageUser = () => {
 
       Actions: (
         <div className="flex gap-4">
-          <button
+          <Button
+            variant="none"
             type="button"
-            class="relative items-center border-none p-2 rounded-md bg-white hover hover-secondary"
+            className="relative w-9 min-h-9 items-center border-none p-2 !rounded-md  hover hover-secondary"
           >
             <Image
               src="/images/more.svg"
@@ -97,14 +99,14 @@ const ManageUser = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
         </div>
       ),
     },
 
     {
       Title: (
-        <div class="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
+        <div className="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
           <span className=" w-10 flex items-center justify-center bg-red-100 text-pink-500 font-semibold  py-2.5 px-2 rounded-full	">
             JD
           </span>
@@ -117,19 +119,18 @@ const ManageUser = () => {
       Role: <p className="  text-sm text-gray-500 font-medium">Viewer</p>,
 
       Actions: (
-        <div className="flex gap-4">
-          <button
-            type="button"
-            class="relative items-center border-none p-2 rounded-md bg-white hover hover-secondary"
-          >
-            <Image
-              src="/images/more.svg"
-              width={20}
-              height={20}
-              alt="not found"
-            />
-          </button>
-        </div>
+        <Button
+          variant="none"
+          type="button"
+          className="relative w-9 min-h-9 items-center border-none p-2 !rounded-md hover hover-secondary"
+        >
+          <Image
+            src="/images/more.svg"
+            width={20}
+            height={20}
+            alt="not found"
+          />
+        </Button>
       ),
     },
   ];
