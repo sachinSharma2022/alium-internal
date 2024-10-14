@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import React from "react";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
@@ -8,8 +9,21 @@ import Filter from "../ui/filter";
 import SearchPrimary from "../ui/searchPrimary";
 import Calender from "../ui/calender";
 import { Button } from "../ui/Button";
+import CopySurvey from "../modals/workspace/copySurvey";
+import Dialog from "../ui/dialog";
+import ModalTitle from "../ui/modalTitle";
 
 const Accordian = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   const columns = [
     "Survey Type",
     "Create Date",
@@ -346,7 +360,10 @@ const Accordian = () => {
                         />
                       </Button>
 
-                      <Button className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
+                      <Button
+                        onClick={openModal}
+                        className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none"
+                      >
                         <Image
                           src="/images/copy.svg"
                           width={20}
@@ -385,6 +402,11 @@ const Accordian = () => {
           </Disclosure.Panel>
         </Disclosure>
       </div>
+
+      <Dialog modalWidth="max-w-[620px]" isOpen={isOpen} onClose={closeModal}>
+        <ModalTitle backHandler={closeModal}>Copy Survey</ModalTitle>
+        <CopySurvey backHandler={true} />
+      </Dialog>
     </section>
   );
 };
