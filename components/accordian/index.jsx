@@ -7,6 +7,7 @@ import Table from "../table";
 import Filter from "../ui/filter";
 import SearchPrimary from "../ui/searchPrimary";
 import Calender from "../ui/calender";
+import { Button } from "../ui/Button";
 
 const Accordian = () => {
   const columns = [
@@ -31,29 +32,29 @@ const Accordian = () => {
         </div>
       ),
       "Create Date": (
-        <p className="  text-sm text-gray-500 font-medium">2024-08-30</p>
+        <p className=" text-sm text-gray-500 font-medium">2024-08-30</p>
       ),
       "Last Changed by": (
-        <p className="  text-sm text-gray-500 font-medium">Alium Admin</p>
+        <p className=" text-sm text-gray-500 font-medium">Alium Admin</p>
       ),
       Status: (
-        <span class="justify-center min-w-24 inline-flex items-center gap-x-1.5 py-1.5 px-4	 rounded-full text-sm	 font-semibold	 bg-red-100 dark:bg-red-300/30 dark:text-red-600">
-          <span class="size-1.5 inline-block rounded-full bg-red-600 dark:bg-red-600"></span>
+        <span className="justify-center min-w-24 inline-flex items-center gap-x-1.5 py-1.5 px-4	 rounded-full text-sm	 font-semibold	 bg-red-100 dark:bg-red-300/30 dark:text-red-600">
+          <span className="size-1.5 inline-block rounded-full bg-red-600 dark:bg-red-600"></span>
           Inactive
         </span>
       ),
       Actions: (
         <div className="flex gap-4">
-          <button
-            type="button"
-            class="min-w-28 text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
+          <Button
+            type="Button"
+            className="min-h-9 min-w-36 text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Activate
-          </button>
+          </Button>
 
-          <button
-            type="button"
-            class="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
+          <Button
+            type="Button"
+            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
           >
             <Image
               src="/images/edit.svg"
@@ -61,11 +62,11 @@ const Accordian = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
 
-          <button
-            type="button"
-            class="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
+          <Button
+            type="Button"
+            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
           >
             <Image
               src="/images/red-trash.svg"
@@ -73,7 +74,7 @@ const Accordian = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
         </div>
       ),
     },
@@ -99,23 +100,23 @@ const Accordian = () => {
         <p className="  text-sm text-gray-500 font-medium">Alium Admin</p>
       ),
       Status: (
-        <span class="justify-center min-w-24 inline-flex items-center gap-x-1.5 py-1.5 px-4	 rounded-full text-sm	 font-semibold bg-green-100	 text-green-500">
+        <span className="justify-center min-w-24 inline-flex items-center gap-x-1.5 py-1.5 px-4	 rounded-full text-sm	 font-semibold bg-green-100	 text-green-500">
           <span class="size-1.5 inline-block rounded-full bg-green-500	 dark:bg-green-500"></span>
           Active
         </span>
       ),
       Actions: (
         <div className="flex gap-4">
-          <button
-            type="button"
-            class=" min-w-28	text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md block text-center leading-none bg-white hover hover-secondary py-2	"
+          <Button
+            type="Button"
+            className=" min-w-28	text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md block text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Deactivate
-          </button>
+          </Button>
 
-          <button
-            type="button"
-            class="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
+          <Button
+            type="Button"
+            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
           >
             <Image
               src="/images/edit.svg"
@@ -123,10 +124,10 @@ const Accordian = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
 
-          <button
-            type="button"
+          <Button
+            type="Button"
             class="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
           >
             <Image
@@ -135,7 +136,7 @@ const Accordian = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
         </div>
       ),
     },
@@ -161,23 +162,23 @@ const Accordian = () => {
         <p className="  text-sm text-gray-500 font-medium">Alium Admin</p>
       ),
       Status: (
-        <span class="justify-center min-w-24 inline-flex items-center gap-x-1.5 py-1.5 px-4	 rounded-full text-sm	 font-semibold bg-green-100	 text-green-500">
-          <span class="size-1.5 inline-block rounded-full bg-green-500	 dark:bg-green-500"></span>
+        <span className="justify-center min-w-24 inline-flex items-center gap-x-1.5 py-1.5 px-4	 rounded-full text-sm	 font-semibold bg-green-100	 text-green-500">
+          <span className="size-1.5 inline-block rounded-full bg-green-500	 dark:bg-green-500"></span>
           Active
         </span>
       ),
       Actions: (
         <div className="flex gap-4">
-          <button
-            type="button"
-            class=" min-w-28	text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md block text-center leading-none bg-white hover hover-secondary py-2	"
+          <Button
+            type="Button"
+            className=" min-w-28	text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md block text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Deactivate
-          </button>
+          </Button>
 
-          <button
-            type="button"
-            class="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
+          <Button
+            type="Button"
+            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
           >
             <Image
               src="/images/edit.svg"
@@ -185,11 +186,11 @@ const Accordian = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
 
-          <button
-            type="button"
-            class="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
+          <Button
+            type="Button"
+            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
           >
             <Image
               src="/images/mail.svg"
@@ -197,7 +198,7 @@ const Accordian = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
         </div>
       ),
     },
@@ -223,23 +224,23 @@ const Accordian = () => {
         <p className="  text-sm text-gray-500 font-medium">Alium Admin</p>
       ),
       Status: (
-        <span class="justify-center min-w-24 inline-flex items-center gap-x-1.5 py-1.5 px-4	 rounded-full text-sm	 font-semibold	 bg-red-100 dark:bg-red-300/30 dark:text-red-600">
-          <span class="size-1.5 inline-block rounded-full bg-red-600 dark:bg-red-600"></span>
+        <span className="justify-center min-w-24 inline-flex items-center gap-x-1.5 py-1.5 px-4	 rounded-full text-sm	 font-semibold	 bg-red-100 dark:bg-red-300/30 dark:text-red-600">
+          <span className="size-1.5 inline-block rounded-full bg-red-600 dark:bg-red-600"></span>
           Inactive
         </span>
       ),
       Actions: (
         <div className="flex gap-4">
-          <button
-            type="button"
-            class=" min-w-28	text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md block text-center leading-none bg-white hover hover-secondary py-2	"
+          <Button
+            type="Button"
+            className=" min-w-28	text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md block text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Activate
-          </button>
+          </Button>
 
-          <button
-            type="button"
-            class="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
+          <Button
+            type="Button"
+            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
           >
             <Image
               src="/images/edit.svg"
@@ -247,10 +248,10 @@ const Accordian = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
 
-          <button
-            type="button"
+          <Button
+            type="Button"
             class="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
           >
             <Image
@@ -259,7 +260,7 @@ const Accordian = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
         </div>
       ),
     },
@@ -289,16 +290,16 @@ const Accordian = () => {
       ),
       Actions: (
         <div className="flex gap-4">
-          <button
-            type="button"
-            class=" min-w-28	text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md block text-center leading-none bg-white hover hover-secondary py-2	"
+          <Button
+            type="Button"
+            className=" min-w-28	text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md block text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Deactivate
-          </button>
+          </Button>
 
-          <button
-            type="button"
-            class="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
+          <Button
+            type="Button"
+            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
           >
             <Image
               src="/images/edit.svg"
@@ -306,11 +307,11 @@ const Accordian = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
 
-          <button
-            type="button"
-            class="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
+          <Button
+            type="Button"
+            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
           >
             <Image
               src="/images/mail.svg"
@@ -318,7 +319,7 @@ const Accordian = () => {
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
         </div>
       ),
     },
@@ -357,17 +358,17 @@ const Accordian = () => {
                       Survey Title 1
                     </p>
                   </td>
-                  <td class=" py-2 px-10 text-left w-[14%]">-</td>
-                  <td class=" py-2 px-10 text-left w-[14%]">-</td>
-                  <td class="py-2 px-6">
+                  <td className=" py-2 px-10 text-left w-[14%]">-</td>
+                  <td className=" py-2 px-10 text-left w-[14%]">-</td>
+                  <td className="py-2 px-6">
                     <p className="text-gray-light font-medium  text-start text-sm">
                       12 Aug 2024
                     </p>
                   </td>
-                  <td class="text-gray-light font-medium py-2 px-6 text-start text-sm rounded-tr-xl">
+                  <td className="text-gray-light font-medium py-2 px-6 text-start text-sm rounded-tr-xl">
                     <div className="flex gap-4">
-                      <button
-                        type="button"
+                      <Button
+                        type="Button"
                         class="p-2 bg-white rounded-md hover hover-secondary border-none hover:border-none"
                       >
                         <Image
@@ -376,11 +377,11 @@ const Accordian = () => {
                           height={20}
                           alt="not found"
                         />
-                      </button>
+                      </Button>
 
-                      <button
-                        type="button"
-                        class="p-2 bg-white rounded-md hover hover-secondary border-none hover:border-none"
+                      <Button
+                        type="Button"
+                        className="p-2 bg-white rounded-md hover hover-secondary border-none hover:border-none"
                       >
                         <Image
                           src="/images/copy.svg"
@@ -388,11 +389,11 @@ const Accordian = () => {
                           height={20}
                           alt="not found"
                         />
-                      </button>
+                      </Button>
 
-                      <button
-                        type="button"
-                        class="p-2 bg-white rounded-md hover hover-secondary border-none hover:border-none"
+                      <Button
+                        type="Button"
+                        className="p-2 bg-white rounded-md hover hover-secondary border-none hover:border-none"
                       >
                         <Image
                           src="/images/edit.svg"
@@ -400,11 +401,11 @@ const Accordian = () => {
                           height={20}
                           alt="not found"
                         />
-                      </button>
+                      </Button>
 
-                      <button
-                        type="button"
-                        class="p-2 bg-white rounded-md hover hover-secondary border-none hover:border-none"
+                      <Button
+                        type="Button"
+                        className="p-2 bg-white rounded-md hover hover-secondary border-none hover:border-none"
                       >
                         <Image
                           src="/images/trash.svg"
@@ -412,7 +413,7 @@ const Accordian = () => {
                           height={20}
                           alt="not found"
                         />
-                      </button>
+                      </Button>
                     </div>
                   </td>
                 </tr>
