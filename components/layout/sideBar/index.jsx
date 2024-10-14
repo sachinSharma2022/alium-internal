@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Dialog from "@/components/ui/dialog";
-import CreateWorkspace from "@/components/modals/CreateWorkspace";
+import CreateWorkspace from "@/components/modals/workspace/CreateWorkspace";
 import ModalTitle from "@/components/ui/modalTitle";
 
 const sideItems = [

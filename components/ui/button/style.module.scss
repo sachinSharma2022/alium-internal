@@ -24,15 +24,15 @@
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 700;
-border: 1px solid #CFCFCF;
-  
-@apply bg-white;
-@apply relative z-20 overflow-hidden duration-700 transition-all before:absolute before:rounded-full before:w-0 before:h-0 before:duration-700 before:transition-all before:left-1/2 before:bottom-0 hover:before:opacity-100 before:-translate-x-1/2 hover:before:w-[200%] hover:before:h-[400%] hover:before:translate-y-0 before:-z-10;
+  border: 1px solid #cfcfcf;
 
-&:hover {
- color: white;
- @apply before:bg-seconday-blue;
-}
+  @apply bg-white;
+  @apply relative z-20 overflow-hidden duration-700 transition-all before:absolute before:rounded-full before:w-0 before:h-0 before:duration-700 before:transition-all before:left-1/2 before:bottom-0 hover:before:opacity-100 before:-translate-x-1/2 hover:before:w-[200%] hover:before:h-[400%] hover:before:translate-y-0 before:-z-10;
+
+  &:hover {
+    color: white;
+    @apply before:bg-primary-red text-primary-blue border border-primary-blue;
+  }
 }
 
 .variant_blueBtn {
@@ -42,11 +42,25 @@ border: 1px solid #CFCFCF;
   font-size: 16px;
   font-weight: 700;
   @apply bg-primary-blue;
-   @apply relative z-20 overflow-hidden duration-700 transition-all before:absolute before:rounded-full before:w-0 before:h-0 before:duration-700 before:transition-all before:left-1/2 before:bottom-0 hover:before:opacity-100 before:-translate-x-1/2 hover:before:w-[200%] hover:before:h-[400%] hover:before:translate-y-0 before:-z-10;
+  @apply relative z-20 overflow-hidden duration-700 transition-all before:absolute before:rounded-full before:w-0 before:h-0 before:duration-700 before:transition-all before:left-1/2 before:bottom-0 hover:before:opacity-100 before:-translate-x-1/2 hover:before:w-[200%] hover:before:h-[400%] hover:before:translate-y-0 before:-z-10;
 
   &:hover {
     color: white;
     @apply before:bg-seconday-blue;
+  }
+}
+.variant_redBtn {
+  text-transform: capitalize;
+  color: white;
+  height: auto;
+  font-size: 16px;
+  font-weight: 700;
+  @apply bg-red-700;
+  @apply relative z-20 overflow-hidden duration-700 transition-all before:absolute before:rounded-full before:w-0 before:h-0 before:duration-700 before:transition-all before:left-1/2 before:bottom-0 hover:before:opacity-100 before:-translate-x-1/2 hover:before:w-[200%] hover:before:h-[400%] hover:before:translate-y-0 before:-z-10;
+
+  &:hover {
+    color: white;
+    @apply before:bg-red-600;
   }
 }
 
@@ -57,7 +71,7 @@ border: 1px solid #CFCFCF;
 
 .size_sm {
   width: 100%;
-  padding: .75rem 2rem;
+  padding: 0.75rem 2rem;
   height: 3rem;
 }
 

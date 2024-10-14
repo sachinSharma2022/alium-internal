@@ -1,14 +1,11 @@
 import React from "react";
-import SideBar from "@/components/layout/sideBar";
-
+import Workspace from "./workspace/page";
 
 const Home = () => {
   return (
-    <main>
-      <div className="flex">
-        <SideBar />
-      </div>
-    </main>
+    <>
+      <Workspace />
+    </>
   );
 };
 
