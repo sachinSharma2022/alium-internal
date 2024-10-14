@@ -8,6 +8,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "@/lib/redux/authSlice";
 import { useRouter } from "next/navigation";
+import Label from "../ui/label";
 
 // Social Button Link
 const socialLogInButton = [
@@ -102,6 +103,7 @@ const LoginRightSec = ({
                 )
                 .map((field) => (
                   <div className="w-1/2" key={field.id}>
+                    <Label labelText={field.label} />
                     <InputField
                       label={field.label}
                       id={field.id}
@@ -126,6 +128,7 @@ const LoginRightSec = ({
               )
               .map((field) => (
                 <div className="mb-5 relative" key={field.id}>
+                  <Label labelText={field.label} showTooltip={["newPassword", "createPassword"].includes(field.id)} />
                   <InputField
                     value={formValues[field.id]} // Controlled input
                     onChange={(e) =>
