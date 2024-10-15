@@ -6,7 +6,7 @@ const ProcessStep = ({ stepNumber, discription, stepImg, imgAlt, caption, isLast
         <>
             {/* Timeline - 1 */}
 
-            <li className="relative z-20 flex items-baseline gap- 6 pb-10">
+            <li className="relative z-20 flex items-baseline pb-10">
                 {
                     !isLastStep && (
                         <div className="before:absolute before:left-[19.5px] before:h-full before:w-[2px] before:bg-american-silver before:-z-10">
@@ -28,6 +28,7 @@ const ProcessStep = ({ stepNumber, discription, stepImg, imgAlt, caption, isLast
                                     width={552}
                                     height={354}
                                     alt={imgAlt}
+                                    layout="responsive"
                                     className="border border-borderPrimary rounded-xl"
                                 />
                                 {

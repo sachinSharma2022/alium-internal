@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const UploadImage = ({ profilePhoto, profileTitle, profileDescription }) => {
   return (
-    <div className="flex items-center gap-8 mt-6">
+    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 mt-6">
       {/* profile Image  */}
       <figure className="relative">
         <Image

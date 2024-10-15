@@ -57,17 +57,16 @@ const UserProfile = () => {
         />
 
         {/* Profile Input field  */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-5 mt-6 pb-6 border-b border-borderPrimary">
-          <div className="">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5 mt-6 pb-6 border-b border-borderPrimary">
+          <div>
             <Label labelText="Full Name" />
             <InputField
               placeholder="Full Name"
               disabled={!editProfile ? true : false}
             />
           </div>
-          <div className="">
+          <div>
             <Label labelText="Phone Number" />
-
             <div
               className={`flex border border-borderPrimary rounded-lg overflow-hidden px-4 ${!editProfile ? "bg-[#e9e9e9]" : ""
                 }`}
@@ -111,7 +110,7 @@ const UserProfile = () => {
         </div>
 
         {/* Buttons   */}
-        <div className="flex items-center justify-between mt-6">
+        <div className="flex flex-col gap-6 sm:flex-row sm:gap-0 items-center justify-between mt-6">
           <div className="w-auto">
             {editProfile ? (
               <Button size="sm" className="hover hover-secondary">
@@ -146,8 +145,8 @@ const UserProfile = () => {
           onClose={() => setIsOpen(false)}
           className="relative z-50"
         >
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-            <DialogPanel className="w-[38.75rem] space-y-4 border bg-white p-6 rounded-xl shadow2">
+          <div className="fixed inset-0 flex w-full sm:w-screen items-center justify-center p-4">
+            <DialogPanel className="w-full md:w-[38.75rem] space-y-4 border bg-white p-6 rounded-xl shadow2">
               <DialogTitle className="flex items-center justify-between">
                 <h6 className="font-bold text-black-primary">
                   Change Password
