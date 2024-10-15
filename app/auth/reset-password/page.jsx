@@ -10,6 +10,7 @@ const formInputField = [
     type: "Password",
     placeholder: "Enter New Password",
     required: true,
+    tooltipContent: "Password must be at least 8 characters long.",
   },
   {
     id: "confirmPassword",

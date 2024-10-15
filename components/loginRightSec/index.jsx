@@ -128,7 +128,7 @@ const LoginRightSec = ({
               )
               .map((field) => (
                 <div className="mb-5 relative" key={field.id}>
-                  <Label labelText={field.label} showTooltip={["newPassword", "createPassword"].includes(field.id)} />
+                  <Label labelText={field.label} tooltipContent={field.tooltipContent} />
                   <InputField
                     value={formValues[field.id]} // Controlled input
                     onChange={(e) =>

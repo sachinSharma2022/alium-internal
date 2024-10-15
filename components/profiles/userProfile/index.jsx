@@ -11,12 +11,6 @@ import Label from "@/components/ui/label";
 const UserProfile = () => {
   const [editProfile, setEditProfile] = useState(false);
 
-  const [selectedCode, setSelectedCode] = useState("+91");
-
-  const handleSelectChange = (code) => {
-    setSelectedCode(code);
-  };
-
   let [isOpen, setIsOpen] = useState(false);
 
   const [showPassword, setShowPassword] = useState(true);
@@ -75,14 +69,13 @@ const UserProfile = () => {
             <Label labelText="Phone Number" />
 
             <div
-              className={`flex border border-borderPrimary rounded-lg overflow-hidden px-4 ${
-                !editProfile ? "bg-[#e9e9e9]" : ""
-              }`}
+              className={`flex border border-borderPrimary rounded-lg overflow-hidden px-4 ${!editProfile ? "bg-[#e9e9e9]" : ""
+                }`}
             >
               <Select
                 name="status"
                 aria-label="Project status"
-                className="bg-transparent"
+                className="bg-transparent focus:outline-none"
                 disabled={!editProfile ? true : false}
               >
                 <option value="91">91+</option>
@@ -93,8 +86,6 @@ const UserProfile = () => {
 
               <InputField
                 placeholder="Phone Number"
-                selectedCode={selectedCode}
-                handleSelectChange={handleSelectChange}
                 type="tel"
                 className="py-0 border-none bg-transparent"
                 disabled={!editProfile ? true : false}
@@ -172,6 +163,7 @@ const UserProfile = () => {
               </DialogTitle>
               <div className="space-y-6 pb-3">
                 <div className="relative">
+                  <Label labelText="Current Password" className="mb-2" />
                   <Image
                     className="absolute top-11 right-4 cursor-pointer"
                     src={
@@ -184,15 +176,17 @@ const UserProfile = () => {
                     height={20}
                     onClick={togglePasswordVisibility}
                   />
-                  <InputField label="Current Password" type="password" />
+                  <InputField type="password" />
                 </div>
                 <div className="relative">
                   <div className="absolute w-[300px] left-28 top-[2px]"></div>
-                  <InputField
-                    label="New Password"
-                    type="password"
-                    // showTooltip={true}
+                  <Label
+                    labelText="New Password"
+                    className="mb-2"
                     tooltipContent="Use at least 8 characters. Don’t use a password from another site, or something obvious like your pet’s name."
+                  />
+                  <InputField
+                    type="password"
                   />
                   <Image
                     className="absolute top-11 right-4 cursor-pointer"
@@ -220,7 +214,8 @@ const UserProfile = () => {
                     height={20}
                     onClick={togglePasswordVisibility}
                   />
-                  <InputField label="Confirm Password" type="password" />
+                  <Label labelText="Confirm Password" className="mb-2" />
+                  <InputField type="password" />
                 </div>
               </div>
               <div className="flex gap-4 border-t border-borderPrimary pt-6">

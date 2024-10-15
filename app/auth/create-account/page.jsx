@@ -26,6 +26,7 @@ const inputFields = [
     label: "Password",
     type: "password",
     placeholder: "Enter your password",
+    tooltipContent: "Password must be at least 8 characters long.",
   },
 ];
 
@@ -62,7 +63,6 @@ const CreateAccount = () => {
             showCheckbox={false}
             socialLogInButtons={true}
             buttonText="Register"
-            showTooltip ={true}
           />
         </div>
       </div>
