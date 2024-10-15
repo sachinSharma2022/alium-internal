@@ -1,3 +1,4 @@
+import { Button } from "../button";
 import styles from "./style.module.scss";
 import Image from "next/image";
 
@@ -6,14 +7,14 @@ function ModalTitle({ children, className, backHandler }) {
     <div>
       <h4 className={`${styles.modalTitle} ${className}`}>
         {backHandler && (
-          <button type="button" onClick={backHandler}>
+          <Button variant="none" type="button" onClick={backHandler}>
             <Image
               src="/images/close.svg"
               width={20}
               height={20}
               alt="not found"
             />
-          </button>
+          </Button>
         )}
         {children}
       </h4>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import RadioButton from "../radioButton";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import clsx from "clsx";
+import { Button } from "../button";
 
 const AdminDropDown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,14 +16,14 @@ const AdminDropDown = () => {
   return (
     <div className="relative z-50 w-[17.5rem] min-h-[19rem ] p-4 bg-white shadow1 border border-borderPrimary rounded-lg z-30">
       <div className="text-end">
-        <button>
+        <Button variant="none">
           <Image
             src="/images/close.svg"
             width={20}
             height={20}
             alt="close profile button"
           />
-        </button>
+        </Button>
       </div>
       <div className="flex items-center justify-between mt-4">
         <div className="flex items-center space-x-4">

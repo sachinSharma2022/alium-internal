@@ -181,19 +181,13 @@ const Filter = () => {
                 </Disclosure>
 
                 <div className="flex items-center justify-between">
-                  <button
-                    type="button"
-                    class=" text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2		"
-                  >
+                  <Button class=" text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2		">
                     Clear All
-                  </button>
+                  </Button>
 
-                  <button
-                    type="button"
-                    class=" text-white font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-primary-blue hover hover-bg-primary-blue py-2	"
-                  >
+                  <Button class=" text-white font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-primary-blue hover hover-bg-primary-blue py-2	">
                     Activate
-                  </button>
+                  </Button>
                 </div>
               </div>
             </PopoverPanel>

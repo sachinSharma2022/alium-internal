@@ -7,21 +7,21 @@ import { updatePassword } from "@/lib/redux/authSlice";
 // Form Input Field
 const formInputField = [
   {
-    id: "existingPassword",
+    id: "existing_password",
     label: "Existing Password",
     type: "Password",
     placeholder: "Enter New Password",
     required: true,
   },
   {
-    id: "newPassword",
+    id: "new_password",
     label: "New Password",
     type: "Password",
     placeholder: "Enter New Password",
     required: true,
   },
   {
-    id: "confirmPassword",
+    id: "conf_new_password",
     label: "Confirm Password",
     type: "password",
     placeholder: "Confirm Password",
