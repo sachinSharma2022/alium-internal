@@ -56,6 +56,7 @@ const CreateAccount = () => {
             heading="Create An Account"
             discription="Register for a new membership"
             haveAnAccount="Already have an account?"
+            linkHref="/auth/login"
             signup="Sign in"
             showDevide={true}
             inputFields={inputFields}

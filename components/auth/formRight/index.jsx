@@ -4,11 +4,8 @@ import Image from "next/image";
 import InputField from "../../ui/input";
 import CheckBox from "../../ui/checkbox";
 import { Button } from "../../ui/button";
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser, registerUser } from "@/lib/redux/authSlice";
-import { useRouter } from "next/navigation";
-import { getCookie } from "cookies-next";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 // Social Button Link
 const socialLogInButton = [
@@ -31,18 +28,18 @@ const FormRight = ({
   socialLogInButtons = false,
   showDevide = true,
   linkHref = "/",
-  buttonText = "Sign Up",
+  buttonText,
   onSubmitAction,
 }) => {
   const dispatch = useDispatch();
-  const { loading, error, user, token } = useSelector((state) => state.auth);
+  // const { loading, error, user, token } = useSelector((state) => state.auth);
   const [formValues, setFormValues] = useState({});
-  const router = useRouter();
-  useEffect(() => {
-    if (!token) {
-      router.push("/auth/login"); // Redirect to dashboard on login success
-    }
-  }, [token, router]);
+  // const router = useRouter();
+  // // useEffect(() => {
+  // //   // if (!token) {
+  // //   //   router.push("/auth/login"); // Redirect to dashboard on login success
+  // //   // }
+  // // }, [token, router]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -59,7 +56,7 @@ const FormRight = ({
     }));
   };
   // Show / Hide Password
-  const [showPassword, setShowPassword] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
@@ -192,7 +189,7 @@ const FormRight = ({
                 <div>
                   <Link
                     className="font-bold text-primary-blue"
-                    href="/forgot-password"
+                    href="/auth/forgot-password"
                   >
                     Forgot password
                   </Link>
@@ -200,7 +197,7 @@ const FormRight = ({
               </div>
             )}
             <Button variant="blueBtn" size="sm" onClick={handleSubmit}>
-              {buttonText}
+              {buttonText ? buttonText : "Sign Up"}
             </Button>
           </div>
         </form>
@@ -210,10 +207,7 @@ const FormRight = ({
         {/* item-1  */}
         <div className="flex items-center justify-center">
           <p className="font-medium text-gray-light mr-2">{haveAnAccount}</p>
-          <Link
-            href={linkHref || "/login"}
-            className="font-bold text-primary-blue"
-          >
+          <Link href={linkHref} className="font-bold text-primary-blue">
             {signup}
           </Link>
         </div>

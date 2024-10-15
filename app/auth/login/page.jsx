@@ -53,8 +53,9 @@ const Login = () => {
             showForm={true}
             formButtons={formSignUP}
             showCheckbox={true}
+            buttonText="Log In"
             socialLogInButtons={true}
-            linkHref="/create-account"
+            linkHref="/auth/create-account"
             onSubmitAction={loginUser}
           />
         </div>
