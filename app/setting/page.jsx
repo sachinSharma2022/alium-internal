@@ -26,7 +26,7 @@ const Setting = () => {
                     <p>Success! Please copy and paste the code below in your site's html and you'll be set.</p>
                     <p>Preferably as close as possible to the open <span className="font-semibold text-black-primary">head</span> tag but anywhere will work.</p>
                     <div className="border border-borderPrimary bg-gray-table-bg py-3 px-4 rounded-lg text-gray-dark mt-6">
-                        <pre>
+                        <pre className="whitespace-break-spaces overflow-auto">
                             {`<!-- Alium Analytics -->
 <script>
 (function(a,l,i,u,m){
