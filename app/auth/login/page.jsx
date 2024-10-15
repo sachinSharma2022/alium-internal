@@ -1,5 +1,6 @@
-import LoginLeftSec from "@/components/loginLeftSec";
-import LoginRightSec from "@/components/LoginRightSec";
+"use client";
+import FormLeft from "@/components/auth/formLeft";
+import FormRight from "@/components/auth/formRight";
 import React from "react";
 import { loginUser } from "@/lib/redux/authSlice";
 
@@ -35,14 +36,14 @@ const Login = () => {
     <section className="login">
       <div className="mx-auto lg:mx-0">
         <div className="flex xl:flex-row md:flex-row flex-col items-center gap-6 md:gap-0 px-5 h-screen">
-          <LoginLeftSec
+          <FormLeft
             title="Alium"
             heading="Start your journey with us.."
             discription="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
             image="../images/loginimg.svg"
           />
 
-          <LoginRightSec
+          <FormRight
             heading="Log in"
             discription="Welcome back! please enter your details"
             haveAnAccount="Don’t have an account?"
@@ -54,6 +55,7 @@ const Login = () => {
             showCheckbox={true}
             socialLogInButtons={true}
             linkHref="/create-account"
+            onSubmitAction={loginUser}
           />
         </div>
       </div>

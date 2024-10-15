@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import Table from "../table";
+import Table from "../ui/table";
 import Filter from "../ui/filter";
 import SearchPrimary from "../ui/searchPrimary";
 import Calender from "../ui/calender";

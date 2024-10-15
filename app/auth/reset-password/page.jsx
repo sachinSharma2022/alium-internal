@@ -1,9 +1,18 @@
+"use client";
 import React from "react";
-import LoginLeftSec from "@/components/loginLeftSec";
-import LoginRightSec from "@/components/loginRightSec";
+import FormLeft from "@/components/auth/formLeft";
+import FormRight from "@/components/auth/formRight";
+import { updatePassword } from "@/lib/redux/authSlice";
 
 // Form Input Field
 const formInputField = [
+  {
+    id: "existingPassword",
+    label: "Existing Password",
+    type: "Password",
+    placeholder: "Enter New Password",
+    required: true,
+  },
   {
     id: "newPassword",
     label: "New Password",
@@ -36,19 +45,20 @@ const ResetPassword = () => {
     <section className="login">
       <div className="mx-auto lg:mx-0">
         <div className="flex xl:flex-row md:flex-row flex-col items-center gap-6 md:gap-0 px-5 h-screen">
-          <LoginLeftSec
+          <FormLeft
             title="Alium"
             heading="Start your journey with us.."
             discription="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
             image="../images/loginimg.svg"
           />
 
-          <LoginRightSec
+          <FormRight
             heading="Reset password"
             discription="Enter your password to reset your account password."
             inputFields={formInputField}
             formButtons={formSubmitButton}
             showDevide={false}
+            onSubmitAction={updatePassword}
           />
         </div>
       </div>

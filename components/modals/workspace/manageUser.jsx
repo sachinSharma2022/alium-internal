@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../../ui/button";
 import Dropdown from "../../ui/dropdown";
 import SearchPrimary from "../../ui/searchPrimary";
-import Table from "../../table";
+import Table from "../../ui/table";
 import Image from "next/image";
 
 const ManageUser = () => {

@@ -1,22 +1,23 @@
 import api from "../api/axios";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { setCookie, getCookie,deleteCookie } from "cookies-next";
+import { setCookie, getCookie, deleteCookie } from "cookies-next";
 
 // Async Thunk for login
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async ({ email, password }, { rejectWithValue }) => {
     try {
-      console.log(email, "data");
-      const response = await api.post("/login", { email, password }); // Send email and password
+      const response = await api.post("/User/login", { email, password }); // Send email and password
+
       const { token } = response.data;
       setCookie("authToken", token, {
         maxAge: 86400, // Cookie expiry time in seconds
         path: "/",
-        httpOnly: true,
+        // httpOnly: true,
       });
       return response.data;
     } catch (error) {
+      console.log(error, "error");
       return rejectWithValue(error.response.data);
     }
   }
@@ -26,7 +27,7 @@ export const registerUser = createAsyncThunk(
   "auth/registerUser",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await api.post("/register", userData);
+      const response = await api.post("/User/register", userData);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -39,7 +40,7 @@ export const resetPassword = createAsyncThunk(
   "auth/resetPassword",
   async (email, { rejectWithValue }) => {
     try {
-      const response = await api.post("/resetPassword", { email });
+      const response = await api.post("/User/resetPassword", { email });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -53,7 +54,7 @@ export const fetchProfile = createAsyncThunk(
   async (_, { getState, rejectWithValue }) => {
     try {
       const token = getState().auth.token;
-      const response = await api.post("/profile", null, {
+      const response = await api.post("/User/profile", null, {
         headers: {
           Authorization: token,
         },
@@ -71,7 +72,7 @@ export const updatePassword = createAsyncThunk(
   async (passwordData, { getState, rejectWithValue }) => {
     try {
       const token = getState().auth.token;
-      const response = await api.post("/updatePassword", passwordData, {
+      const response = await api.post("/User/updatePassword", passwordData, {
         headers: {
           Authorization: token,
         },
@@ -99,9 +100,9 @@ const authSlice = createSlice({
     logout: (state) => {
       state.user = null;
       state.token = null;
-       deleteCookie("authToken", {
-         path: "/", 
-       }); // Remove token on logout
+      deleteCookie("authToken", {
+        path: "/",
+      }); // Remove token on logout
     },
   },
   extraReducers: (builder) => {

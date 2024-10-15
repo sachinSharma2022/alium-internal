@@ -1,13 +1,14 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import InputField from "../ui/input";
-import CheckBox from "../ui/checkbox";
-import { Button } from "../ui/button";
+import InputField from "../../ui/input";
+import CheckBox from "../../ui/checkbox";
+import { Button } from "../../ui/button";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, registerUser } from "@/lib/redux/authSlice";
 import { useRouter } from "next/navigation";
+import { getCookie } from "cookies-next";
 
 // Social Button Link
 const socialLogInButton = [
@@ -19,7 +20,7 @@ const socialLogInButton = [
 // PasswordStrength
 const bars = 4;
 
-const LoginRightSec = ({
+const FormRight = ({
   heading,
   discription,
   haveAnAccount,
@@ -31,15 +32,15 @@ const LoginRightSec = ({
   showDevide = true,
   linkHref = "/",
   buttonText = "Sign Up",
+  onSubmitAction,
 }) => {
   const dispatch = useDispatch();
   const { loading, error, user, token } = useSelector((state) => state.auth);
   const [formValues, setFormValues] = useState({});
   const router = useRouter();
-  console.log(formValues, "email");
   useEffect(() => {
-    if (token) {
-      router.push("/auth/login-success"); // Redirect to dashboard on login success
+    if (!token) {
+      router.push("/auth/login"); // Redirect to dashboard on login success
     }
   }, [token, router]);
 
@@ -48,8 +49,7 @@ const LoginRightSec = ({
     console.log("Form values before dispatch:", formValues);
     const payload = { ...formValues };
 
-    if (heading === "Log in") dispatch(loginUser(payload));
-    if (heading === "Create An Account") dispatch(registerUser(payload)); // Dispatch login action
+    dispatch(onSubmitAction(payload)); // Dispatch login action
   };
   const handleInputChange = (field, value) => {
     console.log(`Updating ${field} to ${value}`);
@@ -248,4 +248,4 @@ const LoginRightSec = ({
   );
 };
 
-export default LoginRightSec;
+export default FormRight;
