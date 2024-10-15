@@ -6,7 +6,6 @@ import ProcessStep from '@/components/helpSupport/processStep'
 import DisclosureItem from '@/components/helpSupport/disclosureItem'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 
 const processSteps = [
     {
