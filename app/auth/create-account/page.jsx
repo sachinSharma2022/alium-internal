@@ -6,13 +6,13 @@ import { registerUser } from "@/lib/redux/authSlice";
 
 const inputFields = [
   {
-    id: "fullName",
+    id: "name",
     label: "Full Name",
     type: "text",
     placeholder: "Enter your full name",
   },
   {
-    id: "organisationName",
+    id: "orgname",
     label: "Organisation Name",
     type: "text",
     placeholder: "Organisation Name",
@@ -24,7 +24,7 @@ const inputFields = [
     placeholder: "Enter your email",
   },
   {
-    id: "createPassword",
+    id: "password",
     label: "Password",
     type: "password",
     placeholder: "Enter your password",

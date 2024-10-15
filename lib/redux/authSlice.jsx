@@ -72,7 +72,7 @@ export const updatePassword = createAsyncThunk(
   async (passwordData, { getState, rejectWithValue }) => {
     try {
       const token = getState().auth.token;
-      const response = await api.post("/User/updatepassword", passwordData, {
+      const response = await api.post("/User/updatePassword", passwordData, {
         // headers: {
         //   Authorization: token,
         // },
