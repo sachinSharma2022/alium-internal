@@ -7,6 +7,7 @@ import CheckBox from "../checkbox";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Button } from "../button";
+import RangeSlider from "@/components/workspace/rangeSlider";
 
 const Filter = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -176,7 +177,11 @@ const Filter = () => {
                     Response Count
                   </Disclosure.Button>
                   <Disclosure.Panel className="bg-gray-table-bg rounded-xl ">
-                    <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3"></ul>
+                    <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3">
+                    <label for="default-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default range</label>
+                    <input id="default-range" type="range" value="50" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"/> 
+                     <RangeSlider />
+                    </ul>
                   </Disclosure.Panel>
                 </Disclosure>
 
