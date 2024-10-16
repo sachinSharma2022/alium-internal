@@ -48,6 +48,8 @@ const ForgotPassword = () => {
             socialLogInButtons={false}
             buttonText="Submit"
             onSubmitAction={resetPassword}
+            redirect="/auth/login-success"
+            actionType="resetPassword"
           />
         </div>
       </div>

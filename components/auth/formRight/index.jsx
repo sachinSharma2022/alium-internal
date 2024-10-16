@@ -6,6 +6,8 @@ import CheckBox from "../../ui/checkbox";
 import { Button } from "../../ui/button";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import useAuthRouting from "@/lib/hooks/useAuthRouting";
+import { useRouter } from "next/navigation";
 
 // Social Button Link
 const socialLogInButton = [
@@ -30,11 +32,13 @@ const FormRight = ({
   linkHref = "/",
   buttonText,
   onSubmitAction,
+  redirect,
+  actionType,
 }) => {
   const dispatch = useDispatch();
   // const { loading, error, user, token } = useSelector((state) => state.auth);
   const [formValues, setFormValues] = useState({});
-  // const router = useRouter();
+  const router = useRouter();
   // // useEffect(() => {
   // //   // if (!token) {
   // //   //   router.push("/auth/login"); // Redirect to dashboard on login success
@@ -45,8 +49,11 @@ const FormRight = ({
     e.preventDefault();
     console.log("Form values before dispatch:", formValues);
     const payload = { ...formValues };
-
-    dispatch(onSubmitAction(payload)); // Dispatch login action
+    if (onSubmitAction) {
+      dispatch(onSubmitAction(payload)); // Dispatch action
+    } else {
+      router.push(redirect);
+    }
   };
   const handleInputChange = (field, value) => {
     console.log(`Updating ${field} to ${value}`);
@@ -62,6 +69,7 @@ const FormRight = ({
     setShowPassword((prevState) => !prevState);
   };
 
+  redirect && useAuthRouting(redirect, actionType);
   return (
     <div className="lg:max-w-[480px] w-full ml-auto xl:mx-auto">
       {/* text  */}
@@ -196,6 +204,17 @@ const FormRight = ({
                 </div>
               </div>
             )}
+            {/* {actionType === "resetPasswordSuccess" ? (
+              <Link href={"/auth/login"}>
+                <Button variant="blueBtn" size="sm">
+                  {buttonText ? buttonText : "Login"}
+                </Button>
+              </Link>
+            ) : (
+              <Button variant="blueBtn" size="sm" onClick={handleSubmit}>
+                {buttonText ? buttonText : "Sign Up"}
+              </Button>
+            )} */}
             <Button variant="blueBtn" size="sm" onClick={handleSubmit}>
               {buttonText ? buttonText : "Sign Up"}
             </Button>

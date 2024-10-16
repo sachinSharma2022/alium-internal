@@ -90,6 +90,7 @@ const initialState = {
   loading: false,
   error: null,
   profile: null,
+  resetPasswordSuccess: false,
 };
 
 // Auth Slice
@@ -103,6 +104,10 @@ const authSlice = createSlice({
       deleteCookie("authToken", {
         path: "/",
       }); // Remove token on logout
+    },
+    resetResetPasswordSuccess: (state) => {
+      // Reset action
+      state.resetPasswordSuccess = false;
     },
   },
   extraReducers: (builder) => {
@@ -137,13 +142,16 @@ const authSlice = createSlice({
     // Reset Password
     builder.addCase(resetPassword.pending, (state) => {
       state.loading = true;
+      state.resetPasswordSuccess = false;
     });
     builder.addCase(resetPassword.fulfilled, (state) => {
       state.loading = false;
+      state.resetPasswordSuccess = true;
     });
     builder.addCase(resetPassword.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload;
+      state.resetPasswordSuccess = false;
     });
 
     // Fetch Profile
@@ -173,5 +181,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout } = authSlice.actions;
+export const { logout,resetResetPasswordSuccess } = authSlice.actions;
 export default authSlice.reducer;

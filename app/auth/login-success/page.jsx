@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import FormLeft from "@/components/auth/formLeft";
 import FormRight from "@/components/auth/formRight";
@@ -31,6 +32,7 @@ const LoginSuccess = () => {
             formButtons={formLogIn}
             showCheckbox={false}
             showDevide={false}
+            redirect="/auth/login"
           />
         </div>
       </div>
