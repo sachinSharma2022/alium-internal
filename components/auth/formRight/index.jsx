@@ -37,12 +37,37 @@ const FormRight = ({
 }) => {
   const dispatch = useDispatch();
   const [formValues, setFormValues] = useState({});
+  const [errors, setErrors] = useState({});
   const router = useRouter();
+
+  // Email Validation Function
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    return password.length >= 8;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form values before dispatch:", formValues);
     const payload = { ...formValues };
+    const newErrors = {};
+    if (!validateEmail(formValues.email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+    if (!validatePassword(formValues.password)) {
+      newErrors.password = "Password should be at least 8 characters long.";
+    }
+    // If there are validation errors, update the error state and do not proceed
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    } else {
+      setErrors({});
+    }
+
     if (onSubmitAction) {
       dispatch(onSubmitAction(payload)); // Dispatch action
     } else {
@@ -144,6 +169,16 @@ const FormRight = ({
                       field.id
                     )}
                   />
+                  {/* Display email validation error */}
+                  {field.id === "email" && errors.email && (
+                    <p className="text-red-500 text-sm mt-2">{errors.email}</p>
+                  )}
+                  {/* Display password validation error */}
+                  {field.id === "password" && errors.password && (
+                    <p className="text-red-500 text-sm mt-2">
+                      {errors.password}
+                    </p>
+                  )}
                   {/* eye icon for password-related fields */}
                   {[
                     "password",
