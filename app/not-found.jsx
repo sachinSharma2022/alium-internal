@@ -12,8 +12,7 @@ const NotFound = () => {
           description="Please create a dashboard to get started"
           buttonText="Add New Dashboard"
           icon="images/pluss.svg"
-        >
-        </Empty>
+        />
       </div>
     </PrimaryLayout>
   )
