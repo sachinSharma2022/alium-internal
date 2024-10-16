@@ -68,6 +68,8 @@ const CreateAccount = () => {
             buttonText="Register"
             showTooltip={true}
             onSubmitAction={registerUser}
+            redirect="/workspace"
+            actionType="login"
           />
         </div>
       </div>

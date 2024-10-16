@@ -53,10 +53,12 @@ const Login = () => {
             showForm={true}
             formButtons={formSignUP}
             showCheckbox={true}
-            buttonText="Log In"
+            buttonText="Sign in"
             socialLogInButtons={true}
             linkHref="/auth/create-account"
             onSubmitAction={loginUser}
+            redirect="/workspace"
+            actionType="login"
           />
         </div>
       </div>
