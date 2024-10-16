@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../../ui/button";
-import InputField from "../../ui/input";
+import { InputField } from "../../ui/input";
 import ColorSelector from "../../ui/colorSelector";
 
 const CreateWorkspace = () => {

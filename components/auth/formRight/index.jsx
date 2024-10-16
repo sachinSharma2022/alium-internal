@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import InputField from "../../ui/input";
+import { Error, InputField } from "../../ui/input";
 import CheckBox from "../../ui/checkbox";
 import { Button } from "../../ui/button";
 import React, { useState } from "react";
