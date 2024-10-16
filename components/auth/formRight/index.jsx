@@ -36,14 +36,8 @@ const FormRight = ({
   actionType,
 }) => {
   const dispatch = useDispatch();
-  // const { loading, error, user, token } = useSelector((state) => state.auth);
   const [formValues, setFormValues] = useState({});
   const router = useRouter();
-  // // useEffect(() => {
-  // //   // if (!token) {
-  // //   //   router.push("/auth/login"); // Redirect to dashboard on login success
-  // //   // }
-  // // }, [token, router]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -28,6 +28,12 @@ export const registerUser = createAsyncThunk(
   async (userData, { rejectWithValue }) => {
     try {
       const response = await api.post("/User/register", userData);
+      const { token } = response.data;
+      setCookie("authToken", token, {
+        maxAge: 86400, // Cookie expiry time in seconds
+        path: "/",
+        // httpOnly: true,
+      });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -133,6 +139,7 @@ const authSlice = createSlice({
     builder.addCase(registerUser.fulfilled, (state, action) => {
       state.loading = false;
       state.user = action.payload;
+      state.token = action.payload.token;
     });
     builder.addCase(registerUser.rejected, (state, action) => {
       state.loading = false;
@@ -181,5 +188,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout,resetResetPasswordSuccess } = authSlice.actions;
+export const { logout, resetResetPasswordSuccess } = authSlice.actions;
 export default authSlice.reducer;
