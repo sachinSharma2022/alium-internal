@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import edit from "../../public/images/edit.svg";
 import userplus from "../../public/images/user-plus.svg";
 import trash from "../../public/images/trash.svg";
-import Accordian from "@/components/accordian";
+import Accordion from "@/components/accordion";
 import PrimaryLayout from "@/components/layout/primaryLayout";
-import AddNewSurvery from "@/components/workspace/addNewSurvery";
+import AddNewSurvey from "@/components/workspace/addNewSurvey";
 import WorkspaceHeading from "@/components/workspace/workspaceHeading";
 
 const Workspace = () => {
@@ -22,9 +22,9 @@ const Workspace = () => {
           icons={icons}
         />
         {!addSurvey ? (
-          <Accordian />
+          <Accordion />
         ) : (
-          <AddNewSurvery backHandler={() => setAddSurvey(false)} />
+          <AddNewSurvey backHandler={() => setAddSurvey(false)} />
         )}
       </section>
     </PrimaryLayout>
