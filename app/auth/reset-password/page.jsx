@@ -49,13 +49,13 @@ const ResetPassword = () => {
           <FormLeft
             title="Alium"
             heading="Start your journey with us.."
-            discription="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
+            description="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
             image="../images/loginimg.svg"
           />
 
           <FormRight
             heading="Reset password"
-            discription="Enter your password to reset your account password."
+            description="Enter your password to reset your account password."
             inputFields={formInputField}
             formButtons={formSubmitButton}
             showDevide={false}

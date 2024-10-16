@@ -6,6 +6,7 @@ import CheckBox from "../../ui/checkbox";
 import { Button } from "../../ui/button";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import Label from "@/components/ui/label";
 
 // Social Button Link
 const socialLogInButton = [
@@ -19,7 +20,7 @@ const bars = 4;
 
 const FormRight = ({
   heading,
-  discription,
+  description,
   haveAnAccount,
   signup,
   inputFields = [],
@@ -68,7 +69,7 @@ const FormRight = ({
       <div className="mb-12">
         <h2 className="text-black">{heading}</h2>
         <p className="text-xl leading-[30px] mt-3 lg:w-[430px]">
-          {discription}
+          {description}
         </p>
       </div>
 

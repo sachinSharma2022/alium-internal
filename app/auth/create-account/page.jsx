@@ -49,13 +49,13 @@ const CreateAccount = () => {
           <FormLeft
             title="Alium"
             heading="Start your journey with us.."
-            discription="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
+            description="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
             image="../images/loginimg.svg"
           />
 
           <FormRight
             heading="Create An Account"
-            discription="Register for a new membership"
+            description="Register for a new membership"
             haveAnAccount="Already have an account?"
             linkHref="/auth/login"
             signup="Sign in"
