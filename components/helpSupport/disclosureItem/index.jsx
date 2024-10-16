@@ -6,7 +6,7 @@ const DisclosureItem = ({title, children}) => {
   return (
     <div className="border border-borderPrimary rounded-lg">
       <Disclosure>
-        <div className="ankur">
+        <div>
           <DisclosureButton className="flex justify-between w-full py-4 px-5 group">
             <h6 className="text-black-primary">{title}</h6>
             <Image
