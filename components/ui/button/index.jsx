@@ -7,12 +7,14 @@ import styles from "./style.module.scss";
 const buttonVariants = cva(styles.base, {
   variants: {
     variant: {
+      none: styles.none_default,
       default: styles.variant_default,
       blueBtn: styles.variant_blueBtn,
       redBtn: styles.variant_redBtn,
     },
     size: {
       default: styles.size_default,
+      xs: styles.size_xs,
       sm: styles.size_sm,
       lg: styles.size_lg,
     },

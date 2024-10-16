@@ -1,15 +1,29 @@
 "use client";
+import { useState } from "react";
 import React from "react";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import Table from "../table";
+import Table from "../ui/table";
 import Filter from "../ui/filter";
 import SearchPrimary from "../ui/searchPrimary";
 import Calender from "../ui/calender";
 import { Button } from "../ui/Button";
+import CopySurvey from "../modals/workspace/copySurvey";
+import Dialog from "../ui/dialog";
+import ModalTitle from "../ui/modalTitle";
 
 const Accordian = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   const columns = [
     "Survey Type",
     "Create Date",
@@ -46,16 +60,13 @@ const Accordian = () => {
       Actions: (
         <div className="flex gap-4">
           <Button
-            type="Button"
-            className="min-h-9 min-w-36 text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
+            size="xs"
+            className="min-w-[156px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Activate
           </Button>
 
-          <Button
-            type="Button"
-            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
-          >
+          <Button className="relative w-9 h-9 items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary">
             <Image
               src="/images/edit.svg"
               width={20}
@@ -64,10 +75,7 @@ const Accordian = () => {
             />
           </Button>
 
-          <Button
-            type="Button"
-            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
-          >
+          <Button className="relative w-9 h-9 items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary">
             <Image
               src="/images/red-trash.svg"
               width={20}
@@ -108,16 +116,13 @@ const Accordian = () => {
       Actions: (
         <div className="flex gap-4">
           <Button
-            type="Button"
-            className=" min-w-28	text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md block text-center leading-none bg-white hover hover-secondary py-2	"
+            size="xs"
+            className=" min-w-[156px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Deactivate
           </Button>
 
-          <Button
-            type="Button"
-            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
-          >
+          <Button className="relative w-9 h-9 items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary">
             <Image
               src="/images/edit.svg"
               width={20}
@@ -126,12 +131,9 @@ const Accordian = () => {
             />
           </Button>
 
-          <Button
-            type="Button"
-            class="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
-          >
+          <Button className="relative w-9 h-9 items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary">
             <Image
-              src="/images/mail.svg"
+              src="/images/red-trash.svg"
               width={20}
               height={20}
               alt="not found"
@@ -170,16 +172,13 @@ const Accordian = () => {
       Actions: (
         <div className="flex gap-4">
           <Button
-            type="Button"
-            className=" min-w-28	text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md block text-center leading-none bg-white hover hover-secondary py-2	"
+            size="xs"
+            className=" min-w-[156px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
           >
-            Deactivate
+            Activate
           </Button>
 
-          <Button
-            type="Button"
-            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
-          >
+          <Button className="relative w-9 h-9 items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary">
             <Image
               src="/images/edit.svg"
               width={20}
@@ -188,12 +187,9 @@ const Accordian = () => {
             />
           </Button>
 
-          <Button
-            type="Button"
-            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
-          >
+          <Button className="relative w-9 h-9 items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary">
             <Image
-              src="/images/mail.svg"
+              src="/images/red-trash.svg"
               width={20}
               height={20}
               alt="not found"
@@ -232,16 +228,13 @@ const Accordian = () => {
       Actions: (
         <div className="flex gap-4">
           <Button
-            type="Button"
-            className=" min-w-28	text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md block text-center leading-none bg-white hover hover-secondary py-2	"
+            size="xs"
+            className=" min-w-[156px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Activate
           </Button>
 
-          <Button
-            type="Button"
-            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
-          >
+          <Button className="relative w-9 h-9 items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary">
             <Image
               src="/images/edit.svg"
               width={20}
@@ -250,12 +243,9 @@ const Accordian = () => {
             />
           </Button>
 
-          <Button
-            type="Button"
-            class="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
-          >
+          <Button className="relative w-9 h-9 items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary">
             <Image
-              src="/images/mail.svg"
+              src="/images/red-trash.svg"
               width={20}
               height={20}
               alt="not found"
@@ -291,16 +281,13 @@ const Accordian = () => {
       Actions: (
         <div className="flex gap-4">
           <Button
-            type="Button"
-            className=" min-w-28	text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md block text-center leading-none bg-white hover hover-secondary py-2	"
+            size="xs"
+            className=" min-w-[156px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Deactivate
           </Button>
 
-          <Button
-            type="Button"
-            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
-          >
+          <Button className="relative w-9 h-9 items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary">
             <Image
               src="/images/edit.svg"
               width={20}
@@ -309,12 +296,9 @@ const Accordian = () => {
             />
           </Button>
 
-          <Button
-            type="Button"
-            className="relative items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary"
-          >
+          <Button className="relative w-9 h-9 items-center p-2 border border-borderPrimary rounded-md bg-white hover hover-secondary">
             <Image
-              src="/images/mail.svg"
+              src="/images/red-trash.svg"
               width={20}
               height={20}
               alt="not found"
@@ -367,10 +351,7 @@ const Accordian = () => {
                   </td>
                   <td className="text-gray-light font-medium py-2 px-6 text-start text-sm rounded-tr-xl">
                     <div className="flex gap-4">
-                      <Button
-                        type="Button"
-                        class="p-2 bg-white rounded-md hover hover-secondary border-none hover:border-none"
-                      >
+                      <Button className="w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
                         <Image
                           src="/images/file-text.svg"
                           width={20}
@@ -380,8 +361,8 @@ const Accordian = () => {
                       </Button>
 
                       <Button
-                        type="Button"
-                        className="p-2 bg-white rounded-md hover hover-secondary border-none hover:border-none"
+                        onClick={openModal}
+                        className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none"
                       >
                         <Image
                           src="/images/copy.svg"
@@ -391,10 +372,7 @@ const Accordian = () => {
                         />
                       </Button>
 
-                      <Button
-                        type="Button"
-                        className="p-2 bg-white rounded-md hover hover-secondary border-none hover:border-none"
-                      >
+                      <Button className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
                         <Image
                           src="/images/edit.svg"
                           width={20}
@@ -403,10 +381,7 @@ const Accordian = () => {
                         />
                       </Button>
 
-                      <Button
-                        type="Button"
-                        className="p-2 bg-white rounded-md hover hover-secondary border-none hover:border-none"
-                      >
+                      <Button className="w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
                         <Image
                           src="/images/trash.svg"
                           width={20}
@@ -427,6 +402,11 @@ const Accordian = () => {
           </Disclosure.Panel>
         </Disclosure>
       </div>
+
+      <Dialog modalWidth="max-w-[620px]" isOpen={isOpen} onClose={closeModal}>
+        <ModalTitle backHandler={closeModal}>Copy Survey</ModalTitle>
+        <CopySurvey backHandler={true} />
+      </Dialog>
     </section>
   );
 };

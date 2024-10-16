@@ -1,14 +1,11 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import InputField from "../ui/input";
-import CheckBox from "../ui/checkbox";
-import { Button } from "../ui/button";
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "@/lib/redux/authSlice";
-import { useRouter } from "next/navigation";
-import Label from "../ui/label";
+import InputField from "../../ui/input";
+import CheckBox from "../../ui/checkbox";
+import { Button } from "../../ui/button";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 // Social Button Link
 const socialLogInButton = [
@@ -20,7 +17,7 @@ const socialLogInButton = [
 // PasswordStrength
 const bars = 4;
 
-const LoginRightSec = ({
+const FormRight = ({
   heading,
   discription,
   haveAnAccount,
@@ -31,31 +28,25 @@ const LoginRightSec = ({
   socialLogInButtons = false,
   showDevide = true,
   linkHref = "/",
-  buttonText = "Sign Up",
+  buttonText,
+  onSubmitAction,
 }) => {
   const dispatch = useDispatch();
-  const { loading, error, user, token } = useSelector((state) => state.auth);
-  const [formValues, setFormValues] = useState({
-    email: "",
-    password: "",
-  });
-  const router = useRouter();
-  console.log(formValues, "email");
-  useEffect(() => {
-    if (token) {
-      router.push("/login-success"); // Redirect to dashboard on login success
-    }
-  }, [token, router]);
+  // const { loading, error, user, token } = useSelector((state) => state.auth);
+  const [formValues, setFormValues] = useState({});
+  // const router = useRouter();
+  // // useEffect(() => {
+  // //   // if (!token) {
+  // //   //   router.push("/auth/login"); // Redirect to dashboard on login success
+  // //   // }
+  // // }, [token, router]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form values before dispatch:", formValues);
-    const loginData = {
-      email: formValues.email,
-      password: formValues.password,
-    };
+    const payload = { ...formValues };
 
-    dispatch(loginUser(loginData)); // Dispatch login action
+    dispatch(onSubmitAction(payload)); // Dispatch login action
   };
   const handleInputChange = (field, value) => {
     console.log(`Updating ${field} to ${value}`);
@@ -65,7 +56,7 @@ const LoginRightSec = ({
     }));
   };
   // Show / Hide Password
-  const [showPassword, setShowPassword] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
@@ -128,7 +119,10 @@ const LoginRightSec = ({
               )
               .map((field) => (
                 <div className="mb-5 relative" key={field.id}>
-                  <Label labelText={field.label} tooltipContent={field.tooltipContent} />
+                  <Label
+                    labelText={field.label}
+                    tooltipContent={field.tooltipContent}
+                  />
                   <InputField
                     value={formValues[field.id]} // Controlled input
                     onChange={(e) =>
@@ -200,7 +194,7 @@ const LoginRightSec = ({
                 <div>
                   <Link
                     className="font-bold text-primary-blue"
-                    href="/forgot-password"
+                    href="/auth/forgot-password"
                   >
                     Forgot password
                   </Link>
@@ -208,7 +202,7 @@ const LoginRightSec = ({
               </div>
             )}
             <Button variant="blueBtn" size="sm" onClick={handleSubmit}>
-              {buttonText}
+              {buttonText ? buttonText : "Sign Up"}
             </Button>
           </div>
         </form>
@@ -218,10 +212,7 @@ const LoginRightSec = ({
         {/* item-1  */}
         <div className="flex items-center justify-center">
           <p className="font-medium text-gray-light mr-2">{haveAnAccount}</p>
-          <Link
-            href={linkHref || "/login"}
-            className="font-bold text-primary-blue"
-          >
+          <Link href={linkHref} className="font-bold text-primary-blue">
             {signup}
           </Link>
         </div>
@@ -256,4 +247,4 @@ const LoginRightSec = ({
   );
 };
 
-export default LoginRightSec;
+export default FormRight;

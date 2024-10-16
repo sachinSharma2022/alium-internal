@@ -5,6 +5,11 @@ import Image from "next/image";
 import Dialog from "@/components/ui/dialog";
 import CreateWorkspace from "@/components/modals/workspace/CreateWorkspace";
 import ModalTitle from "@/components/ui/modalTitle";
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
+import clsx from "clsx";
+import { Disclosure } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Button } from "@/components/ui/button";
 
 const sideItems = [
   {
@@ -23,6 +28,10 @@ const sideItems = [
 
 const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   function openModal() {
     setIsOpen(true);
@@ -105,13 +114,38 @@ const SideBar = () => {
               </Link>
             </div>
 
-            <div>
-              <Image
-                src="/images/more.svg"
-                width={20}
-                height={20}
-                alt="not found"
-              />
+            <div className="relative">
+              <Popover>
+                {({ open }) => (
+                  <div className="popover">
+                    <PopoverButton className="flex items-center gap-2">
+                      <Image
+                        src="/images/more.svg"
+                        width={20}
+                        height={20}
+                        alt="filter"
+                        className="min-w-5"
+                      />
+                    </PopoverButton>
+
+                    <PopoverPanel>
+                      <div className="absolute w-[120px]  pt-3  flex flex-col gap-3 bg-white px-3 mt-2 pb-4 shadow1 border border-borderPrimary rounded-lg z-30">
+                        <span className="w-full text-center text-tricorn-black text-base font-medium pb-3 border-b border-borderPrimary flex items-center cursor-pointer">
+                          Rename
+                        </span>
+
+                        <span className="w-full text-center text-tricorn-black text-base font-medium pb-3 border-b border-borderPrimary flex items-center cursor-pointer">
+                          Leave
+                        </span>
+
+                        <span className="w-full text-center text-akabeni text-base font-medium flex items-center cursor-pointer">
+                          Delete
+                        </span>
+                      </div>
+                    </PopoverPanel>
+                  </div>
+                )}
+              </Popover>
             </div>
           </div>
 
@@ -180,7 +214,9 @@ const SideBar = () => {
         </div>
 
         <Dialog isOpen={isOpen} onClose={closeModal}>
-        <ModalTitle backHandler={closeModal}>Create a new workspace</ModalTitle>
+          <ModalTitle backHandler={closeModal}>
+            Create a new workspace
+          </ModalTitle>
           <CreateWorkspace backHandler={true} />
         </Dialog>
       </div>

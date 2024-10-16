@@ -1,12 +1,21 @@
 import React from "react";
 import { Button } from "../../ui/button";
 import InputField from "../../ui/input";
+import Dropdown from "@/components/ui/dropdown";
 
 const CopySurvey = () => {
   return (
     <div>
-      <div className="flex items-center justify-between gap-3">
-        <InputField placeholder="Workspace Name" />
+      <div className="mb-6">
+        <InputField
+          className="w-full"
+          placeholder="Lead generati|"
+          label="Survey title"
+        />
+      </div>
+
+      <div>
+        <Dropdown workspace label="Select Workplace" />
       </div>
 
       <div class="border-b border-grey-700 pt-5 mb-5"></div>
@@ -17,7 +26,7 @@ const CopySurvey = () => {
         </Button>
 
         <Button variant="blueBtn" size="sm">
-          Create
+          Continue
         </Button>
       </div>
     </div>

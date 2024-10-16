@@ -7,6 +7,7 @@ import CheckBox from "../checkbox";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Button } from "../button";
+import RangeSlider from "@/components/workspace/rangeSlider";
 
 const Filter = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -176,24 +177,22 @@ const Filter = () => {
                     Response Count
                   </Disclosure.Button>
                   <Disclosure.Panel className="bg-gray-table-bg rounded-xl ">
-                    <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3"></ul>
+                    <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3">
+                    <label for="default-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default range</label>
+                    <input id="default-range" type="range" value="50" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"/> 
+                     <RangeSlider />
+                    </ul>
                   </Disclosure.Panel>
                 </Disclosure>
 
                 <div className="flex items-center justify-between">
-                  <button
-                    type="button"
-                    class=" text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2		"
-                  >
+                  <Button class=" text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2		">
                     Clear All
-                  </button>
+                  </Button>
 
-                  <button
-                    type="button"
-                    class=" text-white font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-primary-blue hover hover-bg-primary-blue py-2	"
-                  >
+                  <Button class=" text-white font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-primary-blue hover hover-bg-primary-blue py-2	">
                     Activate
-                  </button>
+                  </Button>
                 </div>
               </div>
             </PopoverPanel>

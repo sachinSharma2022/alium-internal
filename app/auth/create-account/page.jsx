@@ -1,16 +1,18 @@
+"use client";
 import React from "react";
-import LoginLeftSec from "@/components/loginLeftSec";
-import LoginRightSec from "@/components/loginRightSec";
+import FormLeft from "@/components/auth/formLeft";
+import FormRight from "@/components/auth/formRight";
+import { registerUser } from "@/lib/redux/authSlice";
 
 const inputFields = [
   {
-    id: "fullName",
+    id: "name",
     label: "Full Name",
     type: "text",
     placeholder: "Enter your full name",
   },
   {
-    id: "organisationName",
+    id: "orgname",
     label: "Organisation Name",
     type: "text",
     placeholder: "Organisation Name",
@@ -22,7 +24,7 @@ const inputFields = [
     placeholder: "Enter your email",
   },
   {
-    id: "createPassword",
+    id: "password",
     label: "Password",
     type: "password",
     placeholder: "Enter your password",
@@ -44,17 +46,18 @@ const CreateAccount = () => {
     <section className="login">
       <div className="mx-auto lg:mx-0">
         <div className="flex xl:flex-row md:flex-row flex-col items-center gap-6 md:gap-0 px-5 h-screen">
-          <LoginLeftSec
+          <FormLeft
             title="Alium"
             heading="Start your journey with us.."
             discription="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
             image="../images/loginimg.svg"
           />
 
-          <LoginRightSec
+          <FormRight
             heading="Create An Account"
             discription="Register for a new membership"
             haveAnAccount="Already have an account?"
+            linkHref="/auth/login"
             signup="Sign in"
             showDevide={true}
             inputFields={inputFields}
@@ -63,6 +66,8 @@ const CreateAccount = () => {
             showCheckbox={false}
             socialLogInButtons={true}
             buttonText="Register"
+            showTooltip={true}
+            onSubmitAction={registerUser}
           />
         </div>
       </div>

@@ -29,7 +29,11 @@ const AddNewSurvery = ({ backHandler }) => {
       <div className=" bg-white flex flex-col w-full items-start justify-center gap-5 p-8 relative bg-primary-white rounded-xl overflow-hidden">
         <div className="inline-flex items-center gap-3 relative flex-[0_0_auto] rounded-lg overflow-hidden">
           <div className="relative w-fit mt-[-1.50px]  whitespace-nowrap">
-            <button onClick={backHandler} className="flex items-center gap-3">
+            <Button
+              variant="none"
+              onClick={backHandler}
+              className="flex items-center gap-3"
+            >
               <Image
                 src="/images/arrow-left.svg"
                 width={20}
@@ -40,7 +44,7 @@ const AddNewSurvery = ({ backHandler }) => {
               <span className="font-semibold text-primary text-base tracking-[0] leading-6 text-primary-blue">
                 Go Back
               </span>
-            </button>
+            </Button>
           </div>
         </div>
         <p className="relative w-fit  text-black-primary font-semibold  text-2xl tracking-[0] leading-[normal]">
@@ -134,8 +138,8 @@ const AddNewSurvery = ({ backHandler }) => {
       </Dialog> */}
 
       {/* Invite User */}
-      {/* 
-      <Dialog className="max-h-[620px]" modalWidth="max-w-[620px]" isOpen={isOpen} onClose={closeModal}>
+      
+      {/* <Dialog className="max-h-[620px]" modalWidth="max-w-[620px]" isOpen={isOpen} onClose={closeModal}>
         <ModalTitle backHandler={closeModal}>Invite User</ModalTitle>
         <div className="flex w-full justify-center">
           <div className="w-full">
