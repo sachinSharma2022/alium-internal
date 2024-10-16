@@ -14,7 +14,7 @@ const formLogIn = [
   },
 ];
 
-const LoginSuccess = () => {
+const ResetSuccess = () => {
   return (
     <section className="loginSuccess">
       <div className="mx-auto lg:mx-0">
@@ -40,4 +40,4 @@ const LoginSuccess = () => {
   );
 };
 
-export default LoginSuccess;
+export default ResetSuccess;
