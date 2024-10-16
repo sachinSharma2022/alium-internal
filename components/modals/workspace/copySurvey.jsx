@@ -2,20 +2,23 @@ import React from "react";
 import { Button } from "../../ui/button";
 import InputField from "../../ui/input";
 import Dropdown from "@/components/ui/dropdown";
+import Label from "@/components/ui/label";
 
 const CopySurvey = () => {
   return (
     <div>
       <div className="mb-6">
-        <InputField
-          className="w-full"
-          placeholder="Lead generati|"
-          label="Survey title"
-        />
+        <Label labelText="Survey title" />
+        <InputField className="w-full" placeholder="Lead generati|" />
       </div>
 
       <div>
-        <Dropdown workspace label="Select Workplace" />
+        <Label
+          tooltipContent="  Note: Use at least 8 characters. Don’t use a password from another
+              site, or something obvious like your pet’s name."
+          labelText="Select Workplace"
+        />
+        <Dropdown workspace />
       </div>
 
       <div class="border-b border-grey-700 pt-5 mb-5"></div>

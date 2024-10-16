@@ -150,7 +150,7 @@ const ManageUser = () => {
         </div>
       </div>
 
-      <div className="max-h-[290px] overflow-y-scroll overflow-hidden">
+      <div className="max-h-[290px] overflow-y-scroll overflow-hidden custom-scrollbar">
         <Table columns={columns} data={data} />
       </div>
 

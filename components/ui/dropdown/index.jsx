@@ -6,24 +6,13 @@ const links = [
   { href: "", label: "WorkSpace 1" },
   { href: "", label: "WorkSpace 2" },
   { href: "", label: "WorkSpace 3" },
+  { href: "", label: "WorkSpace 3" },
+  { href: "", label: "WorkSpace 3" },
 ];
 
 const Dropdown = ({ className = "", label, showTooltip, workspace }) => {
   return (
     <>
-      <label className="mb-[6px] font-semibold text-black flex items-center">
-        <span className="shrink-0">{label}</span>
-        {showTooltip && (
-          <ToolTip icon="/images/info-circle.svg">
-            <p>
-              {" "}
-              Note: Use at least 8 characters. Don’t use a password from another
-              site, or something obvious like your pet’s name.
-            </p>
-          </ToolTip>
-        )}
-      </label>
-
       <div className="w-full text-right">
         <Menu as="div" className="relative  w-full inline-block text-left">
           <div>
@@ -48,7 +37,7 @@ const Dropdown = ({ className = "", label, showTooltip, workspace }) => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <MenuItems className="absolute w-full p-3 z-40 bg-white border border-borderPrimary text-black right-0 mt-2 origin-top-right divide-y divide-gray-100 rounded-md  shadow-lg focus:outline-none">
+            <MenuItems className="absolute w-full p-3 z-40 bg-white border border-borderPrimary text-black right-0 mt-2 origin-top-right divide-y divide-gray-100 rounded-md  shadow-lg focus:outline-none ">
               {workspace && (
                 <div className="flex items-center gap-3 px-4 py-3 mb-3 relative bg-primary-white rounded border border-dashed border-primary-blue cursor-pointer">
                   <Image
@@ -62,17 +51,18 @@ const Dropdown = ({ className = "", label, showTooltip, workspace }) => {
                   </div>
                 </div>
               )}
-
-              {links.map((link) => (
-                <MenuItem
-                  key={link.href}
-                  className="block data-[focus]:bg-primary-red p-3 rounded"
-                >
-                  <a className="font-semibold text-base" href={link.href}>
-                    {link.label}
-                  </a>
-                </MenuItem>
-              ))}
+              <div className="max-h-40 overflow-auto custom-scrollbar">
+                {links.map((link) => (
+                  <MenuItem
+                    key={link.href}
+                    className="block data-[focus]:bg-primary-red p-3 rounded "
+                  >
+                    <a className="font-semibold text-base" href={link.href}>
+                      {link.label}
+                    </a>
+                  </MenuItem>
+                ))}
+              </div>
             </MenuItems>
           </Transition>
         </Menu>

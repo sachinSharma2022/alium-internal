@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const WorkspaceHeading = ({ heading, buttonText, icons, onClick }) => {
   return (
-    <div className="bg-white-smoke mb-8 w-full">
+    <div className="bg-white-smoke mb-10 w-full">
       <div className="flex items-center justify-between p-8 bg-white mx-auto rounded-xl w-full">
         <div className="flex items-center gap-6">
           <h1 className="text-black-primary text-5xl">{heading}</h1>

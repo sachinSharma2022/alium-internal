@@ -3,25 +3,27 @@ import { Button } from "../../ui/button";
 import InputField from "../../ui/input";
 import Dropdown from "../../ui/dropdown";
 import SamplePromptsCard from "../../workspace/samplePromptsCard";
+import Label from "@/components/ui/label";
 
 const CreateWithAISurvey = () => {
   return (
     <>
       <div className="mb-6">
-        <InputField
-          className="w-full"
-          placeholder="Enter a Prompt"
-          label="Describe the form you have in mind"
-          showTooltip
+        <Label
+          tooltipContent="Writing Great Prompt"
+          labelText="Describe the form you have in mind"
         />
+        <InputField className="w-full" placeholder="Enter a Prompt" />
       </div>
       <div className="mb-6 flex gap-6 w-full">
         <div className="w-full">
-          <Dropdown label="Number of Questions" />
+            <Label labelText="Number of Questions" />
+          <Dropdown />
         </div>
 
         <div className="w-full">
-          <Dropdown workspace label="Select Workplace" />
+            <Label labelText="Select Workplace" />
+          <Dropdown workspace />
         </div>
       </div>
 

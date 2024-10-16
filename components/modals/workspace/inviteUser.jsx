@@ -2,28 +2,32 @@ import React from "react";
 import { Button } from "../../ui/button";
 import InputField from "../../ui/input";
 import Dropdown from "../../ui/dropdown";
+import Label from "@/components/ui/label";
 
 const InviteUser = () => {
   return (
     <>
       <div className="mb-6">
-        <InputField className="w-full" placeholder="Name" label="John Doe" />
+      <Label labelText="John Doe" />
+        <InputField className="w-full" placeholder="Name"/>
       </div>
 
       <div className="mb-6">
+      <Label labelText="johndoe@email.com" />
         <InputField
           className="w-full"
           placeholder="Email"
-          label="johndoe@email.com"
         />
       </div>
 
       <div className="mb-6">
-        <Dropdown label="Role" />
+         <Label labelText="Role" />
+        <Dropdown />
       </div>
 
       <div>
-        <Dropdown label="Organisation" />
+         <Label labelText="Organisation" />
+        <Dropdown />
       </div>
 
       <div class="border-b border-grey-700 pt-6 mb-6"></div>
