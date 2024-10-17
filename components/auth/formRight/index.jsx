@@ -5,7 +5,7 @@ import InputField from "../../ui/input";
 import CheckBox from "../../ui/checkbox";
 import { Button } from "../../ui/button";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import useAuthRouting from "@/lib/hooks/useAuthRouting";
 import { useRouter } from "next/navigation";
 
@@ -39,7 +39,7 @@ const FormRight = ({
   const [formValues, setFormValues] = useState({});
   const [errors, setErrors] = useState({});
   const router = useRouter();
-
+  const { message } = useSelector((state) => state.auth);
   // Email Validation Function
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -54,10 +54,10 @@ const FormRight = ({
     e.preventDefault();
     const payload = { ...formValues };
     const newErrors = {};
-    if (!validateEmail(formValues.email)) {
+    if (formValues.email && !validateEmail(formValues.email)) {
       newErrors.email = "Please enter a valid email address.";
     }
-    if (!validatePassword(formValues.password)) {
+    if (formValues.password && !validatePassword(formValues.password)) {
       newErrors.password = "Password should be at least 8 characters long.";
     }
     // If there are validation errors, update the error state and do not proceed
@@ -215,6 +215,8 @@ const FormRight = ({
                   )}
                 </div>
               ))}
+            {/* API error message */}
+            {message && <p className="text-red-500 text-sm mt-2">{message}</p>}
             {/* Forgot Password  */}
             {showCheckbox && (
               <div className="flex items-center justify-between mb-8 mt-8">
