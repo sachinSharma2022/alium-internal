@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // Default localStorage for web
 import authReducer from "./authSlice"; // Import your slice
+import workspaceReducer from "./workspaceSlice"
 
 // Redux persist configuration
 const persistConfig = {
@@ -15,7 +16,8 @@ const persistedReducer = persistReducer(persistConfig, authReducer);
 
 const store = configureStore({
   reducer: {
-    auth: persistedReducer, // Persisted reducer
+    auth: persistedReducer,
+    workspace: workspaceReducer, // Persisted reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

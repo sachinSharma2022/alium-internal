@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Dialog from "@/components/ui/dialog";
@@ -7,6 +7,14 @@ import CreateWorkspace from "@/components/modals/workspace/CreateWorkspace";
 import ModalTitle from "@/components/ui/modalTitle";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { Disclosure } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Button } from "@/components/ui/button";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchOrganizations,
+  createWorkspace,
+  fetchWorkspaces,
+} from "@/lib/redux/workspaceSlice";
 
 const sideItems = [
   {
@@ -25,7 +33,20 @@ const sideItems = [
 
 const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+  const { organizations, workspaces, loading, error } = useSelector(
+    (state) => state.workspace
+  );
 
+  useEffect(() => {
+    dispatch(fetchOrganizations()); // Fetch organizations
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (organizations && organizations.length > 0) {
+      dispatch(fetchWorkspaces(organizations[0].id)); // Fetch workspaces
+    }
+  }, [organizations, dispatch, workspaces]);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -72,8 +93,29 @@ const SideBar = () => {
               </Link>
             </div>
           </div>
-
-          <div className="flex items-center justify-between px-5 py-3 h-[2.75rem] hover:bg-white-smoke hover:rounded-lg transition-all duration-300 group">
+          {workspaces.map((workspace) => {
+            return (
+              <div className="flex items-center justify-between px-5 py-3 h-[2.75rem] hover:bg-white-smoke hover:rounded-lg transition-all duration-300 group">
+                <div>
+                  <Link href="#" className="flex items-center gap-4">
+                    <figure>
+                      <Image
+                        className="opacity-60"
+                        src="/images/orange-ellipse.svg"
+                        width={8}
+                        height={8}
+                        alt="workspace image"
+                      />
+                    </figure>
+                    <span className="font-medium text-gray-light text-base group-hover:text-black group-hover:font-semibold">
+                      {workspace.name}(1)
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+          {/* <div className="flex items-center justify-between px-5 py-3 h-[2.75rem] hover:bg-white-smoke hover:rounded-lg transition-all duration-300 group">
             <div>
               <Link href="#" className="flex items-center gap-4">
                 <figure>
@@ -161,7 +203,7 @@ const SideBar = () => {
                 </span>
               </Link>
             </div>
-          </div>
+          </div> */}
 
           {/* Dashboard, Reports, Settings  */}
           {sideItems.map((item, index) => (
@@ -212,7 +254,7 @@ const SideBar = () => {
           <ModalTitle backHandler={closeModal}>
             Create a new workspace
           </ModalTitle>
-          <CreateWorkspace backHandler={true} />
+          <CreateWorkspace backHandler={true} closeModal={closeModal} />
         </Dialog>
       </div>
     </aside>
