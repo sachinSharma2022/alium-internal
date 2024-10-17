@@ -27,25 +27,44 @@
 //     text-wrap: balance;
 //   }
 // }
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 4px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
 
-.custom-scrollbar{
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a9a9a9;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a9a9a9;
+}
+
+.custom-scrollbar {
   &::-webkit-scrollbar {
     width: 5px;
     border-radius: 4px;
   }
-  
+
   /* Track */
   &::-webkit-scrollbar-track {
     background: #ffffff;
   }
-  
+
   /* Handle */
   &::-webkit-scrollbar-thumb {
     background: #3b37ff;
     border-radius: 4px;
   }
-  
+
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
     background: #3b37ff;

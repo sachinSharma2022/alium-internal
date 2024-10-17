@@ -328,7 +328,7 @@ const Accordion = () => {
         <Disclosure
           className="bg-white px-6 py-3 rounded-xl mb-4"
           as="div"
-          defaultOpen={true}
+          defaultOpen={false}
         >
           <Disclosure.Button className="w-full flex items-center justify-between text-black-primary rounded-xl">
             <table className="w-full">
@@ -342,10 +342,14 @@ const Accordion = () => {
                       Survey Title 1
                     </p>
                   </td>
-                  <td className=" py-2 px-10 text-left w-[14%]">-</td>
-                  <td className=" py-2 px-10 text-left w-[14%]">-</td>
+                  <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
+                    -
+                  </td>
+                  <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
+                    -
+                  </td>
                   <td className="py-2 px-6">
-                    <p className="text-gray-light font-medium  text-start text-sm">
+                    <p className="text-gray-light text-base  font-medium  text-start">
                       12 Aug 2024
                     </p>
                   </td>
@@ -405,7 +409,7 @@ const Accordion = () => {
         <Disclosure
           className="bg-white px-6 py-3 rounded-xl"
           as="div"
-          defaultOpen={true}
+          defaultOpen={false}
         >
           <Disclosure.Button className="w-full flex items-center justify-between text-black-primary rounded-xl">
             <table className="w-full">
@@ -419,10 +423,14 @@ const Accordion = () => {
                       Survey Title 2
                     </p>
                   </td>
-                  <td className=" py-2 px-10 text-left w-[14%]">2</td>
-                  <td className=" py-2 px-10 text-left w-[14%]">95%</td>
+                  <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
+                    2
+                  </td>
+                  <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
+                    95%
+                  </td>
                   <td className="py-2 px-6">
-                    <p className="text-gray-light font-medium  text-start text-sm">
+                    <p className="text-gray-light text-base  font-medium  text-start">
                       12 Aug 2024
                     </p>
                   </td>

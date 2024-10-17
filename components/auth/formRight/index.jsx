@@ -7,6 +7,8 @@ import { Button } from "../../ui/button";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import Label from "@/components/ui/label";
+import useAuthRouting from "@/lib/hooks/useAuthRouting";
+import { useRouter } from "next/navigation";
 
 // Social Button Link
 const socialLogInButton = [
@@ -31,23 +33,47 @@ const FormRight = ({
   linkHref = "/",
   buttonText,
   onSubmitAction,
+  redirect,
+  actionType,
 }) => {
   const dispatch = useDispatch();
-  // const { loading, error, user, token } = useSelector((state) => state.auth);
   const [formValues, setFormValues] = useState({});
-  // const router = useRouter();
-  // // useEffect(() => {
-  // //   // if (!token) {
-  // //   //   router.push("/auth/login"); // Redirect to dashboard on login success
-  // //   // }
-  // // }, [token, router]);
+  const [errors, setErrors] = useState({});
+  const router = useRouter();
+
+  // Email Validation Function
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    return password.length >= 8;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form values before dispatch:", formValues);
     const payload = { ...formValues };
+    const newErrors = {};
+    if (!validateEmail(formValues.email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+    if (!validatePassword(formValues.password)) {
+      newErrors.password = "Password should be at least 8 characters long.";
+    }
+    // If there are validation errors, update the error state and do not proceed
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    } else {
+      setErrors({});
+    }
 
-    dispatch(onSubmitAction(payload)); // Dispatch login action
+    if (onSubmitAction) {
+      dispatch(onSubmitAction(payload)); // Dispatch action
+    } else {
+      router.push(redirect);
+    }
   };
   const handleInputChange = (field, value) => {
     console.log(`Updating ${field} to ${value}`);
@@ -63,6 +89,7 @@ const FormRight = ({
     setShowPassword((prevState) => !prevState);
   };
 
+  redirect && useAuthRouting(redirect, actionType);
   return (
     <div className="lg:max-w-[480px] w-full ml-auto xl:mx-auto">
       {/* text  */}
@@ -148,6 +175,16 @@ const FormRight = ({
                       field.id
                     )}
                   />
+                  {/* Display email validation error */}
+                  {field.id === "email" && errors.email && (
+                    <p className="text-red-500 text-sm mt-2">{errors.email}</p>
+                  )}
+                  {/* Display password validation error */}
+                  {field.id === "password" && errors.password && (
+                    <p className="text-red-500 text-sm mt-2">
+                      {errors.password}
+                    </p>
+                  )}
                   {/* eye icon for password-related fields */}
                   {[
                     "password",
@@ -202,6 +239,17 @@ const FormRight = ({
                 </div>
               </div>
             )}
+            {/* {actionType === "resetPasswordSuccess" ? (
+              <Link href={"/auth/login"}>
+                <Button variant="blueBtn" size="sm">
+                  {buttonText ? buttonText : "Login"}
+                </Button>
+              </Link>
+            ) : (
+              <Button variant="blueBtn" size="sm" onClick={handleSubmit}>
+                {buttonText ? buttonText : "Sign Up"}
+              </Button>
+            )} */}
             <Button variant="blueBtn" size="sm" onClick={handleSubmit}>
               {buttonText ? buttonText : "Sign Up"}
             </Button>

@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import clsx from "clsx";
-import CheckBox from "../checkbox";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Button } from "../button";
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
 import InputField from "../input";
+import CheckBox from "../checkbox";
 
 const Filter = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,9 +60,10 @@ const Filter = () => {
                   defaultOpen={false}
                 >
                   <Disclosure.Button className="w-full text-left text-tricorn-black font-medium  flex gap-2 pl-2 items-center">
-                    <ChevronDownIcon className="size-5 group-data-[open]:rotate-180" />
+                    <ChevronDownIcon className="size-5 group-data-[open]:rotate-45" />
                     Active
                   </Disclosure.Button>
+
                   <Disclosure.Panel className="bg-gray-table-bg rounded-xl ">
                     <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3">
                       <li class="flex items-center">
@@ -194,12 +195,12 @@ const Filter = () => {
                         <div className="flex justify-between items-center pt-2">
                           <InputField
                             inputHeight="h-[32px]"
-                            inputWidth="w-[69px]"
+                            inputWidth="w-[68px]"
                           />
                           <span className="text-gray-500 font-medium">-</span>
                           <InputField
                             inputHeight="h-[32px]"
-                            inputWidth="w-[69px]"
+                            inputWidth="w-[68px]"
                           />
                         </div>
                       </div>
