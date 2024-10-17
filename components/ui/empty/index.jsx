@@ -4,10 +4,8 @@ import { Button } from "../button";
 
 const Empty = ({ img, title, description, buttonText, icon }) => {
   return (
-    <>
-      <figure>
-        <Image src={img} width={320} height={320} alt="not found image" />
-      </figure>
+    <div className="flex flex-col justify-center items-center">
+      <Image src={img} width={300} height={320} alt="not found image" />
       <div className="text-center w-[31.5rem]">
         <h5 className="text-black-primary">{title}</h5>
         <p className="font-normal pt-3">{description}</p>
@@ -18,7 +16,7 @@ const Empty = ({ img, title, description, buttonText, icon }) => {
           </Button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
