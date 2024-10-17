@@ -41,17 +41,17 @@ const Template = (args) => {
 export const DefaultDialog = Template.bind({});
 DefaultDialog.args = {
   isOpen: false,
-  modalWidth: "max-w-lg", // Set default modal width
+  modalWidth: "max-w-lg",
 };
 
 export const SmallDialog = Template.bind({});
 SmallDialog.args = {
   isOpen: false,
-  modalWidth: "max-w-sm", // Small width for the dialog
+  modalWidth: "max-w-sm",
 };
 
 export const LargeDialog = Template.bind({});
 LargeDialog.args = {
   isOpen: false,
-  modalWidth: "max-w-2xl", // Large width for the dialog
+  modalWidth: "max-w-2xl",
 };

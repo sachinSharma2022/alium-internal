@@ -1,15 +1,11 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import Dialog from "@/components/ui/dialog";
 import CreateWorkspace from "@/components/modals/workspace/CreateWorkspace";
+import Dialog from "@/components/ui/dialog";
 import ModalTitle from "@/components/ui/modalTitle";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
-import clsx from "clsx";
-import { Disclosure } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 const sideItems = [
   {

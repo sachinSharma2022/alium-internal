@@ -52,8 +52,8 @@ export const CustomSizedInput = Template.bind({});
 CustomSizedInput.args = {
   id: "customSize",
   placeholder: "Custom size input",
-  inputWidth: "max-w-xs", // Custom width
-  inputHeight: "h-[3.5rem]", // Custom height
+  inputWidth: "max-w-xs",
+  inputHeight: "h-[3.5rem]",
 };
 
 export const InputWithError = Template.bind({});

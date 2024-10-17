@@ -26,7 +26,7 @@ export const CustomClassLabel = Template.bind({});
 CustomClassLabel.args = {
   labelText: "Email",
   showTooltip: false,
-  className: "text-red-500", // Example of a custom class for red text
+  className: "text-red-500",
 };
 
 export const LabelWithCustomTooltip = Template.bind({});

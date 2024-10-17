@@ -7,16 +7,16 @@ export default {
   argTypes: {
     variant: {
       control: { type: "select" },
-      options: ["default", "blueBtn", "redBtn"],
+      options: ["none", "default", "blueBtn", "redBtn"],
     },
     size: {
       control: { type: "select" },
-      options: ["default", "sm", "lg"],
+      options: ["default", "xs", "sm", "lg"],
     },
   },
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => <Button {...args} className="button" />;
 
 export const Default = Template.bind({});
 Default.args = {
