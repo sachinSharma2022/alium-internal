@@ -39,6 +39,7 @@ module.exports = {
         'shark-fin': '#969696',
         tooltipbg:'#2F2F2F',
         'tricorn-black':'#2F2F2F',
+        'jupiter-grey':'#E2E2E2',
 
       },
       borderColor:{

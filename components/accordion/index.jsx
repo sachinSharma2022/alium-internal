@@ -3,7 +3,7 @@ import { useState } from "react";
 import React from "react";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import clsx from "clsx";
 import Table from "../ui/table";
 import Filter from "../ui/filter";
 import SearchPrimary from "../ui/searchPrimary";
@@ -254,6 +254,7 @@ const Accordion = () => {
         </div>
       ),
     },
+
     {
       "Survey Type": (
         <div className="flex gap-3">
@@ -325,85 +326,150 @@ const Accordion = () => {
       </div>
 
       <div className="w-full">
+        <table className="w-full">
+          <tr>
+            <th class="py-2 px-10 text-left text-base text-gray-light  font-medium pb-4 ">
+              <p class=" flex items-center gap-2 text-gray-light text-base  font-medium  text-start cursor-pointer">
+                Survey Title
+                <Image
+                  src="/images/sort-order-icon.svg"
+                  width={12}
+                  height={12}
+                  alt="not found"
+                />
+              </p>
+            </th>
+
+            <th class="py-2 px-10 text-left text-base text-gray-light  font-medium pb-4 ">
+              <p class=" flex items-center gap-2 text-gray-light text-base  font-medium  text-start cursor-pointer">
+                Responses
+                <Image
+                  src="/images/sort-order-icon.svg"
+                  width={12}
+                  height={12}
+                  alt="not found"
+                />
+              </p>
+            </th>
+
+            <th class="py-2 px-10 text-left text-base text-gray-light  font-medium pb-4 ">
+              <p class=" flex items-center gap-2 text-gray-light text-base  font-medium  text-start cursor-pointer">
+                Completion
+                <Image
+                  src="/images/sort-order-icon.svg"
+                  width={12}
+                  height={12}
+                  alt="not found"
+                />
+              </p>
+            </th>
+
+            <th class="py-2 px-10 text-left text-base text-gray-light  font-medium pb-4 ">
+              <p class=" flex items-center gap-2 text-gray-light text-base  font-medium  text-start cursor-pointer">
+                Updated
+                <Image
+                  src="/images/sort-order-icon.svg"
+                  width={12}
+                  height={12}
+                  alt="not found"
+                />
+              </p>
+            </th>
+          </tr>
+        </table>
         <Disclosure
           className="bg-white px-6 py-3 rounded-xl mb-4"
           as="div"
           defaultOpen={false}
         >
-          <Disclosure.Button className="w-full flex items-center justify-between text-black-primary rounded-xl">
-            <table className="w-full">
-              <tbody>
-                <tr>
-                  <td class="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
-                    <span className=" w-10 flex items-center justify-center bg-red-200 text-pink-500 font-semibold  py-2.5 px-2 rounded-full	">
-                      ST
-                    </span>
-                    <p className="text-black-primary text-base font-semibold	">
-                      Survey Title 1
-                    </p>
-                  </td>
-                  <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
-                    -
-                  </td>
-                  <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
-                    -
-                  </td>
-                  <td className="py-2 px-6">
-                    <p className="text-gray-light text-base  font-medium  text-start">
-                      12 Aug 2024
-                    </p>
-                  </td>
-                  <td className="text-gray-light font-medium py-2 px-6 text-start text-sm rounded-tr-xl">
-                    <div className="flex gap-4">
-                      <Button className="w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
-                        <Image
-                          src="/images/file-text.svg"
-                          width={20}
-                          height={20}
-                          alt="not found"
-                        />
-                      </Button>
+          {({ open }) => (
+            <div>
+              <Disclosure.Button className="w-full flex items-center justify-between text-black-primary rounded-xl">
+                <table className="w-full">
+                  <tbody>
+                    <tr>
+                      <td class="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
+                        <span className=" w-10 flex items-center justify-center bg-red-200 text-pink-500 font-semibold  py-2.5 px-2 rounded-full	">
+                          ST
+                        </span>
+                        <p className="text-black-primary text-base font-semibold	">
+                          Survey Title 1
+                        </p>
+                      </td>
+                      <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
+                        -
+                      </td>
+                      <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
+                        -
+                      </td>
+                      <td className="py-2 px-6">
+                        <p className="text-gray-light text-base  font-medium  text-start">
+                          12 Aug 2024
+                        </p>
+                      </td>
+                      <td className="text-gray-light font-medium py-2 px-6 text-start text-sm rounded-tr-xl">
+                        <div className="flex gap-4">
+                          <Button className="w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
+                            <Image
+                              src="/images/file-text.svg"
+                              width={20}
+                              height={20}
+                              alt="not found"
+                            />
+                          </Button>
 
-                      <Button
-                        onClick={openModal}
-                        className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none"
-                      >
-                        <Image
-                          src="/images/copy.svg"
-                          width={20}
-                          height={20}
-                          alt="not found"
-                        />
-                      </Button>
+                          <Button
+                            onClick={openModal}
+                            className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none"
+                          >
+                            <Image
+                              src="/images/copy.svg"
+                              width={20}
+                              height={20}
+                              alt="not found"
+                            />
+                          </Button>
 
-                      <Button className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
-                        <Image
-                          src="/images/edit.svg"
-                          width={20}
-                          height={20}
-                          alt="not found"
-                        />
-                      </Button>
+                          <Button className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
+                            <Image
+                              src="/images/edit.svg"
+                              width={20}
+                              height={20}
+                              alt="not found"
+                            />
+                          </Button>
 
-                      <Button className="w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
-                        <Image
-                          src="/images/trash.svg"
-                          width={20}
-                          height={20}
-                          alt="not found"
-                        />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                          <Button className="w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
+                            <Image
+                              src="/images/trash.svg"
+                              width={20}
+                              height={20}
+                              alt="not found"
+                            />
+                          </Button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
-            <ChevronDownIcon className="size-5 group-data-[open]:rotate-180" />
-          </Disclosure.Button>
-          <Disclosure.Panel className="bg-gray-table-bg rounded-xl mt-3">
-            <Table columns={columns} data={data} />
-          </Disclosure.Panel>
+                <Image
+                  src="/images/down.svg"
+                  width={20}
+                  height={20}
+                  alt="building"
+                  className={clsx(
+                    "h-5 w-5 transition-transform",
+                    open && "rotate-180"
+                  )}
+                />
+              </Disclosure.Button>
+
+              <Disclosure.Panel className="bg-gray-table-bg rounded-xl mt-3">
+                <Table columns={columns} data={data} />
+              </Disclosure.Panel>
+            </div>
+          )}
         </Disclosure>
 
         <Disclosure
@@ -411,80 +477,93 @@ const Accordion = () => {
           as="div"
           defaultOpen={false}
         >
-          <Disclosure.Button className="w-full flex items-center justify-between text-black-primary rounded-xl">
-            <table className="w-full">
-              <tbody>
-                <tr>
-                  <td class="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
-                    <span className=" w-10 flex items-center justify-center bg-red-200 text-pink-500 font-semibold  py-2.5 px-2 rounded-full	">
-                      ST
-                    </span>
-                    <p className="text-black-primary text-base font-semibold	">
-                      Survey Title 2
-                    </p>
-                  </td>
-                  <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
-                    2
-                  </td>
-                  <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
-                    95%
-                  </td>
-                  <td className="py-2 px-6">
-                    <p className="text-gray-light text-base  font-medium  text-start">
-                      12 Aug 2024
-                    </p>
-                  </td>
-                  <td className="text-gray-light font-medium py-2 px-6 text-start text-sm rounded-tr-xl">
-                    <div className="flex gap-4">
-                      <Button className="w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
-                        <Image
-                          src="/images/file-text.svg"
-                          width={20}
-                          height={20}
-                          alt="not found"
-                        />
-                      </Button>
+          {({ open }) => (
+            <div>
+              <Disclosure.Button className="w-full flex items-center justify-between text-black-primary rounded-xl">
+                <table className="w-full">
+                  <tbody>
+                    <tr>
+                      <td class="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
+                        <span className=" w-10 flex items-center justify-center bg-red-200 text-pink-500 font-semibold  py-2.5 px-2 rounded-full	">
+                          ST
+                        </span>
+                        <p className="text-black-primary text-base font-semibold	">
+                          Survey Title 2
+                        </p>
+                      </td>
+                      <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
+                        2
+                      </td>
+                      <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
+                        95%
+                      </td>
+                      <td className="py-2 px-6">
+                        <p className="text-gray-light text-base  font-medium  text-start">
+                          12 Aug 2024
+                        </p>
+                      </td>
+                      <td className="text-gray-light font-medium py-2 px-6 text-start text-sm rounded-tr-xl">
+                        <div className="flex gap-4">
+                          <Button className="w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
+                            <Image
+                              src="/images/file-text.svg"
+                              width={20}
+                              height={20}
+                              alt="not found"
+                            />
+                          </Button>
 
-                      <Button
-                        onClick={openModal}
-                        className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none"
-                      >
-                        <Image
-                          src="/images/copy.svg"
-                          width={20}
-                          height={20}
-                          alt="not found"
-                        />
-                      </Button>
+                          <Button
+                            onClick={openModal}
+                            className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none"
+                          >
+                            <Image
+                              src="/images/copy.svg"
+                              width={20}
+                              height={20}
+                              alt="not found"
+                            />
+                          </Button>
 
-                      <Button className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
-                        <Image
-                          src="/images/edit.svg"
-                          width={20}
-                          height={20}
-                          alt="not found"
-                        />
-                      </Button>
+                          <Button className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
+                            <Image
+                              src="/images/edit.svg"
+                              width={20}
+                              height={20}
+                              alt="not found"
+                            />
+                          </Button>
 
-                      <Button className="w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
-                        <Image
-                          src="/images/trash.svg"
-                          width={20}
-                          height={20}
-                          alt="not found"
-                        />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                          <Button className="w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
+                            <Image
+                              src="/images/trash.svg"
+                              width={20}
+                              height={20}
+                              alt="not found"
+                            />
+                          </Button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
-            <ChevronDownIcon className="size-5 group-data-[open]:rotate-180" />
-          </Disclosure.Button>
-          <Disclosure.Panel className="bg-gray-table-bg rounded-xl mt-3">
-            <Table columns={columns} data={data} />
-          </Disclosure.Panel>
+                <Image
+                  src="/images/down.svg"
+                  width={20}
+                  height={20}
+                  alt="building"
+                  className={clsx(
+                    "h-5 w-5 transition-transform",
+                    open && "rotate-180"
+                  )}
+                />
+              </Disclosure.Button>
+              <Disclosure.Panel className="bg-gray-table-bg rounded-xl mt-3">
+                <Table columns={columns} data={data} />
+              </Disclosure.Panel>
+            </div>
+          )}
         </Disclosure>
       </div>
 

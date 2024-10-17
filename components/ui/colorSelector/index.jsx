@@ -5,12 +5,54 @@ import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import clsx from "clsx";
 import { Button } from "../button";
 
-const ColorSelector = () => {
+const ColorSelector = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
+  const colorPalette = [
+    {
+      color: "#00B8D9",
+    },
+    {
+      color: "#FFAB00",
+    },
+    {
+      color: "#36B37E",
+    },
+
+    {
+      color: "#BA5CC3",
+    },
+    {
+      color: "#9CEF75",
+    },
+    {
+      color: "#E58585",
+    },
+
+    {
+      color: "#F94DBF",
+    },
+    {
+      color: "#8B94ED",
+    },
+    {
+      color: "#F7EA79",
+    },
+
+    {
+      color: "#96EAFD",
+    },
+    {
+      color: "#CFCFCF",
+    },
+    {
+      color: "#EB8",
+    },
+  ];
 
   return (
     <div className="relative">
@@ -43,79 +85,18 @@ const ColorSelector = () => {
             </PopoverButton>
 
             <PopoverPanel>
-              <div className="absolute w-[330px] pt-4 flex gap-5 bg-white mt-2 p-5 shadow1 rounded-lg z-30 border border-borderPrimary">
-                <Button
-                  type="button"
-                  class="relative items-center p-2 rounded-md border-none bg-white hover hover-secondary"
-                >
-                  <Image
-                    src="/images/blue-ellipse.svg"
-                    width={15}
-                    height={15}
-                    alt="blue"
-                    className="min-w-4"
-                  />
-                </Button>
-                <Button
-                  type="button"
-                  class="relative items-center p-2 rounded-md border-none bg-white hover hover-secondary"
-                >
-                  <Image
-                    src="/images/orange-ellipse.svg"
-                    width={15}
-                    height={15}
-                    alt="orange"
-                    className="min-w-4"
-                  />
-                </Button>
-                <Button
-                  type="button"
-                  class="relative items-center p-2 rounded-md border-none bg-white hover hover-secondary"
-                >
-                  <Image
-                    src="/images/green-ellipse.svg"
-                    width={15}
-                    height={15}
-                    alt="green"
-                    className="min-w-4"
-                  />
-                </Button>
-                <Button
-                  type="button"
-                  class="relative items-center p-2 rounded-md border-none bg-white hover hover-secondary"
-                >
-                  <Image
-                    src="/images/blue-ellipse.svg"
-                    width={15}
-                    height={15}
-                    alt="blue"
-                    className="min-w-4"
-                  />
-                </Button>
-                <Button
-                  type="button"
-                  class="relative items-center p-2 rounded-md border-none bg-white hover hover-secondary"
-                >
-                  <Image
-                    src="/images/orange-ellipse.svg"
-                    width={15}
-                    height={15}
-                    alt="orange"
-                    className="min-w-4"
-                  />
-                </Button>
-                <Button
-                  type="button"
-                  class="relative items-center p-2 rounded-md border-none bg-white hover hover-secondary"
-                >
-                  <Image
-                    src="/images/green-ellipse.svg"
-                    width={15}
-                    height={15}
-                    alt="green"
-                    className="min-w-4"
-                  />
-                </Button>
+              <div className="absolute w-[335px] max-w-[335px] pt-4 flex gap-5 bg-white mt-2 p-5 shadow1 rounded-lg z-30 border border-borderPrimary flex-wrap">
+                {colorPalette.map((item, index) => (
+                  <div
+                    key={index}
+                    className="relative rounded-md border-none hover flex items-center justify-center hover-secondary w-[32px] h-[32px] cursor-pointer"
+                  >
+                    <span
+                      className="w-[15px] h-[15px]  inline-block rounded-3xl	 "
+                      style={{ backgroundColor: item.color }}
+                    ></span>
+                  </div>
+                ))}
               </div>
             </PopoverPanel>
           </div>

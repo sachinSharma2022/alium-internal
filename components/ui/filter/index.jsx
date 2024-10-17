@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import clsx from "clsx";
 import { Disclosure } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Button } from "../button";
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
@@ -23,8 +22,8 @@ const Filter = () => {
       <Popover>
         {({ open }) => (
           <div className="popover">
-            <PopoverButton className="flex items-center gap-2">
-              <div className=" w-28 h-11 gap-2 bg-white p-3 rounded-md flex items-center justify-between  focus:outline-none pl-2 border border-borderPrimary">
+            <PopoverButton className="flex items-center gap-2 focus:outline-none">
+              <div className=" w-28 h-11 gap-2 bg-white p-3 rounded-md flex items-center justify-between focus:outline-none pl-2 border border-borderPrimary">
                 <div className="flex items-center gap-2 ">
                   <figure>
                     <Image
@@ -59,54 +58,67 @@ const Filter = () => {
                   as="div"
                   defaultOpen={false}
                 >
-                  <Disclosure.Button className="w-full text-left text-tricorn-black font-medium  flex gap-2 pl-2 items-center">
-                    <ChevronDownIcon className="size-5 group-data-[open]:rotate-45" />
-                    Active
-                  </Disclosure.Button>
-
-                  <Disclosure.Panel className="bg-gray-table-bg rounded-xl ">
-                    <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3">
-                      <li class="flex items-center">
-                        <CheckBox
-                          size="sm"
-                          text="All"
-                          customClass="font-medium"
+                  {({ open }) => (
+                    <div>
+                      <Disclosure.Button className="w-full text-left text-tricorn-black font-medium  flex gap-2 pl-2 items-center">
+                        <Image
+                          src="/images/arrow-right.svg"
+                          width={12}
+                          height={12}
+                          alt="building"
+                          className={clsx(
+                            "h-[12px] w-[12px] transition-transform",
+                            open && "rotate-90"
+                          )}
                         />
-                      </li>
+                        Active
+                      </Disclosure.Button>
 
-                      <li class="flex items-center">
-                        <CheckBox
-                          size="sm"
-                          text="Draft"
-                          customClass="font-medium"
-                        />
-                      </li>
+                      <Disclosure.Panel className="bg-gray-table-bg rounded-xl ">
+                        <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3">
+                          <li class="flex items-center">
+                            <CheckBox
+                              size="sm"
+                              text="All"
+                              customClass="font-medium"
+                            />
+                          </li>
 
-                      <li class="flex items-center">
-                        <CheckBox
-                          size="sm"
-                          text="Active"
-                          customClass="font-medium"
-                        />
-                      </li>
+                          <li class="flex items-center">
+                            <CheckBox
+                              size="sm"
+                              text="Draft"
+                              customClass="font-medium"
+                            />
+                          </li>
 
-                      <li class="flex items-center">
-                        <CheckBox
-                          size="sm"
-                          text="Inactive"
-                          customClass="font-medium"
-                        />
-                      </li>
+                          <li class="flex items-center">
+                            <CheckBox
+                              size="sm"
+                              text="Active"
+                              customClass="font-medium"
+                            />
+                          </li>
 
-                      <li class="flex items-center">
-                        <CheckBox
-                          size="sm"
-                          text="Deleted"
-                          customClass="font-medium"
-                        />
-                      </li>
-                    </ul>
-                  </Disclosure.Panel>
+                          <li class="flex items-center">
+                            <CheckBox
+                              size="sm"
+                              text="Inactive"
+                              customClass="font-medium"
+                            />
+                          </li>
+
+                          <li class="flex items-center">
+                            <CheckBox
+                              size="sm"
+                              text="Deleted"
+                              customClass="font-medium"
+                            />
+                          </li>
+                        </ul>
+                      </Disclosure.Panel>
+                    </div>
+                  )}
                 </Disclosure>
 
                 <Disclosure
@@ -114,60 +126,73 @@ const Filter = () => {
                   as="div"
                   defaultOpen={false}
                 >
-                  <Disclosure.Button className="w-full text-left text-tricorn-black font-medium  flex gap-2 pl-2 items-center">
-                    <ChevronDownIcon className="size-5 group-data-[open]:rotate-180" />
-                    Survey Type
-                  </Disclosure.Button>
-                  <Disclosure.Panel className="bg-gray-table-bg rounded-xl ">
-                    <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3">
-                      <li class="flex items-center">
-                        <CheckBox
-                          size="sm"
-                          text="All"
-                          customClass="font-medium"
+                  {({ open }) => (
+                    <div>
+                      <Disclosure.Button className="w-full text-left text-tricorn-black font-medium  flex gap-2 pl-2 items-center">
+                      <Image
+                          src="/images/arrow-right.svg"
+                          width={12}
+                          height={12}
+                          alt="building"
+                          className={clsx(
+                            "h-[12px] w-[12px] transition-transform",
+                            open && "rotate-90"
+                          )}
                         />
-                      </li>
+                        Survey Type
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="bg-gray-table-bg rounded-xl ">
+                        <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3">
+                          <li class="flex items-center">
+                            <CheckBox
+                              size="sm"
+                              text="All"
+                              customClass="font-medium"
+                            />
+                          </li>
 
-                      <li class="flex items-center">
-                        <CheckBox
-                          size="sm"
-                          text="Web Survey"
-                          customClass="font-medium"
-                        />
-                      </li>
+                          <li class="flex items-center">
+                            <CheckBox
+                              size="sm"
+                              text="Web Survey"
+                              customClass="font-medium"
+                            />
+                          </li>
 
-                      <li class="flex items-center">
-                        <CheckBox
-                          size="sm"
-                          text="Email/Link Survey"
-                          customClass="font-medium"
-                        />
-                      </li>
+                          <li class="flex items-center">
+                            <CheckBox
+                              size="sm"
+                              text="Email/Link Survey"
+                              customClass="font-medium"
+                            />
+                          </li>
 
-                      <li class="flex items-center">
-                        <CheckBox
-                          size="sm"
-                          text="In-Page Survey"
-                          customClass="font-medium"
-                        />
-                      </li>
+                          <li class="flex items-center">
+                            <CheckBox
+                              size="sm"
+                              text="In-Page Survey"
+                              customClass="font-medium"
+                            />
+                          </li>
 
-                      <li class="flex items-center">
-                        <CheckBox
-                          size="sm"
-                          text="Popup Survey"
-                          customClass="font-medium"
-                        />
-                      </li>
-                      <li class="flex items-center">
-                        <CheckBox
-                          size="sm"
-                          text="App Survey"
-                          customClass="font-medium"
-                        />
-                      </li>
-                    </ul>
-                  </Disclosure.Panel>
+                          <li class="flex items-center">
+                            <CheckBox
+                              size="sm"
+                              text="Popup Survey"
+                              customClass="font-medium"
+                            />
+                          </li>
+                          <li class="flex items-center">
+                            <CheckBox
+                              size="sm"
+                              text="App Survey"
+                              customClass="font-medium"
+                            />
+                          </li>
+                        </ul>
+                      </Disclosure.Panel>
+                    </div>
+                  )}
                 </Disclosure>
 
                 <Disclosure
@@ -175,37 +200,52 @@ const Filter = () => {
                   as="div"
                   defaultOpen={false}
                 >
-                  <Disclosure.Button className="w-full text-left text-tricorn-black font-medium  flex gap-2 pl-2 items-center">
-                    <ChevronDownIcon className="size-5 group-data-[open]:rotate-180" />
-                    Response Count
-                  </Disclosure.Button>
-                  <Disclosure.Panel className="bg-gray-table-bg rounded-xl ">
-                    <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3">
-                      <div className="custom-range-slider">
-                        <RangeSlider />
-                        <div className="flex justify-between items-center pt-2">
-                          <span class="text-xs font-medium text-gray-500">
-                            0
-                          </span>
-                          <span class="text-xs font-medium text-gray-500">
-                            +1000
-                          </span>
-                        </div>
+                  {({ open }) => (
+                    <div>
+                      <Disclosure.Button className="w-full text-left text-tricorn-black font-medium  flex gap-2 pl-2 items-center">
+                      <Image
+                          src="/images/arrow-right.svg"
+                          width={12}
+                          height={12}
+                          alt="building"
+                          className={clsx(
+                            "h-[12px] w-[12px] transition-transform",
+                            open && "rotate-90"
+                          )}
+                        />
+                        Response Count
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="bg-gray-table-bg rounded-xl ">
+                        <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3">
+                          <div className="custom-range-slider">
+                            <RangeSlider />
+                            <div className="flex justify-between items-center pt-2">
+                              <span class="text-xs font-medium text-gray-500">
+                                0
+                              </span>
+                              <span class="text-xs font-medium text-gray-500">
+                                +1000
+                              </span>
+                            </div>
 
-                        <div className="flex justify-between items-center pt-2">
-                          <InputField
-                            inputHeight="h-[32px]"
-                            inputWidth="w-[68px]"
-                          />
-                          <span className="text-gray-500 font-medium">-</span>
-                          <InputField
-                            inputHeight="h-[32px]"
-                            inputWidth="w-[68px]"
-                          />
-                        </div>
-                      </div>
-                    </ul>
-                  </Disclosure.Panel>
+                            <div className="flex justify-between items-center pt-2">
+                              <InputField
+                                inputHeight="h-[32px]"
+                                inputWidth="w-[69px]"
+                              />
+                              <span className="text-gray-500 font-medium">
+                                -
+                              </span>
+                              <InputField
+                                inputHeight="h-[32px]"
+                                inputWidth="w-[69px]"
+                              />
+                            </div>
+                          </div>
+                        </ul>
+                      </Disclosure.Panel>
+                    </div>
+                  )}
                 </Disclosure>
 
                 <div className="flex items-center justify-between">

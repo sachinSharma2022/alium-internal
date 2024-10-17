@@ -1,13 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import RadioButton from "../radioButton";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import clsx from "clsx";
-import CheckBox from "../checkbox";
-import { Disclosure } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { Button } from "../button";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 const Calender = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +18,7 @@ const Calender = () => {
       <Popover>
         {({ open }) => (
           <div className="popover">
-            <PopoverButton className="flex items-center gap-2">
+            <PopoverButton className="flex items-center gap-2 focus:outline-none">
               <div className=" w-29 h-11 gap-2 bg-white p-3 rounded-md flex items-center justify-between  focus:outline-none pl-2 border border-borderPrimary">
                 <div className="flex items-center gap-2 ">
                   <figure>
@@ -33,7 +30,9 @@ const Calender = () => {
                       className="min-w-5"
                     />
                   </figure>
-                  <span className="font-medium text-base text-tricorn-black">Today</span>
+                  <span className="font-medium text-base text-tricorn-black">
+                    Today
+                  </span>
                 </div>
                 <Image
                   src="/images/down.svg"
@@ -49,7 +48,9 @@ const Calender = () => {
             </PopoverButton>
 
             <PopoverPanel>
-            
+              <div className="absolute w-[356px] max-w-[356px] pt-3 flex flex-col rounded-lg z-30 custom-calender">
+                <Calendar />
+              </div>
             </PopoverPanel>
           </div>
         )}
