@@ -33,7 +33,9 @@ const Calender = () => {
                       className="min-w-5"
                     />
                   </figure>
-                  <span className="font-medium text-base text-tricorn-black">Today</span>
+                  <span className="font-medium text-base text-tricorn-black">
+                    Today
+                  </span>
                 </div>
                 <Image
                   src="/images/down.svg"
@@ -48,9 +50,7 @@ const Calender = () => {
               </div>
             </PopoverButton>
 
-            <PopoverPanel>
-            
-            </PopoverPanel>
+            <PopoverPanel></PopoverPanel>
           </div>
         )}
       </Popover>
