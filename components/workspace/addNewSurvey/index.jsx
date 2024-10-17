@@ -14,7 +14,7 @@ import ManageUser from "@/components/modals/workspace/manageUser";
 import DeleteWorkspace from "@/components/modals/workspace/deleteWorkspace";
 import { Button } from "@/components/ui/button";
 
-const AddNewSurvery = ({ backHandler }) => {
+const AddNewSurvey = ({ backHandler }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -138,7 +138,7 @@ const AddNewSurvery = ({ backHandler }) => {
       </Dialog> */}
 
       {/* Invite User */}
-      
+
       {/* <Dialog className="max-h-[620px]" modalWidth="max-w-[620px]" isOpen={isOpen} onClose={closeModal}>
         <ModalTitle backHandler={closeModal}>Invite User</ModalTitle>
         <div className="flex w-full justify-center">
@@ -175,4 +175,4 @@ const AddNewSurvery = ({ backHandler }) => {
   );
 };
 
-export default AddNewSurvery;
+export default AddNewSurvey;

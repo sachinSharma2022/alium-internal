@@ -13,7 +13,7 @@ import CopySurvey from "../modals/workspace/copySurvey";
 import Dialog from "../ui/dialog";
 import ModalTitle from "../ui/modalTitle";
 
-const Accordian = () => {
+const Accordion = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -61,7 +61,7 @@ const Accordian = () => {
         <div className="flex gap-4">
           <Button
             size="xs"
-            className="min-w-[156px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
+            className="w-[116px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Activate
           </Button>
@@ -117,7 +117,7 @@ const Accordian = () => {
         <div className="flex gap-4">
           <Button
             size="xs"
-            className=" min-w-[156px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
+            className=" w-[116px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Deactivate
           </Button>
@@ -173,7 +173,7 @@ const Accordian = () => {
         <div className="flex gap-4">
           <Button
             size="xs"
-            className=" min-w-[156px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
+            className=" w-[116px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Activate
           </Button>
@@ -229,7 +229,7 @@ const Accordian = () => {
         <div className="flex gap-4">
           <Button
             size="xs"
-            className=" min-w-[156px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
+            className="w-[116px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Activate
           </Button>
@@ -282,7 +282,7 @@ const Accordian = () => {
         <div className="flex gap-4">
           <Button
             size="xs"
-            className=" min-w-[156px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
+            className=" w-[116px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2	"
           >
             Deactivate
           </Button>
@@ -326,9 +326,9 @@ const Accordian = () => {
 
       <div className="w-full">
         <Disclosure
-          className="bg-white px-6 py-3 rounded-xl"
+          className="bg-white px-6 py-3 rounded-xl mb-4"
           as="div"
-          defaultOpen={true}
+          defaultOpen={false}
         >
           <Disclosure.Button className="w-full flex items-center justify-between text-black-primary rounded-xl">
             <table className="w-full">
@@ -342,10 +342,95 @@ const Accordian = () => {
                       Survey Title 1
                     </p>
                   </td>
-                  <td className=" py-2 px-10 text-left w-[14%]">-</td>
-                  <td className=" py-2 px-10 text-left w-[14%]">-</td>
+                  <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
+                    -
+                  </td>
+                  <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
+                    -
+                  </td>
                   <td className="py-2 px-6">
-                    <p className="text-gray-light font-medium  text-start text-sm">
+                    <p className="text-gray-light text-base  font-medium  text-start">
+                      12 Aug 2024
+                    </p>
+                  </td>
+                  <td className="text-gray-light font-medium py-2 px-6 text-start text-sm rounded-tr-xl">
+                    <div className="flex gap-4">
+                      <Button className="w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
+                        <Image
+                          src="/images/file-text.svg"
+                          width={20}
+                          height={20}
+                          alt="not found"
+                        />
+                      </Button>
+
+                      <Button
+                        onClick={openModal}
+                        className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none"
+                      >
+                        <Image
+                          src="/images/copy.svg"
+                          width={20}
+                          height={20}
+                          alt="not found"
+                        />
+                      </Button>
+
+                      <Button className=" w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
+                        <Image
+                          src="/images/edit.svg"
+                          width={20}
+                          height={20}
+                          alt="not found"
+                        />
+                      </Button>
+
+                      <Button className="w-9 min-h-9 bg-white rounded-md hover hover-secondary !border-none hover:border-none">
+                        <Image
+                          src="/images/trash.svg"
+                          width={20}
+                          height={20}
+                          alt="not found"
+                        />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <ChevronDownIcon className="size-5 group-data-[open]:rotate-180" />
+          </Disclosure.Button>
+          <Disclosure.Panel className="bg-gray-table-bg rounded-xl mt-3">
+            <Table columns={columns} data={data} />
+          </Disclosure.Panel>
+        </Disclosure>
+
+        <Disclosure
+          className="bg-white px-6 py-3 rounded-xl"
+          as="div"
+          defaultOpen={false}
+        >
+          <Disclosure.Button className="w-full flex items-center justify-between text-black-primary rounded-xl">
+            <table className="w-full">
+              <tbody>
+                <tr>
+                  <td class="gap-3 flex items-center text-gray-light font-medium text-start text-sm py-2  rounded-tl-xl">
+                    <span className=" w-10 flex items-center justify-center bg-red-200 text-pink-500 font-semibold  py-2.5 px-2 rounded-full	">
+                      ST
+                    </span>
+                    <p className="text-black-primary text-base font-semibold	">
+                      Survey Title 2
+                    </p>
+                  </td>
+                  <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
+                    2
+                  </td>
+                  <td className=" py-2 px-10 text-left text-base text-gray-light  font-medium">
+                    95%
+                  </td>
+                  <td className="py-2 px-6">
+                    <p className="text-gray-light text-base  font-medium  text-start">
                       12 Aug 2024
                     </p>
                   </td>
@@ -411,4 +496,4 @@ const Accordian = () => {
   );
 };
 
-export default Accordian;
+export default Accordion;

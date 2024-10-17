@@ -22,13 +22,13 @@ const ResetSuccess = () => {
           <FormLeft
             title="Alium"
             heading="Start your journey with us.."
-            discription="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
+            description="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
             image="../images/loginimg.svg"
           />
 
           <FormRight
             heading="Done!"
-            discription="If the information entered is associated with Alium account we have sent you an email with password reset instructions."
+            description="If the information entered is associated with Alium account we have sent you an email with password reset instructions."
             formButtons={formLogIn}
             showCheckbox={false}
             showDevide={false}

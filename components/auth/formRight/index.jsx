@@ -6,6 +6,7 @@ import CheckBox from "../../ui/checkbox";
 import { Button } from "../../ui/button";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Label from "@/components/ui/label";
 import useAuthRouting from "@/lib/hooks/useAuthRouting";
 import { useRouter } from "next/navigation";
 
@@ -21,7 +22,7 @@ const bars = 4;
 
 const FormRight = ({
   heading,
-  discription,
+  description,
   haveAnAccount,
   signup,
   inputFields = [],
@@ -95,7 +96,7 @@ const FormRight = ({
       <div className="mb-12">
         <h2 className="text-black">{heading}</h2>
         <p className="text-xl leading-[30px] mt-3 lg:w-[430px]">
-          {discription}
+          {description}
         </p>
       </div>
 
@@ -121,6 +122,7 @@ const FormRight = ({
                 )
                 .map((field) => (
                   <div className="w-1/2" key={field.id}>
+                    <Label labelText={field.label} />
                     <InputField
                       label={field.label}
                       id={field.id}
@@ -145,6 +147,10 @@ const FormRight = ({
               )
               .map((field) => (
                 <div className="mb-5 relative" key={field.id}>
+                  <Label
+                    labelText={field.label}
+                    tooltipContent={field.tooltipContent}
+                  />
                   <InputField
                     value={formValues[field.id]} // Controlled input
                     onChange={(e) =>

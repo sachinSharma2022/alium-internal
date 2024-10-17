@@ -39,13 +39,13 @@ const Login = () => {
           <FormLeft
             title="Alium"
             heading="Start your journey with us.."
-            discription="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
+            description="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
             image="../images/loginimg.svg"
           />
 
           <FormRight
             heading="Log in"
-            discription="Welcome back! please enter your details"
+            description="Welcome back! please enter your details"
             haveAnAccount="Don’t have an account?"
             signup="Sign up"
             showDevide={true}

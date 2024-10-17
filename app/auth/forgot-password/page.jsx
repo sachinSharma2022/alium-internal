@@ -33,13 +33,13 @@ const ForgotPassword = () => {
           <FormLeft
             title="Alium"
             heading="Start your journey with us.."
-            discription="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
+            description="Lorem ipsum dolor sit amet consectetur. Neque sit at adipiscing massa et sem tempus. At non"
             image="../images/loginimg.svg"
           />
 
           <FormRight
             heading="Forgot password?"
-            discription="Enter your details below to request an account password reset."
+            description="Enter your details below to request an account password reset."
             showDevide={false}
             inputFields={formInputField}
             showForm={true}

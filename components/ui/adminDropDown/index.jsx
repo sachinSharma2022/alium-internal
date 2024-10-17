@@ -94,6 +94,20 @@ const AdminDropDown = () => {
                       id="org1"
                       htmlFor="org1"
                     />
+
+                    <RadioButton
+                      label="Organisation 2"
+                      type="radio"
+                      id="org1"
+                      htmlFor="org1"
+                    />
+
+                    <RadioButton
+                      label="Organisation 3"
+                      type="radio"
+                      id="org1"
+                      htmlFor="org1"
+                    />
                   </div>
                 </PopoverPanel>
               </div>
