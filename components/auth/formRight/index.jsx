@@ -76,7 +76,6 @@ const FormRight = ({
     }
   };
   const handleInputChange = (field, value) => {
-    console.log(`Updating ${field} to ${value}`);
     setFormValues((prevValues) => ({
       ...prevValues,
       [field]: value,
