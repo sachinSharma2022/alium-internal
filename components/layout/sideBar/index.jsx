@@ -1,21 +1,15 @@
 "use client";
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import Dialog from "@/components/ui/dialog";
 import CreateWorkspace from "@/components/modals/workspace/CreateWorkspace";
 import Dialog from "@/components/ui/dialog";
 import ModalTitle from "@/components/ui/modalTitle";
-import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
-import { Disclosure } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { Button } from "@/components/ui/button";
-import { useDispatch, useSelector } from "react-redux";
 import {
   fetchOrganizations,
-  createWorkspace,
   fetchWorkspaces,
 } from "@/lib/redux/workspaceSlice";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const sideItems = [
   {
@@ -96,7 +90,10 @@ const SideBar = () => {
           </div>
           {workspaces.map((workspace) => {
             return (
-              <div className="flex items-center justify-between px-5 py-3 h-[2.75rem] hover:bg-white-smoke hover:rounded-lg transition-all duration-300 group">
+              <div
+                key={workspace}
+                className="flex items-center justify-between px-5 py-3 h-[2.75rem] hover:bg-white-smoke hover:rounded-lg transition-all duration-300 group"
+              >
                 <div>
                   <Link href="#" className="flex items-center gap-4">
                     <figure>
