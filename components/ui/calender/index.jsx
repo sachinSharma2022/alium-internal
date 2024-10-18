@@ -13,6 +13,11 @@ const Calender = () => {
     setIsOpen(!isOpen);
   };
 
+  const formatShortWeekday = (locale, date) => {
+    const weekdayNames = ["S", "M", "T", "W", "T", "F", "S"]; // Customize weekday letters
+    return weekdayNames[date.getDay()];
+  };
+
   return (
     <div className="relative">
       <Popover>
@@ -49,7 +54,7 @@ const Calender = () => {
 
             <PopoverPanel>
               <div className="absolute w-[356px] max-w-[356px] pt-3 flex flex-col rounded-lg z-30 custom-calender">
-                <Calendar />
+                <Calendar formatShortWeekday={formatShortWeekday} />
               </div>
             </PopoverPanel>
           </div>

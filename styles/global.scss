@@ -181,17 +181,18 @@ h6 {
 
 .custom-calender .react-calendar {
   width: 356px;
+  height: auto;
   border-radius: 8px;
   padding: 10px;
   border: 1px solid #cfcfcf;
 }
 
-.custom-calender .react-calendar__navigation__arrow {
-  display: none;
+.custom-calender .react-calendar__navigation {
+ margin-bottom: 0;
 }
 
-.custom-calender .react-calendar__navigation button:enabled:hover {
-  background-color: transparent;
+.custom-calender .react-calendar__navigation__arrow {
+  display: none;
 }
 
 .custom-calender .react-calendar__navigation__label__labelText {
@@ -206,6 +207,14 @@ h6 {
   color: #111;
   border-bottom: 1px solid #CFCFCF;
 }
+
+.custom-calender .react-calendar__month-view__weekdays__weekday {
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .custom-calender .react-calendar__tile--now {
   background-color: #3b37ff;
   color: #ffffff;
@@ -213,19 +222,33 @@ h6 {
 .custom-calender .react-calendar button:enabled:focus {
   background-color: #3b37ff;
   color: #ffffff;
+  border-radius: 0;
 }
 .custom-calender .react-calendar__tile--active {
   background-color: #3b37ff;
+  border-radius: 0;
 }
 
 .custom-calender .react-calendar__tile {
   font-size: 18px;
   font-weight: 500;
+  height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.custom-calender .react-calendar button:enabled:hover {
-  background-color: #3b37ff;
-  color: #ffffff;
+.custom-calender .react-calendar__tile:enabled:hover,
+.custom-calender .react-calendar__tile:enabled:focus {
+  background-color: #EFEFFF;
+  color: #111;
+  border-radius: 24px;
+}
+
+.custom-calender .react-calendar__navigation button:enabled:hover,
+.custom-calender .react-calendar__navigation button:enabled:focus {
+  background-color: transparent;
 }
 .custom-calender abbr:where([title]) {
   text-decoration: none;

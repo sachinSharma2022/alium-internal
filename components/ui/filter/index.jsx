@@ -229,14 +229,14 @@ const Filter = () => {
                             </div>
 
                             <div className="flex justify-between items-center pt-2">
-                              <InputField
+                              <InputField className="max-w-[69px]"
                                 inputHeight="h-[32px]"
                                 inputWidth="w-[69px]"
                               />
                               <span className="text-gray-500 font-medium">
                                 -
                               </span>
-                              <InputField
+                              <InputField className="max-w-[69px]"
                                 inputHeight="h-[32px]"
                                 inputWidth="w-[69px]"
                               />
