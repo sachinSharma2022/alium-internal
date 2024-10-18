@@ -356,3 +356,38 @@ h6 {
   padding: 1rem 2rem;
   height: 3.5rem;
 }
+
+
+// Workspace table alignment css
+.table-container,
+.disclosure-table-container {
+  width: 100%;
+}
+
+.table-filter,
+.disclosure-table {
+  width: 100%; /* Ensure both are the same width */
+}
+.table-filter td:first-child {
+  left: 50px;
+  position: relative;
+}
+.table-filter td:first-child,
+.disclosure-table td:first-child {
+  width: 20vw;
+}
+
+.table-filter td:nth-child(2),
+.disclosure-table td:nth-child(2) {
+  width: 10vw;
+}
+
+.table-filter td:nth-child(3),
+.disclosure-table td:nth-child(3) {
+  width: 10vw;
+}
+
+.table-filter td:nth-child(4),
+.disclosure-table td:nth-child(4) {
+  width: 15vw;
+}

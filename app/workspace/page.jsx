@@ -23,7 +23,6 @@ const Workspace = () => {
         />
         {!addSurvey ? (
           <Accordion />
-          
         ) : (
           <AddNewSurvey backHandler={() => setAddSurvey(false)} />
         )}

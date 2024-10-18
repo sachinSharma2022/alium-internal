@@ -17,12 +17,12 @@ const CreateWithAISurvey = () => {
       </div>
       <div className="mb-6 flex gap-6 w-full">
         <div className="w-full">
-            <Label labelText="Number of Questions" />
+          <Label labelText="Number of Questions" />
           <Dropdown />
         </div>
 
         <div className="w-full">
-            <Label labelText="Select Workplace" />
+          <Label labelText="Select Workplace" />
           <Dropdown workspace />
         </div>
       </div>
