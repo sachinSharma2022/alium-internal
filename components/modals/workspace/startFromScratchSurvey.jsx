@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../../ui/button";
-import InputField from "../../ui/input";
+import { InputField } from "../../ui/input";
 import Dropdown from "../../ui/dropdown";
 import CheckBox from "../../ui/checkbox";
 import Label from "@/components/ui/label";

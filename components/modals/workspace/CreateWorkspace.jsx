@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Button } from "../../ui/button";
-import InputField from "../../ui/input";
+import { InputField } from "../../ui/input";
 import ColorSelector from "../../ui/colorSelector";
 import { useDispatch, useSelector } from "react-redux";
 import { createWorkspace } from "@/lib/redux/workspaceSlice";

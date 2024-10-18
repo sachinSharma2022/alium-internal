@@ -27,4 +27,11 @@ const InputField = ({
   );
 };
 
-export default InputField;
+const Error = ({ children }) => (
+  <p className="text-red-600 absolute text-sm">{children}</p>
+);
+const Success = ({ children }) => (
+  <p className="text-green-600 absolute text-sm">{children}</p>
+);
+
+export { Error, Success, InputField };

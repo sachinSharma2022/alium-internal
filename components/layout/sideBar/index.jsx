@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Dialog from "@/components/ui/dialog";
 import CreateWorkspace from "@/components/modals/workspace/CreateWorkspace";
+import Dialog from "@/components/ui/dialog";
 import ModalTitle from "@/components/ui/modalTitle";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { Disclosure } from "@headlessui/react";

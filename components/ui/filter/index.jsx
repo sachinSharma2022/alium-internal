@@ -7,7 +7,7 @@ import { Disclosure } from "@headlessui/react";
 import { Button } from "../button";
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
-import InputField from "../input";
+import { InputField } from "../input";
 import CheckBox from "../checkbox";
 
 const Filter = () => {

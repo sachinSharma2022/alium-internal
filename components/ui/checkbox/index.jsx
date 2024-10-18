@@ -25,7 +25,9 @@ const CheckBox = ({
   };
   return (
     <div>
-      <label className={`inline-flex items-center relative gap-2 text-gray-dark cursor-pointer ${customClass}`}>
+      <label
+        className={`inline-flex items-center relative gap-2 text-gray-dark cursor-pointer ${customClass}`}
+      >
         <input
           type="checkbox"
           className={`${baseStyle} ${variants[variant]} ${sizes[size]}`}

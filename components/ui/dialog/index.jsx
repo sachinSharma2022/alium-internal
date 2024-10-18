@@ -1,11 +1,6 @@
 import { Dialog as HDialog } from "@headlessui/react";
 
-export default function Dialog({
-  children,
-  isOpen,
-  onClose,
-  modalWidth,
-}) {
+export default function Dialog({ children, isOpen, onClose, modalWidth }) {
   return (
     <>
       <HDialog

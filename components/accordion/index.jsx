@@ -8,7 +8,7 @@ import Table from "../ui/table";
 import Filter from "../ui/filter";
 import SearchPrimary from "../ui/searchPrimary";
 import Calender from "../ui/calender";
-import { Button } from "../ui/Button";
+import { Button } from "../ui/button";
 import CopySurvey from "../modals/workspace/copySurvey";
 import Dialog from "../ui/dialog";
 import ModalTitle from "../ui/modalTitle";

@@ -4,23 +4,25 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./stories/**/*.{js,jsx,ts,tsx}", // Add Storybook stories path
+    "./.storybook/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     container: {
       padding: {
-        DEFAULT: '1rem',
+        DEFAULT: "1rem",
       },
     },
     screens: {
-      sm: '640px',
-      md: '768px',
-      xmd:'960px',
-      lg: '1170px',
-      xl: '1440px',
-      xxl:'1700px',
+      sm: "640px",
+      md: "768px",
+      xmd: "960px",
+      lg: "1170px",
+      xl: "1440px",
+      xxl: "1700px",
     },
     fontFamily: {
-      primary: ['Albert Sans', 'sans-serif'],
+      primary: ["Albert Sans", "sans-serif"],
     },
     extend: {
       colors: {
@@ -42,9 +44,9 @@ module.exports = {
         'jupiter-grey':'#E2E2E2',
 
       },
-      borderColor:{
-      borderPrimary:'#CFCFCF',
-      borderSecondary:'#3B37FF',
+      borderColor: {
+        borderPrimary: "#CFCFCF",
+        borderSecondary: "#3B37FF",
       },
     },
   },
