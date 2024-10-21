@@ -28,6 +28,12 @@ export const registerUser = createAsyncThunk(
   async (userData, { rejectWithValue }) => {
     try {
       const response = await api.post("/User/register", userData);
+      const { token } = response.data;
+      setCookie("authToken", token, {
+        maxAge: 86400, // Cookie expiry time in seconds
+        path: "/",
+        // httpOnly: true,
+      });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -90,6 +96,7 @@ const initialState = {
   loading: false,
   error: null,
   profile: null,
+  resetPasswordSuccess: false,
 };
 
 // Auth Slice
@@ -103,6 +110,10 @@ const authSlice = createSlice({
       deleteCookie("authToken", {
         path: "/",
       }); // Remove token on logout
+    },
+    resetResetPasswordSuccess: (state) => {
+      // Reset action
+      state.resetPasswordSuccess = false;
     },
   },
   extraReducers: (builder) => {
@@ -128,6 +139,7 @@ const authSlice = createSlice({
     builder.addCase(registerUser.fulfilled, (state, action) => {
       state.loading = false;
       state.user = action.payload;
+      state.token = action.payload.token;
     });
     builder.addCase(registerUser.rejected, (state, action) => {
       state.loading = false;
@@ -137,13 +149,16 @@ const authSlice = createSlice({
     // Reset Password
     builder.addCase(resetPassword.pending, (state) => {
       state.loading = true;
+      state.resetPasswordSuccess = false;
     });
     builder.addCase(resetPassword.fulfilled, (state) => {
       state.loading = false;
+      state.resetPasswordSuccess = true;
     });
     builder.addCase(resetPassword.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload;
+      state.resetPasswordSuccess = false;
     });
 
     // Fetch Profile
@@ -173,5 +188,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout } = authSlice.actions;
+export const { logout, resetResetPasswordSuccess } = authSlice.actions;
 export default authSlice.reducer;

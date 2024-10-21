@@ -21,7 +21,7 @@ const ReportTable = ({ title, created, loaded, responses, statusColor, status })
                     </div>
                 </td>
                 <td className=" text-primary-blue font-semibold cursor-pointer">
-                    <Link href="/auth/login">View Responses</Link>
+                    <Link href="reports/survey-setting">View Responses</Link>
                 </td>
             </tr>
         </>

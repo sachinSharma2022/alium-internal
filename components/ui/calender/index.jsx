@@ -1,13 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import RadioButton from "../radioButton";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import clsx from "clsx";
-import CheckBox from "../checkbox";
-import { Disclosure } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { Button } from "../button";
+import Image from "next/image";
+import { useState } from "react";
 
 const Calender = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +28,9 @@ const Calender = () => {
                       className="min-w-5"
                     />
                   </figure>
-                  <span className="font-medium text-base text-tricorn-black">Today</span>
+                  <span className="font-medium text-base text-tricorn-black">
+                    Today
+                  </span>
                 </div>
                 <Image
                   src="/images/down.svg"
@@ -48,9 +45,7 @@ const Calender = () => {
               </div>
             </PopoverButton>
 
-            <PopoverPanel>
-            
-            </PopoverPanel>
+            <PopoverPanel></PopoverPanel>
           </div>
         )}
       </Popover>

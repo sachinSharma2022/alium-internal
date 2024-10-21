@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import clsx from "clsx";
-import CheckBox from "../checkbox";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Button } from "../button";
-import RangeSlider from "@/components/workspace/rangeSlider";
+import RangeSlider from "react-range-slider-input";
+import "react-range-slider-input/dist/style.css";
+import { InputField } from "../input";
+import CheckBox from "../checkbox";
 
 const Filter = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,9 +60,10 @@ const Filter = () => {
                   defaultOpen={false}
                 >
                   <Disclosure.Button className="w-full text-left text-tricorn-black font-medium  flex gap-2 pl-2 items-center">
-                    <ChevronDownIcon className="size-5 group-data-[open]:rotate-180" />
+                    <ChevronDownIcon className="size-5 group-data-[open]:rotate-45" />
                     Active
                   </Disclosure.Button>
+
                   <Disclosure.Panel className="bg-gray-table-bg rounded-xl ">
                     <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3">
                       <li class="flex items-center">
@@ -178,20 +181,40 @@ const Filter = () => {
                   </Disclosure.Button>
                   <Disclosure.Panel className="bg-gray-table-bg rounded-xl ">
                     <ul class="bg-white-smoke rounded-lg px-3 py-3 mt-3">
-                    <label for="default-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default range</label>
-                    <input id="default-range" type="range" value="50" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"/> 
-                     <RangeSlider />
+                      <div className="custom-range-slider">
+                        <RangeSlider />
+                        <div className="flex justify-between items-center pt-2">
+                          <span class="text-xs font-medium text-gray-500">
+                            0
+                          </span>
+                          <span class="text-xs font-medium text-gray-500">
+                            +1000
+                          </span>
+                        </div>
+
+                        <div className="flex justify-between items-center pt-2">
+                          <InputField
+                            inputHeight="h-[32px]"
+                            inputWidth="w-[68px]"
+                          />
+                          <span className="text-gray-500 font-medium">-</span>
+                          <InputField
+                            inputHeight="h-[32px]"
+                            inputWidth="w-[68px]"
+                          />
+                        </div>
+                      </div>
                     </ul>
                   </Disclosure.Panel>
                 </Disclosure>
 
                 <div className="flex items-center justify-between">
-                  <Button class=" text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2		">
+                  <Button class=" min-w-[96px] text-black-primary font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-white hover hover-secondary py-2		">
                     Clear All
                   </Button>
 
-                  <Button class=" text-white font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-primary-blue hover hover-bg-primary-blue py-2	">
-                    Activate
+                  <Button class=" min-w-[96px] text-white font-medium text-sm px-5 border border-borderPrimary rounded-md  text-center leading-none bg-primary-blue hover hover-bg-primary-blue py-2	">
+                    Apply
                   </Button>
                 </div>
               </div>

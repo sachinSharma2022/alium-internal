@@ -2,21 +2,19 @@ import * as React from "react";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-import styles from "./style.module.scss";
-
-const buttonVariants = cva(styles.base, {
+const buttonVariants = cva("base", {
   variants: {
     variant: {
-      none: styles.none_default,
-      default: styles.variant_default,
-      blueBtn: styles.variant_blueBtn,
-      redBtn: styles.variant_redBtn,
+      none: "none_default",
+      default: "variant_default",
+      blueBtn: "variant_blueBtn",
+      redBtn: "variant_redBtn",
     },
     size: {
-      default: styles.size_default,
-      xs: styles.size_xs,
-      sm: styles.size_sm,
-      lg: styles.size_lg,
+      default: "size_default",
+      xs: "size_xs",
+      sm: "size_sm",
+      lg: "size_lg",
     },
   },
   defaultVariants: {

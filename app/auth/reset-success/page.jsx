@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import FormLeft from "@/components/auth/formLeft";
 import FormRight from "@/components/auth/formRight";
@@ -13,7 +14,7 @@ const formLogIn = [
   },
 ];
 
-const LoginSuccess = () => {
+const ResetSuccess = () => {
   return (
     <section className="loginSuccess">
       <div className="mx-auto lg:mx-0">
@@ -31,6 +32,7 @@ const LoginSuccess = () => {
             formButtons={formLogIn}
             showCheckbox={false}
             showDevide={false}
+            redirect="/auth/login"
           />
         </div>
       </div>
@@ -38,4 +40,4 @@ const LoginSuccess = () => {
   );
 };
 
-export default LoginSuccess;
+export default ResetSuccess;

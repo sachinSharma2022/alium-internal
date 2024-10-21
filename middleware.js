@@ -10,5 +10,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/auth/reset-password/:path*"],
+  matcher: ["/auth/reset-password/:path*", "/workspace/:path*"],
 };
