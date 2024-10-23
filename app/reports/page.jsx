@@ -1,10 +1,9 @@
 "use client"
 import React from 'react'
 import PrimaryLayout from '@/components/layout/primaryLayout'
-// import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import Link from 'next/link'
 import Image from 'next/image'
-import ReportTable from '@/components/reports/reportTable'
+import ReportTable from '@/components/reports/table/reportTable'
 import DropDown from '@/components/reports/dropDown'
 
 const Reports = () => {
@@ -16,7 +15,7 @@ const Reports = () => {
         { href: '/license', label: 'License' },
     ]
 
-    // DropDown 
+    // DropDown show Pages 
     const pageItems = [
         { label: 2 },
         { label: 5 },
@@ -35,14 +34,6 @@ const Reports = () => {
         { title: 'Survey Title 1', created: '12 Aug 2024', loaded: 0, responses: 0, status: 'Inactive', statusColor: 'bg-orange-400' },
         { title: 'Survey Title 1', created: '12 Aug 2024', loaded: 0, responses: 0, status: 'Active', statusColor: 'bg-green-500' },
         { title: 'Survey Title 1', created: '12 Aug 2024', loaded: 3, responses: 1, status: 'Deleted', statusColor: 'bg-red-700' },
-        { title: 'Survey Title 1', created: '12 Aug 2024', loaded: 3, responses: 1, status: 'Deleted', statusColor: 'bg-red-700' },
-        { title: 'Survey Title 1', created: '12 Aug 2024', loaded: 3, responses: 1, status: 'Deleted', statusColor: 'bg-red-700' },
-        { title: 'Survey Title 1', created: '12 Aug 2024', loaded: 3, responses: 1, status: 'Deleted', statusColor: 'bg-red-700' },
-        { title: 'Survey Title 1', created: '12 Aug 2024', loaded: 3, responses: 1, status: 'Deleted', statusColor: 'bg-red-700' },
-        { title: 'Survey Title 1', created: '12 Aug 2024', loaded: 3, responses: 1, status: 'Deleted', statusColor: 'bg-red-700' },
-        { title: 'Survey Title 1', created: '12 Aug 2024', loaded: 3, responses: 1, status: 'Deleted', statusColor: 'bg-red-700' },
-        { title: 'Survey Title 1', created: '12 Aug 2024', loaded: 3, responses: 1, status: 'Deleted', statusColor: 'bg-red-700' },
-        { title: 'Survey Title 1', created: '12 Aug 2024', loaded: 3, responses: 1, status: 'Deleted', statusColor: 'bg-red-700' },
     ]
 
 
@@ -59,8 +50,10 @@ const Reports = () => {
                         <DropDown
                             title="All"
                             types={reportsType}
-                            custClass1="py-3 px-4 w-[9.125rem] h-[44px] rounded-md"
-                            custClass2="py-2 w-[9.125rem] mt-2 rounded-md"
+                            width="16"
+                            height="16"
+                            custClass1="py-3 px-4 w-[9.125rem] h-[44px] rounded-md bg-white"
+                            custClass2="py-2 w-[9.125rem] mt-2 rounded-md bg-white"
                         />
                     </div>
                 </div>
@@ -145,8 +138,10 @@ const Reports = () => {
                             <DropDown
                                 title="8"
                                 types={pageItems}
-                                custClass1=" rounded-lg py-[10px] pl-4 pr-[11px] w-[70px] h-[44px] my-2"
-                                custClass2=" rounded-lg w-[70px] py-2 mt-2"
+                                width="16"
+                                height="16"
+                                custClass1=" rounded-lg py-[10px] pl-4 pr-[11px] w-[70px] h-[44px] my-2 bg-white"
+                                custClass2=" rounded-lg w-[70px] py-2 mt-2 bg-white"
                             />
                         </div>
                     </div>

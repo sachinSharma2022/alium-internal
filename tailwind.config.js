@@ -28,6 +28,7 @@ module.exports = {
       colors: {
         "primary-blue": "#3B37FF",
         "seconday-blue": "#0B00CC",
+        "snowbank": "#e9e9e9",
         "primary-red": "#efefff",
         "gray-light": "#727272",
         "gray-dark": "#4F4F4F",
@@ -41,6 +42,8 @@ module.exports = {
         "shark-fin": "#969696",
         tooltipbg: "#2F2F2F",
         "tricorn-black": "#2F2F2F",
+        "powder-puff": "#ffeef3",
+        "wild-strawberry": "#FF3797",
       },
       borderColor: {
         borderPrimary: "#CFCFCF",
