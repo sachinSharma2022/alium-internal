@@ -3,7 +3,7 @@ import React from 'react'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import Image from 'next/image'
 
-const DropDown = ({ title, types, custClass1, custClass2, width, height, disable, title2, imgTitle, border }) => {
+const DropDown = ({ title, types, custClass1, custClass2, width, height, disable, title2, dropDownImg, border }) => {
 
     const [isDisabled, setIsDisabled] = useState(disable)
 
@@ -17,10 +17,10 @@ const DropDown = ({ title, types, custClass1, custClass2, width, height, disable
                     disabled={isDisabled}
                 >
                     {
-                        imgTitle && (
+                        dropDownImg && (
                             <span className="">
                                 <Image
-                                    src={imgTitle}
+                                    src={dropDownImg}
                                     width={20}
                                     height={20}
                                     alt="not found"
@@ -41,7 +41,7 @@ const DropDown = ({ title, types, custClass1, custClass2, width, height, disable
                         width={width}
                         height={height}
                         alt="not found"
-                        className="group-data-[open]:rotate-180"
+                        className="group-data-[open]:rotate-180 transition-transform"
                     />
                 </MenuButton>
                 <MenuItems anchor="bottom" className={`border border-borderPrimary text-black-primary ${custClass2}`}>
