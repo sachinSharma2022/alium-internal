@@ -139,7 +139,7 @@ const ReportSurveySetting = () => {
                                         ))
                                     }
                                 </ul>
-                                <div className="flex items-center gap-3">
+                                <div className="flex items-center gap-3 justify-end">
                                     {/* Pie Chart List DropDown  */}
                                     <DropDown
                                         title="Gauge"
@@ -229,7 +229,7 @@ const ReportSurveySetting = () => {
                                                                         />
                                                                     </li>
                                                                     {/* Y Axis  */}
-                                                                    <li>
+                                                                    <li className="border-b border-borderPrimary pb-4">
                                                                         <div className="flex items-center justify-between mt-4">
                                                                             <p className="font-semibold text-black-primary mb-3">Y - Axis</p>
                                                                             <Icon
@@ -268,6 +268,29 @@ const ReportSurveySetting = () => {
                                                                                 </figure>
                                                                             </li>
                                                                         </ul>
+                                                                    </li>
+                                                                    <li className="border-b border-borderPrimary pb-4">
+                                                                        <div className="flex items-center justify-between mt-4">
+                                                                            <p className="font-semibold text-black-primary mb-3">Date Range</p>
+                                                                        </div>
+                                                                        <DropDown
+                                                                            title="All"
+                                                                            types={serveyTestItem}
+                                                                            custClass1=" w-full py-4 px-3 rounded-lg text-blackPrimary font-semibold h-[44px]"
+                                                                            custClass2=" rounded-lg py-2 mt-2 bg-white z-50 w-[320px]"
+                                                                        />
+                                                                    </li>
+                                                                    <li className="pb-4">
+                                                                        <div className="flex items-center justify-between mt-4">
+                                                                            <p className="font-semibold text-black-primary mb-3">Theme</p>
+                                                                        </div>
+                                                                        <DropDown
+                                                                            title="Theme"
+                                                                            types={serveyTestItem}
+                                                                            dropDownImg="/images/pie.svg"
+                                                                            custClass1=" w-full py-4 px-3 rounded-lg text-blackPrimary font-semibold h-[44px]"
+                                                                            custClass2=" rounded-lg py-2 mt-2 bg-white z-50 w-[320px]"
+                                                                        />
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -312,21 +335,36 @@ const ReportSurveySetting = () => {
                             ansNumber="8"
                             skipNumber="2"
                         >
-                            <ul className="flex gap-[30px]">
-                                {
-                                    radioGroup.map((item, index) => (
-                                        <li className="font-medium text-black-primary">
-                                            <RadioButton
-                                                type="radio"
-                                                className1="checked:border-primary-blue"
-                                                label={item.label}
-                                                id={item.id}
-                                                htmlFor={item.htmlFor}
-                                            />
-                                        </li>
-                                    ))
-                                }
-                            </ul>
+                            <div className="flex items-center gap-3 justify-end">
+                                <DropDown
+                                    title="Gauge"
+                                    dropDownImg="/images/pie.svg"
+                                    width="20"
+                                    height="20"
+                                    types={pieChartIcon}
+                                    custClass1="py-[10px] px-4 rounded-lg h-10 font-semibold text-sm gap-2"
+                                    custClass2="w-[200px] bg-white z-50 h-72 rounded-lg mt-2 custom-scrollbar font-semibold px-4"
+                                    border={true}
+                                />
+                                <Button className="border border-borderPrimary rounded-lg p-2 cursor-pointer bg-white" onClick={open}>
+                                    <Icon
+                                        name="setting"
+                                        width="24"
+                                        height="24"
+                                    />
+                                </Button>
+                            </div>
+                            <figure>
+                                <Image 
+                                    src="/images/lineAndBarChart.svg"
+                                    width={680}
+                                    height={248}
+                                    layout="responsive"
+                                    objectFit="cover"
+                                    alt="not found"
+                                    className="mt-4"
+                                />
+                            </figure>
                         </Accordion>
                     </div>
                 </div>
@@ -383,11 +421,11 @@ const ReportSurveySetting = () => {
                         <div className="mt-4">
                             <h6 className="text-black-primary text-base mb-4">Export Report</h6>
                             <Button size="sm">
-                               <Icon 
-                               name="export"
-                               width="20"
-                               height="20"
-                               />
+                                <Icon
+                                    name="export"
+                                    width="20"
+                                    height="20"
+                                />
                                 Export
                             </Button>
                         </div>

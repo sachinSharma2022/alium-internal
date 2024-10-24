@@ -17,26 +17,28 @@ const DropDown = ({ title, types, custClass1, custClass2, width, height, disable
                     className={`group border border-borderPrimary flex items-center justify-between text-black-primary ${custClass1} ${isDisabled ? "bg-snowbank text-gray-light" : "bg-white"}`}
                     disabled={isDisabled}
                 >
-                    {
-                        dropDownImg && (
-                            <span className="">
-                                <Image
-                                    src={dropDownImg}
-                                    width={20}
-                                    height={20}
-                                    alt="not found"
-                                />
-                            </span>
-                        )
-                    }
-                    {title}
-                    {
-                        title2 && (
-                            <span className="truncate overflow-hidden whitespace-nowrap w-52">
-                                {title2}
-                            </span>
-                        )
-                    }
+                    <div className="flex items-center gap-2">
+                        {
+                            dropDownImg && (
+                                <span className="">
+                                    <Image
+                                        src={dropDownImg}
+                                        width={20}
+                                        height={20}
+                                        alt="not found"
+                                    />
+                                </span>
+                            )
+                        }
+                        {title}
+                        {
+                            title2 && (
+                                <span className="truncate overflow-hidden whitespace-nowrap w-52">
+                                    {title2}
+                                </span>
+                            )
+                        }
+                    </div>
                     <Icon
                         name="arrowDown"
                         className="group-data-[open]:rotate-180 transition-transform"

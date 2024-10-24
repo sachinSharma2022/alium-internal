@@ -4,7 +4,7 @@ import Link from 'next/link'
 const ReportTable = ({ title, created, loaded, responses, statusColor, status }) => {
     return (
         <>
-            <tr className="border-t hover:bg-primary-red">
+            <tr className="border-t hover:border hover:border-borderPrimary">
                 <td className="flex items-center gap-8 py-3 px-6">
                     <div className="bg-powder-puff text-wild-strawberry w-10 h-10 rounded-full flex items-center justify-center font-semibold">
                         ST
