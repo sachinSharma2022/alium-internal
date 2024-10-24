@@ -2,10 +2,10 @@ import React, { Children } from 'react'
 import Image from 'next/image'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 
-const ReportHeading = ({ children, img, title, ansNumber, skipNumber }) => {
+const Accordion = ({ children, img, title, ansNumber, skipNumber }) => {
     return (
         <>
-            <Disclosure as="div" className="p-6 mb-5 bg-white rounded-xl" defaultOpen={true}>
+            <Disclosure as="div" defaultOpen={true}>
                 <div className="rounded-xl border border-borderPrimary overflow-hidden">
                     <DisclosureButton className="group flex w-full justify-between bg-primary-red p-5">
                         <h6 className="text-black-primary flex items-start">
@@ -48,4 +48,4 @@ const ReportHeading = ({ children, img, title, ansNumber, skipNumber }) => {
     )
 }
 
-export default ReportHeading
+export default Accordion

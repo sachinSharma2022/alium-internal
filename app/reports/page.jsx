@@ -1,10 +1,10 @@
 "use client"
 import React from 'react'
 import PrimaryLayout from '@/components/layout/primaryLayout'
-import Link from 'next/link'
 import Image from 'next/image'
 import ReportTable from '@/components/reports/table/reportTable'
 import DropDown from '@/components/reports/dropDown'
+import Icon from '@/components/ui/icon'
 
 const Reports = () => {
 
@@ -52,7 +52,7 @@ const Reports = () => {
                             types={reportsType}
                             width="16"
                             height="16"
-                            custClass1="py-3 px-4 w-[9.125rem] h-[44px] rounded-md bg-white"
+                            custClass1="py-3 px-4 w-[9.125rem] h-[44px] rounded-md bg-white font-medium"
                             custClass2="py-2 w-[9.125rem] mt-2 rounded-md bg-white"
                         />
                     </div>
@@ -67,15 +67,13 @@ const Reports = () => {
                                     {
                                         reportsTableHeading.map((item, index) => (
                                             <th className={`py-4 ${index === 0 ? 'pl-24' : ''}`} key={index}>
-                                                <div className="flex gap-2">
+                                                <div className="flex gap-2 items-center">
                                                     {item.heading}
                                                     {
                                                         index !== reportsTableHeading.length - 1 && (
-                                                            <Image
-                                                                src="images/sorting.svg"
-                                                                width={12}
-                                                                height={20}
-                                                                alt="not found"
+                                                            <Icon
+                                                                name="sorting"
+                                                                color="#3B37FF"
                                                             />
                                                         )
                                                     }
@@ -109,12 +107,10 @@ const Reports = () => {
                     <div className="flex justify-between items-center mt-8">
                         <div className="font-normal">2 out of 10 pages (8 items)</div>
                         <div className="flex items-center gap-3">
-                            <button className="bg-white rounded-lg p-3 border border-borderPrimary hover hover-secondary">
-                                <Image
-                                    src="/images/down.svg"
-                                    alt="previous"
-                                    width={20}
-                                    height={20}
+                            <button className="bg-white rounded-lg p-3 border border-borderPrimary hover hover-secondary ">
+                                <Icon
+                                    name="arrowDown"
+                                    color="#111111"
                                     className="rotate-90"
                                 />
                             </button>
@@ -124,11 +120,9 @@ const Reports = () => {
                             <span>...</span>
                             <button className="w-10 h-10 font-medium text-black-primary rounded-md">10</button>
                             <button className="bg-white rounded-lg p-3 border border-borderPrimary hover hover-secondary">
-                                <Image
-                                    src="/images/down.svg"
-                                    alt="previous"
-                                    width={20}
-                                    height={20}
+                                <Icon
+                                    name="arrowDown"
+                                    color="#111111"
                                     className="-rotate-90"
                                 />
                             </button>

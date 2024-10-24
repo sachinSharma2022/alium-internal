@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Icon from '@/components/ui/icon'
 
 
 const ProcessTable = () => {
@@ -17,11 +17,9 @@ const ProcessTable = () => {
                         <th className="px-3 py-2 text-[12px] font-semibold text-black-primary border border-borderPrimary text-left">
                             No. of Responses
                             <span className="inline-block float-right">
-                                <Image
-                                    src="/images/sorting.svg"
-                                    width={12}
-                                    height={20}
-                                    alt="not found"
+                                <Icon
+                                    name="sorting"
+                                    color="#3B37FF"
                                 />
                             </span>
                         </th>

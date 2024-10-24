@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import Icon from '@/components/ui/icon'
 import Image from 'next/image'
 
 const DropDown = ({ title, types, custClass1, custClass2, width, height, disable, title2, dropDownImg, border }) => {
@@ -31,16 +32,13 @@ const DropDown = ({ title, types, custClass1, custClass2, width, height, disable
                     {title}
                     {
                         title2 && (
-                            <span className="truncate overflow-hidden whitespace-nowrap">
+                            <span className="truncate overflow-hidden whitespace-nowrap w-52">
                                 {title2}
                             </span>
                         )
                     }
-                    <Image
-                        src="/images/down.svg"
-                        width={width}
-                        height={height}
-                        alt="not found"
+                    <Icon
+                        name="arrowDown"
                         className="group-data-[open]:rotate-180 transition-transform"
                     />
                 </MenuButton>
