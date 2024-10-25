@@ -87,8 +87,7 @@ const ReportSurveySetting = () => {
                         <div className="flex items-center gap-6">
                             <h6 className="text-black-primary flex items-center">
                                 <Icons.arrowLeft
-                                    color="#111111"
-                                    className="mr-5"
+                                    className="mr-5 text-black-primary"
                                 />
                                 This is an example for the Survey Title.
                             </h6>
@@ -97,7 +96,7 @@ const ReportSurveySetting = () => {
                             <div className="w-fit">
                                 <Button size="sm">
                                     <Icons.arrowUpDown
-                                        color="#111111"
+                                        className="text-black-primary"
                                     />
                                     Collapse All
                                 </Button>
@@ -166,7 +165,7 @@ const ReportSurveySetting = () => {
                                                     </h6>
                                                     <Button onClick={close} className="!border-none">
                                                         <Icons.close
-                                                            color="#111111"
+                                                            className="text-black-primary"
                                                         />
                                                     </Button>
                                                 </DialogTitle>
@@ -180,7 +179,7 @@ const ReportSurveySetting = () => {
                                                                     <li className="flex-grow">
                                                                         <Button size="sm" className="!gap-x-4">
                                                                             <Icons.pie
-                                                                                color="#3B37FF"
+                                                                                className="text-primary-blue"
                                                                             />
                                                                             Trend Chart
                                                                         </Button>
@@ -192,7 +191,7 @@ const ReportSurveySetting = () => {
                                                                         <div className="flex items-center justify-between mt-4">
                                                                             <p className="font-semibold text-black-primary mb-3">Source</p>
                                                                             <Icons.plus
-                                                                                color="#3B37FF"
+                                                                                className="text-primary-blue"
                                                                             />
                                                                         </div>
                                                                         {/* DropDown  */}
@@ -223,7 +222,7 @@ const ReportSurveySetting = () => {
                                                                         <div className="flex items-center justify-between mt-4">
                                                                             <p className="font-semibold text-black-primary mb-3">Y - Axis</p>
                                                                             <Icons.plus
-                                                                                color="#3B37FF"
+                                                                                className="text-primary-blue"
                                                                             />
                                                                         </div>
                                                                         {/* DropDown  */}
@@ -251,7 +250,7 @@ const ReportSurveySetting = () => {
                                                                                 />
                                                                                 <figure>
                                                                                     <Icons.delete
-                                                                                        color="#C62828"
+                                                                                        className="text-akabeni"
                                                                                     />
                                                                                 </figure>
                                                                             </li>

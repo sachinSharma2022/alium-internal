@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import PrimaryLayout from '@/components/layout/primaryLayout'
-import Image from 'next/image'
 import ReportTable from '@/components/reports/table/reportTable'
 import DropDown from '@/components/reports/dropDown'
 import {Icons} from '@/components/ui/icon'
@@ -72,7 +71,7 @@ const Reports = () => {
                                                     {
                                                         index !== reportsTableHeading.length - 1 && (
                                                             <Icons.sorting
-                                                                color="#3B37FF"
+                                                            className="text-primary-blue"
                                                             />
                                                         )
                                                     }
@@ -108,8 +107,7 @@ const Reports = () => {
                         <div className="flex items-center gap-3">
                             <button className="bg-white rounded-lg p-3 border border-borderPrimary hover hover-secondary ">
                                 <Icons.arrowDown
-                                    color="#111111"
-                                    className="rotate-90"
+                                    className="rotate-90 text-black-primary"
                                 />
                             </button>
                             <button className="w-10 h-10 font-medium text-black-primary rounded-lg">1</button>
@@ -119,8 +117,7 @@ const Reports = () => {
                             <button className="w-10 h-10 font-medium text-black-primary rounded-md">10</button>
                             <button className="bg-white rounded-lg p-3 border border-borderPrimary hover hover-secondary">
                                 <Icons.arrowDown
-                                    color="#111111"
-                                    className="-rotate-90"
+                                    className="-rotate-90 text-black-primary"
                                 />
                             </button>
                         </div>

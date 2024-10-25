@@ -8,7 +8,7 @@ const Date = () => {
             <PopoverButton className="flex items-center border border-borderPrimary rounded-lg py-3 px-4 font-semibold text-black-primary w-full focus:outline-none">
                 <figure className="mr-3">
                     <Icons.calendarTimes
-                    color="#111111"
+                    className="text-black-primary"
                     />
                 </figure>
                 31/07/2024 - 29/08/2024
