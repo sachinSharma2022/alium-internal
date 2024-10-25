@@ -4,7 +4,7 @@ import PrimaryLayout from '@/components/layout/primaryLayout'
 import Image from 'next/image'
 import ReportTable from '@/components/reports/table/reportTable'
 import DropDown from '@/components/reports/dropDown'
-import Icon from '@/components/ui/icon'
+import {Icons} from '@/components/ui/icon'
 
 const Reports = () => {
 
@@ -71,8 +71,7 @@ const Reports = () => {
                                                     {item.heading}
                                                     {
                                                         index !== reportsTableHeading.length - 1 && (
-                                                            <Icon
-                                                                name="sorting"
+                                                            <Icons.sorting
                                                                 color="#3B37FF"
                                                             />
                                                         )
@@ -108,8 +107,7 @@ const Reports = () => {
                         <div className="font-normal">2 out of 10 pages (8 items)</div>
                         <div className="flex items-center gap-3">
                             <button className="bg-white rounded-lg p-3 border border-borderPrimary hover hover-secondary ">
-                                <Icon
-                                    name="arrowDown"
+                                <Icons.arrowDown
                                     color="#111111"
                                     className="rotate-90"
                                 />
@@ -120,8 +118,7 @@ const Reports = () => {
                             <span>...</span>
                             <button className="w-10 h-10 font-medium text-black-primary rounded-md">10</button>
                             <button className="bg-white rounded-lg p-3 border border-borderPrimary hover hover-secondary">
-                                <Icon
-                                    name="arrowDown"
+                                <Icons.arrowDown
                                     color="#111111"
                                     className="-rotate-90"
                                 />

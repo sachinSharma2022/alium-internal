@@ -4,14 +4,13 @@ import { useState } from 'react'
 import PrimaryLayout from '@/components/layout/primaryLayout'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import RadioButton from '@/components/ui/radioButton'
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 import DropDown from '../dropDown'
 import ProcessTable from '@/components/reports/table/processTable'
 import Date from '../date'
 import Accordion from './accordion'
-import Icon from '@/components/ui/icon'
+import { Icons } from '@/components/ui/icon'
 
 const ReportSurveySetting = () => {
     //  Radio multi Selection 
@@ -87,8 +86,7 @@ const ReportSurveySetting = () => {
                     <div className="flex items-center justify-between py-4 px-5 bg-white mx-auto rounded-xl w-full">
                         <div className="flex items-center gap-6">
                             <h6 className="text-black-primary flex items-center">
-                                <Icon
-                                    name="arrowLeft"
+                                <Icons.arrowLeft
                                     color="#111111"
                                     className="mr-5"
                                 />
@@ -98,8 +96,7 @@ const ReportSurveySetting = () => {
                         <div className="flex items-center gap-5">
                             <div className="w-fit">
                                 <Button size="sm">
-                                    <Icon
-                                        name="arrowUpDown"
+                                    <Icons.arrowUpDown
                                         color="#111111"
                                     />
                                     Collapse All
@@ -152,11 +149,7 @@ const ReportSurveySetting = () => {
                                         border={true}
                                     />
                                     <Button className="border border-borderPrimary rounded-lg p-2 cursor-pointer bg-white" onClick={open}>
-                                        <Icon
-                                            name="setting"
-                                            width="24"
-                                            height="24"
-                                        />
+                                        <Icons.setting />
                                     </Button>
                                 </div>
                                 {/* Modal  */}
@@ -172,8 +165,7 @@ const ReportSurveySetting = () => {
                                                         Configure Widget
                                                     </h6>
                                                     <Button onClick={close} className="!border-none">
-                                                        <Icon
-                                                            name="close"
+                                                        <Icons.close
                                                             color="#111111"
                                                         />
                                                     </Button>
@@ -187,8 +179,7 @@ const ReportSurveySetting = () => {
                                                                 <ul className="mt-3 flex flex-wrap gap-3 border-b border-borderPrimary pb-4">
                                                                     <li className="flex-grow">
                                                                         <Button size="sm" className="!gap-x-4">
-                                                                            <Icon
-                                                                                name="pie"
+                                                                            <Icons.pie
                                                                                 color="#3B37FF"
                                                                             />
                                                                             Trend Chart
@@ -200,8 +191,7 @@ const ReportSurveySetting = () => {
                                                                     <li>
                                                                         <div className="flex items-center justify-between mt-4">
                                                                             <p className="font-semibold text-black-primary mb-3">Source</p>
-                                                                            <Icon
-                                                                                name="plus"
+                                                                            <Icons.plus
                                                                                 color="#3B37FF"
                                                                             />
                                                                         </div>
@@ -232,8 +222,7 @@ const ReportSurveySetting = () => {
                                                                     <li className="border-b border-borderPrimary pb-4">
                                                                         <div className="flex items-center justify-between mt-4">
                                                                             <p className="font-semibold text-black-primary mb-3">Y - Axis</p>
-                                                                            <Icon
-                                                                                name="plus"
+                                                                            <Icons.plus
                                                                                 color="#3B37FF"
                                                                             />
                                                                         </div>
@@ -261,8 +250,7 @@ const ReportSurveySetting = () => {
                                                                                     custClass2=" rounded-lg py-2 mt-2 bg-white z-50 w-[276px]"
                                                                                 />
                                                                                 <figure>
-                                                                                    <Icon
-                                                                                        name="delete"
+                                                                                    <Icons.delete
                                                                                         color="#C62828"
                                                                                     />
                                                                                 </figure>
@@ -347,11 +335,7 @@ const ReportSurveySetting = () => {
                                     border={true}
                                 />
                                 <Button className="border border-borderPrimary rounded-lg p-2 cursor-pointer bg-white" onClick={open}>
-                                    <Icon
-                                        name="setting"
-                                        width="24"
-                                        height="24"
-                                    />
+                                    <Icons.setting />
                                 </Button>
                             </div>
                             <figure>
@@ -421,8 +405,7 @@ const ReportSurveySetting = () => {
                         <div className="mt-4">
                             <h6 className="text-black-primary text-base mb-4">Export Report</h6>
                             <Button size="sm">
-                                <Icon
-                                    name="export"
+                                <Icons.export
                                     width="20"
                                     height="20"
                                 />

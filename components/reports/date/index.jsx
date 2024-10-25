@@ -1,14 +1,13 @@
 import React from 'react'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import Icon from '@/components/ui/icon'
+import {Icons} from '@/components/ui/icon'
 
 const Date = () => {
     return (
         <Popover className="group">
             <PopoverButton className="flex items-center border border-borderPrimary rounded-lg py-3 px-4 font-semibold text-black-primary w-full focus:outline-none">
                 <figure className="mr-3">
-                    <Icon 
-                    name="calendarTimes"
+                    <Icons.calendarTimes
                     color="#111111"
                     />
                 </figure>

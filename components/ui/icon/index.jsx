@@ -1,16 +1,6 @@
 import React from "react";
 
-const Icon = ({ name, ...props }) => {
-    const SelectedIcon = icons[name];
-
-    if (!SelectedIcon) {
-        return null;
-    }
-
-    return <SelectedIcon {...props} />;
-};
-
-const icons = {
+export const Icons = {
 
     arrowDown: (props) => (
         <svg
@@ -368,4 +358,4 @@ const icons = {
 
 
 
-export default Icon;
+

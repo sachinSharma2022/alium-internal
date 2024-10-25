@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '@/components/ui/icon'
+import {Icons} from '@/components/ui/icon'
 
 
 const ProcessTable = () => {
@@ -17,8 +17,7 @@ const ProcessTable = () => {
                         <th className="px-3 py-2 text-[12px] font-semibold text-black-primary border border-borderPrimary text-left">
                             No. of Responses
                             <span className="inline-block float-right">
-                                <Icon
-                                    name="sorting"
+                                <Icons.sorting
                                     color="#3B37FF"
                                 />
                             </span>
