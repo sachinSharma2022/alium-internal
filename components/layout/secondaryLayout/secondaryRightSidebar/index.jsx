@@ -2,11 +2,11 @@ import React from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Icons } from '@/components/ui/icon'
 
-const RightSidebar = () => {
+const SecondaryRightSidebar = () => {
   return (
       <div className="flex">
           <Disclosure defaultOpen={true}>
-              <DisclosureButton className="py-2 group flex items-center">
+              <DisclosureButton className="py-2 group flex items-center min-h-[calc(100vh-92px)] ">
                   <Icons.arrowDown
                       className="group-data-[open]:-rotate-90 rotate-90 text-[#969696] w-4 h-4"
                   />
@@ -21,4 +21,4 @@ const RightSidebar = () => {
   )
 }
 
-export default RightSidebar
+export default SecondaryRightSidebar

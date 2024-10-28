@@ -1,20 +1,16 @@
 import React from "react";
-import Header from "./header";
-import LeftSidebar from "./leftSidebar";
-import RightSidebar from "./rightSidebar";
+import SecondaryLeftSidebar from "./secondaryLeftSidebar";
+import SecondaryRightSidebar from "./secondaryRightSidebar";
 
 const SecondaryLayout = ({ children }) => {
     return (
-        <main>
-            <Header />
-            <div className="flex justify-between">
-                <LeftSidebar />
-                <div className="bg-white-smoke p-6">
+            <div className="flex justify-between w-full">
+                <SecondaryLeftSidebar />
+                <div className="p-6">
                     {children}
                 </div>
-                <RightSidebar />
+                <SecondaryRightSidebar />
             </div>
-        </main>
     )
 }
 export default SecondaryLayout;

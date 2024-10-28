@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const Header = () => {
     return (
-        <div className="h-[92px] px-6 py-[26px] flex items-center justify-between">
+        <div className="h-[92px] px-6 py-[26px] flex items-center justify-between border-b border-borderPrimary fixed top-0 w-full bg-white">
             <div>
                 <ul className="flex items-center">
                     <li>
@@ -23,7 +23,9 @@ const Header = () => {
                     </li>
                 </ul>
             </div>
-            <div></div>
+            <div className="flex h- screen w- full justify-center pt- 24 px-4">
+                
+            </div>
             <div>
                 <Button variant="blueBtn" size="sm">
                     Next: Survey Type
