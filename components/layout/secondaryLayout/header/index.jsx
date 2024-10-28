@@ -1,9 +1,10 @@
+import { Button } from "@/components/ui/button"
 import { Icons } from "@/components/ui/icon"
 import Link from "next/link"
 
 const Header = () => {
     return (
-        <div className="h-[92px] px-6 py-[26px] flex items-center">
+        <div className="h-[92px] px-6 py-[26px] flex items-center justify-between">
             <div>
                 <ul className="flex items-center">
                     <li>
@@ -23,7 +24,11 @@ const Header = () => {
                 </ul>
             </div>
             <div></div>
-            <div></div>
+            <div>
+                <Button variant="blueBtn" size="sm">
+                    Next: Survey Type
+                </Button>
+            </div>
         </div>
     )
 }
