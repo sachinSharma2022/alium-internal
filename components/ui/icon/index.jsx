@@ -391,6 +391,95 @@ export const Icons = {
             </defs>
         </svg>
     ),
+    translate:(props) =>(
+        <svg 
+        width="24" 
+        height="24" 
+        viewBox="0 0 24 24" 
+        fill="none"
+        {...props} 
+        xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_4400_39547)">
+                <path d="M4 5H11" 
+                stroke="currentColor" 
+                stroke-width="1.5" 
+                stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7 4C7 8.846 7 11 7.5 12" 
+                stroke="currentColor" 
+                stroke-width="1.5" 
+                stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10 8.5C10 10.786 8 13 6.5 13C5 13 4 11.865 4 11C4 9 5 8 7 8C9 8 12 8.57 12 10.857C12 12.381 11.333 13.428 10 14" 
+                stroke="currentColor" 
+                stroke-width="1.5" 
+                stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 20L16 11L20 20" 
+                stroke="currentColor" 
+                stroke-width="1.5" 
+                stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M19.1004 18H12.9004" 
+                stroke="currentColor" 
+                stroke-width="1.5" 
+                stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+            <defs>
+                <clipPath id="clip0_4400_39547">
+                    <rect width="24" height="24" fill="white" />
+                </clipPath>
+            </defs>
+        </svg>
+    ),
+    device:(props) =>(
+        <svg 
+        width="24" 
+        height="24" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        {...props}
+        xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_4400_39562)">
+                <path d="M16 4H8C7.44772 4 7 4.44772 7 5V19C7 19.5523 7.44772 20 8 20H16C16.5523 20 17 19.5523 17 19V5C17 4.44772 16.5523 4 16 4Z" 
+                stroke="currentColor" 
+                stroke-width="1.5" 
+                stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M11 5H13" 
+                stroke="currentColor" 
+                stroke-width="1.5" 
+                stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 17V17.01" 
+                stroke="currentColor" 
+                stroke-width="1.5" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+                <clipPath id="clip0_4400_39562">
+                    <rect width="24" height="24" fill="white" />
+                </clipPath>
+            </defs>
+        </svg>
+    ),
+    sparkel:(props)=>(
+        <svg 
+        width="24" 
+        height="24" 
+        viewBox="0 0 24 24" 
+        fill="none"
+        {...props} 
+        xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_3869_38152)">
+                <path d="M16 18C16.5304 18 17.0391 18.2107 17.4142 18.5858C17.7893 18.9609 18 19.4696 18 20C18 19.4696 18.2107 18.9609 18.5858 18.5858C18.9609 18.2107 19.4696 18 20 18C19.4696 18 18.9609 17.7893 18.5858 17.4142C18.2107 17.0391 18 16.5304 18 16C18 16.5304 17.7893 17.0391 17.4142 17.4142C17.0391 17.7893 16.5304 18 16 18ZM16 6C16.5304 6 17.0391 6.21071 17.4142 6.58579C17.7893 6.96086 18 7.46957 18 8C18 7.46957 18.2107 6.96086 18.5858 6.58579C18.9609 6.21071 19.4696 6 20 6C19.4696 6 18.9609 5.78929 18.5858 5.41421C18.2107 5.03914 18 4.53043 18 4C18 4.53043 17.7893 5.03914 17.4142 5.41421C17.0391 5.78929 16.5304 6 16 6ZM9 18C9 16.4087 9.63214 14.8826 10.7574 13.7574C11.8826 12.6321 13.4087 12 15 12C13.4087 12 11.8826 11.3679 10.7574 10.2426C9.63214 9.11742 9 7.5913 9 6C9 7.5913 8.36786 9.11742 7.24264 10.2426C6.11742 11.3679 4.5913 12 3 12C4.5913 12 6.11742 12.6321 7.24264 13.7574C8.36786 14.8826 9 16.4087 9 18Z" 
+                stroke="currentColor" 
+                stroke-width="1.5" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+                <clipPath id="clip0_3869_38152">
+                    <rect width="24" height="24" fill="white" />
+                </clipPath>
+            </defs>
+        </svg>
+    ),
 };
 
 

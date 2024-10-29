@@ -6,7 +6,7 @@ const SecondaryLayout = ({ children }) => {
     return (
             <div className="flex justify-between w-full">
                 <SecondaryLeftSidebar />
-                <div className="p-6">
+                <div className="w-full p-6">
                     {children}
                 </div>
                 <SecondaryRightSidebar />

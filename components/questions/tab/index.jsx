@@ -3,9 +3,21 @@ import { Icons } from "@/components/ui/icon"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import SecondaryLayout from '@/components/layout/secondaryLayout'
+import SecondaryHeading from '../secondaryHeading'
 
 
 const Tabs = () => {
+    const headingIcons = [
+        {
+            icon: Icons.translate, modal: true,
+        },
+        {
+            icon: Icons.device, modal: true,
+        },
+        {
+            icon: Icons.setting,
+        },
+    ]
     return (
         <>
             <TabGroup className="flex items-center justify-between flex-col w-full">
@@ -26,29 +38,34 @@ const Tabs = () => {
                             </Link>
                         </li>
                     </ul>
-                        <TabList>
-                            <Tab>Tab 1</Tab>
-                            <Tab>Tab 2</Tab>
-                            <Tab>Tab 3</Tab>
-                        </TabList>
+                    <TabList className="*:px-5 *:py-2 *:rounded-lg *:font-semibold *:text-gray-light space-x-2">
+                        <Tab className="data-[selected]:bg-primary-red data-[selected]:text-primary-blue focus:outline-none">Create</Tab>
+                        <Tab className="data-[selected]:bg-primary-red data-[selected]:text-primary-blue focus:outline-none">Share</Tab>
+                        <Tab className="data-[selected]:bg-primary-red data-[selected]:text-primary-blue focus:outline-none">Results</Tab>
+                    </TabList>
                     <div>
                         <Button variant="blueBtn" size="sm">
                             Next: Survey Type
                         </Button>
                     </div>
                 </div>
-               
+
                 <TabPanels className="bg-white mt-[92px] w-full">
                     <TabPanel className="flex justify-between items-center bg-white-smoke">
-                                <SecondaryLayout>
-                                    Lorem, ipsum dolor sit amet consectetur 
-                                </SecondaryLayout>
-                        </TabPanel>
-                        <TabPanel>Content 2</TabPanel>
-                        <TabPanel>Content 3</TabPanel>
-                    </TabPanels>
+                        <SecondaryLayout>
+                            <SecondaryHeading
+                                icons={headingIcons}
+                                preview="Preview"
+                                drafts="Save as Draft"
+                                
+                            />
+                        </SecondaryLayout>
+                    </TabPanel>
+                    <TabPanel>Content 2</TabPanel>
+                    <TabPanel>Content 3</TabPanel>
+                </TabPanels>
             </TabGroup>
-           
+
         </>
 
     )

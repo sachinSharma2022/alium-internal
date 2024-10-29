@@ -4,11 +4,11 @@ import { Icons } from '@/components/ui/icon'
 
 const SecondaryLeftSidebar = () => {
     return (
-        <div className="flex">
+        <div className="flex bg-white">
             <Disclosure defaultOpen={true}>
                 <DisclosurePanel
                     transition
-                    className="text-gray-500 w-[312px] bg-red-200 min-h-[calc(100vh-92px)] flex-shrink-0 p-6 origin-top transition duration-200 ease-out data-[closed]:-translate-x-6 data-[closed]:opacity-0">
+                    className="text-gray-500 w-[312px] min-h-[calc(100vh-92px)] flex-shrink-0 p-6 origin-top transition duration-200 ease-out data-[closed]:-translate-x-6 data-[closed]:opacity-0">
                     Yes! You can purchase a license that you can share with your entire team.
                 </DisclosurePanel>
                 <DisclosureButton className="py-2 group flex items-center min-h-[calc(100vh-92px)]">
