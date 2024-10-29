@@ -2,7 +2,7 @@ import React from "react";
 import SecondaryLeftSidebar from "./secondaryLeftSidebar";
 import SecondaryRightSidebar from "./secondaryRightSidebar";
 
-const SecondaryLayout = ({ children }) => {
+const QuestionContent = ({ children }) => {
     return (
             <div className="flex justify-between w-full">
                 <SecondaryLeftSidebar />
@@ -13,4 +13,4 @@ const SecondaryLayout = ({ children }) => {
             </div>
     )
 }
-export default SecondaryLayout;
+export default QuestionContent;

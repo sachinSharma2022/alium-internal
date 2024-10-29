@@ -1,12 +1,11 @@
 "use client"
 import React, { useState } from 'react'
-import SecondaryLayout from '@/components/layout/secondaryLayout'
-import Tabs from '@/components/questions/tab'
+import QuestionHeader from '@/components/questions/questionHeader'
 
 const Question = () => {
   return (
     <div>
-      <Tabs />
+      <QuestionHeader />
      
     </div>
   )

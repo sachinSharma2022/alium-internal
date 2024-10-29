@@ -2,11 +2,11 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import { Icons } from "@/components/ui/icon"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import SecondaryLayout from '@/components/layout/secondaryLayout'
-import SecondaryHeading from '../secondaryHeading'
+import QuestionContent from '@/components/layout/questionContent'
+import QuestionActionBar from '../questionActionBar'
 
 
-const Tabs = () => {
+const QuestionHeader = () => {
     const headingIcons = [
         {
             icon: Icons.translate, modal: true,
@@ -52,14 +52,14 @@ const Tabs = () => {
 
                 <TabPanels className="bg-white mt-[92px] w-full">
                     <TabPanel className="flex justify-between items-center bg-white-smoke">
-                        <SecondaryLayout>
-                            <SecondaryHeading
+                        <QuestionContent>
+                            <QuestionActionBar
                                 icons={headingIcons}
                                 preview="Preview"
                                 drafts="Save as Draft"
                                 
                             />
-                        </SecondaryLayout>
+                        </QuestionContent>
                     </TabPanel>
                     <TabPanel>Content 2</TabPanel>
                     <TabPanel>Content 3</TabPanel>
@@ -70,4 +70,4 @@ const Tabs = () => {
 
     )
 }
-export default Tabs
+export default QuestionHeader

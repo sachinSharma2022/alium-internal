@@ -1,19 +1,25 @@
 import React from 'react'
-import { Field, Label, Select } from '@headlessui/react'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import { Icons } from '@/components/ui/icon'
 
-const DropDown = () => {
+const DropDown = ({label, title, language}) => {
   return (
-      <Field className="bg-red-100 flex flex-col">
-          <Label>Project status</Label>
-          <Select name="status" className="border border-borderPrimary appearance-none p-3">
-            <Icons.arrowDown className="bg-red-600" />
-              <option value="active">Active</option>
-              <option value="paused">Paused</option>
-              <option value="delayed">Delayed</option>
-              <option value="canceled">Canceled</option>
-          </Select>
-      </Field>
+    <Popover className="group space-y-2 mb-6">
+      <h6 className="text-black-primary text-base">{label}</h6>
+      <PopoverButton className="flex items-center justify-between w-full border border-borderPrimary rounded-lg px-4 py-3">
+        {title}
+        <Icons.arrowDown className="size-5 group-data-[open]:rotate-180" />
+      </PopoverButton>
+      <PopoverPanel anchor="bottom" className="flex flex-col w-[568px] bg-white border border-borderPrimary rounded-lg px-4 py-3 mt-3">
+        <ul>
+          {
+            language.map((item,index) => (
+              <li key={index}>{item.lang}</li>
+            ))
+          }
+        </ul>
+      </PopoverPanel>
+    </Popover>
   )
 }
 
