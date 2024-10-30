@@ -1,15 +1,15 @@
 import React from "react";
-import SecondaryLeftSidebar from "./secondaryLeftSidebar";
-import SecondaryRightSidebar from "./secondaryRightSidebar";
+import QuestionLeftSidebar from "./questionLeftSidebar";
+import QuestionRightSidebar from "./questionRightSidebar";
 
 const QuestionContent = ({ children }) => {
     return (
             <div className="flex justify-between w-full">
-                <SecondaryLeftSidebar />
+            <QuestionLeftSidebar />
                 <div className="w-full p-6">
                     {children}
                 </div>
-                <SecondaryRightSidebar />
+            <QuestionRightSidebar />
             </div>
     )
 }

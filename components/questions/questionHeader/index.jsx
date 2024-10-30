@@ -7,17 +7,6 @@ import QuestionActionBar from '../questionActionBar'
 
 
 const QuestionHeader = () => {
-    const headingIcons = [
-        {
-            icon: Icons.translate, modal: true,
-        },
-        {
-            icon: Icons.device, modal: true,
-        },
-        {
-            icon: Icons.setting,
-        },
-    ]
     return (
         <>
             <TabGroup className="flex items-center justify-between flex-col w-full">
@@ -54,10 +43,8 @@ const QuestionHeader = () => {
                     <TabPanel className="flex justify-between items-center bg-white-smoke">
                         <QuestionContent>
                             <QuestionActionBar
-                                icons={headingIcons}
-                                preview="Preview"
-                                drafts="Save as Draft"
-                                
+                                previewBtn="Preview"
+                                saveAsDraftsBtn="Save as Draft"
                             />
                         </QuestionContent>
                     </TabPanel>

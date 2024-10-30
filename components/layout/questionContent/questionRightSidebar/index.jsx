@@ -2,7 +2,7 @@ import React from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Icons } from '@/components/ui/icon'
 
-const SecondaryRightSidebar = () => {
+const QuestionRightSidebar = () => {
   return (
       <div className="flex bg-white">
           <Disclosure defaultOpen={true}>
@@ -21,4 +21,4 @@ const SecondaryRightSidebar = () => {
   )
 }
 
-export default SecondaryRightSidebar
+export default QuestionRightSidebar

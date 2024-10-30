@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Icons } from "@/components/ui/icon"
-import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import DropDown from "../dropDown"
 import CheckBox from "@/components/ui/checkbox"
+import ActionModal from "../modals/actionModal"
 
 const contentItems = [
     {
@@ -15,17 +15,17 @@ const contentItems = [
     {
         text: "Radio",
         icon: Icons.circleCheck,
-         phIcon: Icons.phoneDots,
+        phIcon: Icons.phoneDots,
     },
     {
         text: "Checkbox",
         icon: Icons.checkBox,
-         phIcon: Icons.phoneDots,
+        phIcon: Icons.phoneDots,
     },
     {
         text: "Net Promoter Score",
         icon: Icons.guage,
-         phIcon: Icons.phoneDots,
+        phIcon: Icons.phoneDots,
     },
     {
         text: "Rating",
@@ -53,21 +53,11 @@ const contentItems = [
         phIcon: Icons.phoneDots,
     },
 ]
- const language = [
-        {
-            lang:"English"
-        },
-        {
-            lang: "French"
-        },
-        {
-            lang: "Spanich"
-        },
-    ]
 
-const QuestionActionBar = ({ icons, preview, drafts }) => {
+const QuestionActionBar = ({ previewBtn, saveAsDraftsBtn }) => {
 
-    let [isOpen, setIsOpen] = useState(false)
+    const [TranslateModalOpen, setTranslateModalOpen] = useState(false);
+    const [DeviceModalOpen, setDeviceModalOpen] = useState(false);
 
 
     return (
@@ -102,59 +92,84 @@ const QuestionActionBar = ({ icons, preview, drafts }) => {
                         </PopoverPanel>
                     </Popover>
                 </div>
+
                 <ul className="flex items-center gap-4">
-                    {
-                        icons.map((items, index) => (
-                            <li key={index}>
-                                <items.icon className="text-black-primary" onClick={() => items.modal && setIsOpen(true)} />
-                                {
-                                    items.modal && (
-                                        <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
-                                            <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-                                                <DialogPanel className="w-[620px] space-y-4 border bg-white rounded-xl p-6 shadow2">
-                                                    <DialogTitle as="h6" className="font-bold text-black-primary flex items-center justify-between border-b border-borderPrimary pb-6">
-                                                        Language Translation
-                                                        <Icons.close onClick={() => setIsOpen(false)} />
-                                                    </DialogTitle>
-                                                    <Description>
-                                                        <DropDown 
-                                                            label="Form Main Language"
-                                                            title="Select"
-                                                            language={language}
-                                                        />
-                                                        <DropDown
-                                                            label="Translation Language"
-                                                            title="Select"
-                                                            language={language}
-                                                        />
-                                                        <div className="flex items-start gap-4">
-                                                            <CheckBox checked/>
-                                                            <div>
-                                                                <h6 className="text-black-primary text-base">Use Auto Translation</h6>
-                                                                <p className="edgecase">
-                                                                    Turn on automatic translations in your Setting. If someone doesn't understand your form's language, they can switch it to their browser's default language.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </Description>
-                                                    <div className="flex gap-4">
-                                                        <Button size="sm" onClick={() => setIsOpen(false)}>Cancel</Button>
-                                                        <Button variant="blueBtn" size="sm" onClick={() => setIsOpen(false)}>Save</Button>
-                                                    </div>
-                                                </DialogPanel>
-                                            </div>
-                                        </Dialog>
-                                    )
-                                }
-                            </li>
-                        ))
-                    }
+                    <li className="text-black-primary">
+                        <Icons.translate onClick={() => setTranslateModalOpen(true)} />
+                        <ActionModal
+                            isOpen={TranslateModalOpen} setIsOpen={setTranslateModalOpen}
+                            title="Language Translation"
+                            actionBtnPrimary="Cancel"
+                            actionBtnSecondary="Save"
+                        >
+                            <DropDown
+                                label="Form Main Language"
+                                title="Select"
+                            >
+                                <ul>
+                                    <li>English</li>
+                                    <li>English</li>
+                                    <li>English</li>
+                                    <li>English</li>
+                                </ul>
+                            </DropDown>
+                            <DropDown
+                                label="Translation Language"
+                                title="Select"
+                            >
+                                <ul>
+                                    <li>Hindi</li>
+                                    <li>Hindi</li>
+                                    <li>Hindi</li>
+                                    <li>Hindi</li>
+                                </ul>
+                            </DropDown>
+                            <div className="flex items-start gap-4">
+                                <CheckBox />
+                                <div>
+                                    <h6 className="text-black-primary text-base">Use Auto Translation</h6>
+                                    <p className="edgecase">
+                                        Turn on automatic translations in your Setting. If someone doesn't understand your form's language, they can switch it to their browser's default language.
+                                    </p>
+                                </div>
+                            </div>
+                        </ActionModal>
+                    </li>
+                    <li className="text-black-primary" >
+                        <Icons.device onClick={() => setDeviceModalOpen(true)} />
+                        <ActionModal
+                            isOpen={DeviceModalOpen} setIsOpen={setDeviceModalOpen}
+                            title="Survey Options"
+                            actionBtnPrimary="Cancel"
+                            actionBtnSecondary="Continue"
+                        >
+                            <DropDown
+                                label="Survey title"
+                                title="Select"
+                            >
+                                <ul>
+                                    <li>French</li>
+                                    <li>French</li>
+                                    <li>French</li>
+                                    <li>French</li>
+                                </ul>
+                            </DropDown>
+                            <h6 className="text-black-primary text-base mb-4">Advance setting</h6>
+                            <div className="flex items-start gap-3">
+                                <CheckBox />
+                                <p className="edgecase">Allow respondents to submit answers anonymously.</p>
+                            </div>
+                        </ActionModal>
+                    </li>
+                    <li className="text-black-primary">
+                        <Icons.setting />
+                    </li>
                 </ul>
             </div>
             {/* preview & save as defauls Button  */}
             <ul className="flex gap-5">
-                <li><Button size="sm">{preview}</Button></li>
-                <li><Button size="sm">{drafts}</Button></li>
+                <li><Button size="sm">{previewBtn}</Button></li>
+                <li><Button size="sm">{saveAsDraftsBtn}</Button></li>
             </ul>
         </div>
     )
